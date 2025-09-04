@@ -301,23 +301,23 @@ export default function ArticuloRPARPM() {
         </div>
 
         {/* CTA Final */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white">
-          <h3 className="text-2xl font-bold mb-4">
+        <div className="bg-white border border-neutral-200 rounded-2xl p-8 text-center shadow-sm">
+          <h3 className="text-2xl font-bold text-neutral-900 mb-4">
             ¿Necesitás más información?
           </h3>
-          <p className="text-blue-100 mb-6">
+          <p className="text-neutral-600 mb-6">
             Consultá nuestra sección de jurisdicciones para encontrar los requisitos específicos de tu provincia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/jurisdicciones"
-              className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors"
+              className="btn-primary"
             >
               Ver Jurisdicciones
             </Link>
             <Link 
               href="/faq"
-              className="bg-blue-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors"
+              className="btn-secondary"
             >
               Preguntas Frecuentes
             </Link>
