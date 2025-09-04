@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://grabado-autopartes-argentina.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://grabadoautopartes.com.ar'),
   title: {
     default: 'Grabado de Autopartes Argentina - RPA/RPM y Cédulas Digitales',
     template: '%s | Grabado Autopartes Argentina'
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code', // Reemplazar con código real
   },
   alternates: {
-    canonical: 'https://grabado-autopartes-argentina.vercel.app',
+    canonical: 'https://grabadoautopartes.com.ar',
   },
 }
 

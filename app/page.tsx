@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://grabado-autopartes-argentina.vercel.app',
+    canonical: 'https://grabadoautopartes.com.ar',
   },
 }
 

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Términos y condiciones de uso del sitio web de grabado de autopartes Argentina. Información legal sobre el uso de la plataforma.',
   robots: 'noindex, follow',
   alternates: {
-    canonical: 'https://grabado-autopartes-argentina.vercel.app/terminos',
+    canonical: 'https://grabadoautopartes.com.ar/terminos',
   },
 }
 
