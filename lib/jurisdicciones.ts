@@ -37,7 +37,6 @@ export async function getJurisdicciones(): Promise<Jurisdiccion[]> {
     // Filtrar solo las jurisdicciones válidas (excluir metadata)
     const jurisdicciones = data.filter((item: any) => item.slug && item.nombre)
     
-    console.log(`Cargadas ${jurisdicciones.length} jurisdicciones desde: ${filePath}`)
     return jurisdicciones
   } catch (error) {
     console.error('Error loading jurisdicciones:', error)
@@ -48,17 +47,8 @@ export async function getJurisdicciones(): Promise<Jurisdiccion[]> {
 // Función server-side para obtener una jurisdicción por slug
 export async function getJurisdiccionBySlug(slug: string): Promise<Jurisdiccion | null> {
   try {
-    console.log(`Buscando jurisdicción con slug: ${slug}`)
     const jurisdicciones = await getJurisdicciones()
-    console.log(`Total de jurisdicciones cargadas: ${jurisdicciones.length}`)
-    
     const jurisdiccion = jurisdicciones.find(j => j.slug === slug)
-    if (jurisdiccion) {
-      console.log(`Jurisdicción encontrada: ${jurisdiccion.nombre}`)
-    } else {
-      console.log(`Jurisdicción no encontrada para slug: ${slug}`)
-      console.log('Slugs disponibles:', jurisdicciones.map(j => j.slug))
-    }
     
     return jurisdiccion || null
   } catch (error) {
