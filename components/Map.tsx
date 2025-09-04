@@ -104,7 +104,7 @@ export function Map({ centers, onCenterSelect, className = '' }: MapProps) {
               <div className="p-2">
                 <h3 className="font-semibold text-neutral-900 mb-2">{center.nombre}</h3>
                 <p className="text-sm text-neutral-600 mb-1">
-                  <strong>Jurisdicción:</strong> {center.jurisdiccion || 'N/A'}
+                  <strong>Jurisdicción:</strong> {(center as any).jurisdiccion || 'N/A'}
                 </p>
                 <p className="text-sm text-neutral-600 mb-1">
                   <strong>Servicios:</strong> {center.servicios.join(', ')}
