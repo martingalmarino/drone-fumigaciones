@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/', '/admin/'],
     },
-    sitemap: 'https://grabado-autopartes-argentina.vercel.app/sitemap.xml',
+    sitemap: 'https://www.grabadoautopartes.com.ar/sitemap.xml',
   }
 }

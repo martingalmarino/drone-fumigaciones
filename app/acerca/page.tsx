@@ -178,7 +178,7 @@ export default function AcercaPage() {
               <h3 className="font-medium text-neutral-900 mb-3">Gobiernos Provinciales</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="https://www.buenosaires.gob.ar/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
+                  <a href="https://buenosaires.gob.ar/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
                     Gobierno de la Ciudad de Buenos Aires
                   </a>
                 </li>
@@ -188,7 +188,7 @@ export default function AcercaPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.cba.gov.ar/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
+                  <a href="https://www.cordoba.gob.ar/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
                     Gobierno de Córdoba
                   </a>
                 </li>
@@ -204,12 +204,12 @@ export default function AcercaPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.argentina.gob.ar/interior/cedula-digital" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
+                  <a href="https://www.argentina.gob.ar/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
                     Cédula Digital
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.argentina.gob.ar/justicia/derechos-familia/dni" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
+                  <a href="https://www.argentina.gob.ar/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
                     DNI y Documentación
                   </a>
                 </li>

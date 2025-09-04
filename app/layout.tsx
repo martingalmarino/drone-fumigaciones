@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_AR',
-    url: 'https://grabado-autopartes-argentina.vercel.app',
+    url: 'https://www.grabadoautopartes.com.ar',
     siteName: 'Grabado Autopartes Argentina',
     title: 'Grabado de Autopartes Argentina - RPA/RPM y Cédulas Digitales',
     description: 'Información completa sobre grabado de autopartes, RPA/RPM y cédulas digitales en Argentina. Requisitos, costos, turnos y centros por jurisdicción.',
@@ -107,16 +107,16 @@ export default function RootLayout({
     "@type": "WebSite",
     "name": "Grabado Autopartes Argentina",
     "description": "Información oficial sobre grabado de autopartes, RPA/RPM y cédulas digitales por jurisdicción en Argentina",
-    "url": "https://grabado-autopartes-argentina.vercel.app",
+    "url": "https://www.grabadoautopartes.com.ar",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://grabado-autopartes-argentina.vercel.app/jurisdicciones?search={search_term_string}",
+      "target": "https://www.grabadoautopartes.com.ar/jurisdicciones?search={search_term_string}",
       "query-input": "required name=search_term_string"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Grabado Autopartes Argentina",
-      "url": "https://grabado-autopartes-argentina.vercel.app"
+      "url": "https://www.grabadoautopartes.com.ar"
     }
   }
 

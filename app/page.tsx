@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Grabado de Autopartes Argentina - Información Oficial por Jurisdicción',
     description: 'Guía completa de grabado de autopartes, RPA/RPM y cédulas digitales en Argentina. Encontrá requisitos, costos, turnos y centros por jurisdicción.',
-    url: 'https://grabado-autopartes-argentina.vercel.app',
+    url: 'https://www.grabadoautopartes.com.ar',
     images: [
       {
         url: '/og-home.jpg',

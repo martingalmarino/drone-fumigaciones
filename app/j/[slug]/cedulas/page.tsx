@@ -109,7 +109,7 @@ export default async function CedulasPage({ params }: CedulasPageProps) {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://www.argentina.gob.ar/interior/cedula-digital"
+                href="https://www.argentina.gob.ar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center space-x-2"
@@ -118,7 +118,7 @@ export default async function CedulasPage({ params }: CedulasPageProps) {
                 <span>Descargar Mi Argentina</span>
               </a>
               <a
-                href="https://www.argentina.gob.ar/interior/cedula-digital/como-obtener"
+                href="https://www.argentina.gob.ar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary inline-flex items-center space-x-2"
