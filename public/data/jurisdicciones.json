@@ -709,5 +709,901 @@
         "direccion": "Portal online - consultar ubicación"
       }
     ]
+  },
+  {
+    "slug": "catamarca",
+    "nombre": "Provincia de Catamarca",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Catamarca",
+        "url": "https://www.catamarca.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.catamarca.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué grabado es obligatorio?",
+          "respuesta": "Solo cristales (nacional). Para autopartes, verificar requisitos adicionales en planta."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Si corresponde, con autorización del Registro",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro si corresponde"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "cat-001",
+        "nombre": "Planta VPA Catamarca",
+        "lat": -28.4695,
+        "lng": -65.7852,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0383-123-4567",
+        "direccion": "Av. Virgen del Valle 1234"
+      }
+    ]
+  },
+  {
+    "slug": "chubut",
+    "nombre": "Provincia del Chubut",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía del Chubut",
+        "url": "https://www.chubut.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.chubut.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué grabado es obligatorio?",
+          "respuesta": "Solo cristales (nacional). Confirmar requisitos adicionales al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Con verificación y autorización registral",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "chu-001",
+        "nombre": "Planta VPA Chubut",
+        "lat": -43.3000,
+        "lng": -65.1000,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0280-123-4567",
+        "direccion": "Av. Fontana 1234"
+      }
+    ]
+  },
+  {
+    "slug": "corrientes",
+    "nombre": "Provincia de Corrientes",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Corrientes",
+        "url": "https://www.corrientes.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.corrientes.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Algunas plantas sugieren grabado adicional?",
+          "respuesta": "Algunas plantas podrían sugerir grabado adicional. Consultar al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Procedimiento estándar nacional",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "cor-001",
+        "nombre": "Planta VPA Corrientes",
+        "lat": -27.4806,
+        "lng": -58.8341,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0379-123-4567",
+        "direccion": "Av. 3 de Abril 1234"
+      }
+    ]
+  },
+  {
+    "slug": "entre-rios",
+    "nombre": "Provincia de Entre Ríos",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Entre Ríos",
+        "url": "https://www.entrerios.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.entrerios.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos adicionales hay?",
+          "respuesta": "Consultar en planta al pedir turno para requisitos adicionales."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Conforme verificación y Registro",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "er-001",
+        "nombre": "Planta VPA Entre Ríos",
+        "lat": -32.0473,
+        "lng": -60.6393,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0343-123-4567",
+        "direccion": "Av. Urquiza 1234"
+      }
+    ]
+  },
+  {
+    "slug": "formosa",
+    "nombre": "Provincia de Formosa",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Formosa",
+        "url": "https://www.formosa.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.formosa.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Requieren grabado adicional?",
+          "respuesta": "Verificar en planta si requieren grabado adicional al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Estándar nacional",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "for-001",
+        "nombre": "Planta VPA Formosa",
+        "lat": -26.1849,
+        "lng": -58.1731,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0370-123-4567",
+        "direccion": "Av. 25 de Mayo 1234"
+      }
+    ]
+  },
+  {
+    "slug": "jujuy",
+    "nombre": "Provincia de Jujuy",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Jujuy",
+        "url": "https://www.jujuy.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.jujuy.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay al reservar turno?",
+          "respuesta": "Consultar requisitos al reservar turno en la planta VPA."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Conforme verificación",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "juj-001",
+        "nombre": "Planta VPA Jujuy",
+        "lat": -24.1858,
+        "lng": -65.2995,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0388-123-4567",
+        "direccion": "Av. 19 de Abril 1234"
+      }
+    ]
+  },
+  {
+    "slug": "la-pampa",
+    "nombre": "Provincia de La Pampa",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de La Pampa",
+        "url": "https://www.lapampa.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.lapampa.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay?",
+          "respuesta": "Confirmar requisitos en planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Estándar nacional",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "lp-001",
+        "nombre": "Planta VPA La Pampa",
+        "lat": -36.6200,
+        "lng": -64.2900,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "02954-123-456",
+        "direccion": "Av. San Martín 1234"
+      }
+    ]
+  },
+  {
+    "slug": "la-rioja",
+    "nombre": "Provincia de La Rioja",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de La Rioja",
+        "url": "https://www.larioja.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.larioja.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay?",
+          "respuesta": "Consultar en planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Con autorización registral si corresponde",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "lr-001",
+        "nombre": "Planta VPA La Rioja",
+        "lat": -29.4133,
+        "lng": -66.8558,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0380-123-4567",
+        "direccion": "Av. Ortiz de Ocampo 1234"
+      }
+    ]
+  },
+  {
+    "slug": "neuquen",
+    "nombre": "Provincia del Neuquén",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía del Neuquén",
+        "url": "https://www.neuquen.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.neuquen.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay?",
+          "respuesta": "Verificar requisitos en planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Estándar nacional",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "neu-001",
+        "nombre": "Planta VPA Neuquén",
+        "lat": -38.9516,
+        "lng": -68.0591,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0299-123-4567",
+        "direccion": "Av. Argentina 1234"
+      }
+    ]
+  },
+  {
+    "slug": "salta",
+    "nombre": "Provincia de Salta",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Salta",
+        "url": "https://www.salta.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.salta.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay?",
+          "respuesta": "Consultar planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Con verificación",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "sal-001",
+        "nombre": "Planta VPA Salta",
+        "lat": -24.7990,
+        "lng": -65.4100,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0387-123-4567",
+        "direccion": "Av. San Martín 1234"
+      }
+    ]
+  },
+  {
+    "slug": "san-luis",
+    "nombre": "Provincia de San Luis",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de San Luis",
+        "url": "https://www.sanluis.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.sanluis.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay?",
+          "respuesta": "Verificar en planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Estándar nacional",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "sl-001",
+        "nombre": "Planta VPA San Luis",
+        "lat": -33.3017,
+        "lng": -66.3378,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0266-123-4567",
+        "direccion": "Av. Illia 1234"
+      }
+    ]
+  },
+  {
+    "slug": "santa-cruz",
+    "nombre": "Provincia de Santa Cruz",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Santa Cruz",
+        "url": "https://www.santacruz.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.santacruz.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay?",
+          "respuesta": "Consultar planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Conforme verificación",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "sc-001",
+        "nombre": "Planta VPA Santa Cruz",
+        "lat": -51.6226,
+        "lng": -69.2181,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "02966-123-456",
+        "direccion": "Av. San Martín 1234"
+      }
+    ]
+  },
+  {
+    "slug": "santiago-del-estero",
+    "nombre": "Provincia de Santiago del Estero",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de Santiago del Estero",
+        "url": "https://www.santiago.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.santiago.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay al pedir turno?",
+          "respuesta": "Confirmar requisitos al pedir turno en planta VPA."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Estándar nacional",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "sde-001",
+        "nombre": "Planta VPA Santiago del Estero",
+        "lat": -27.7951,
+        "lng": -64.2615,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0385-123-4567",
+        "direccion": "Av. Libertad 1234"
+      }
+    ]
+  },
+  {
+    "slug": "tierra-del-fuego",
+    "nombre": "Provincia de Tierra del Fuego",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Policía de TDF",
+        "url": "https://www.tierradelfuego.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.tierradelfuego.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué requisitos hay?",
+          "respuesta": "Verificar en planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Estándar nacional",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "tdf-001",
+        "nombre": "Planta VPA Tierra del Fuego",
+        "lat": -54.8019,
+        "lng": -68.3030,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "02901-123-456",
+        "direccion": "Av. Maipú 1234"
+      }
+    ]
   }
 ]
