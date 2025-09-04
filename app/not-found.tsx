@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Search, Home, MapPin, HelpCircle } from 'lucide-react'
-import { CommandK } from '@/components/CommandK'
 
 export default function NotFoundPage() {
   return (
@@ -14,16 +13,25 @@ export default function NotFoundPage() {
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
             La página que estás buscando no existe o ha sido movida. 
-            Usá la búsqueda global para encontrar lo que necesitás.
+            Usá los enlaces de abajo para navegar por el sitio.
           </p>
         </div>
 
-        {/* Global Search */}
+        {/* Search Suggestion */}
         <div className="mb-12">
           <h3 className="text-xl font-semibold text-neutral-900 mb-4">
-            Buscar en el sitio
+            ¿Qué estás buscando?
           </h3>
-          <CommandK />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/jurisdicciones" className="btn-primary">
+              <Search className="h-4 w-4 mr-2" />
+              Buscar Jurisdicciones
+            </Link>
+            <Link href="/mapa" className="btn-secondary">
+              <MapPin className="h-4 w-4 mr-2" />
+              Ver Mapa
+            </Link>
+          </div>
         </div>
 
         {/* Quick Navigation */}
