@@ -5,6 +5,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { AdSenseHead } from '@/components/AdSenseHead'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -129,6 +130,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <AdSenseHead />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
