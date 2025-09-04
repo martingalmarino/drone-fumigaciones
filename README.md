@@ -1,269 +1,335 @@
-# 🚗 Grabado de Autopartes, RPA/RPM y Cédulas - Argentina
+# Fumigación con Drones Argentina
 
-**Versión**: 0.1.0  
-**Estado**: Desarrollo activo
+El directorio más completo de empresas certificadas de fumigación con drones en Argentina. Conecta productores agrícolas con proveedores de servicios especializados.
 
-## 📋 Descripción
+## 🚀 Características
 
-Sitio web informativo sobre grabado de autopartes, RPA/RPM y cédulas digitales por jurisdicción en Argentina. Proporciona información oficial, requisitos, costos y enlaces a turneros oficiales.
-
-## ✨ Características Principales
-
-- **🏛️ Información por Jurisdicción**: Datos específicos para cada provincia/ciudad
-- **🗺️ Mapa Interactivo**: Centros de servicio con ubicaciones geográficas
-- **🔍 Búsqueda Global**: Búsqueda rápida con ⌘K
-- **📱 100% Responsive**: Optimizado para todos los dispositivos
-- **♿ Accesible**: Cumple estándares de accesibilidad web
-- **🔍 SEO Optimizado**: Metadatos y estructura para motores de búsqueda
-
-## 🎯 Audiencia Objetivo
-
-- Usuarios buscando "turno grabado [provincia/ciudad]"
-- Personas que necesitan requisitos y costos de grabado
-- Conductores que requieren información sobre RPA/RPM
-- Usuarios interesados en cédulas digitales
-- Gestores y profesionales del sector automotriz
+- **Directorio de Empresas**: Base de datos completa con filtros por provincia, servicios y equipos
+- **Reviews de Drones**: Análisis detallado de equipos agrícolas con especificaciones técnicas
+- **Blog Educativo**: Guías, tutoriales y artículos especializados
+- **Sistema de Cotizaciones**: Formulario multi-step para solicitar presupuestos
+- **Panel de Administración**: CRUD completo para gestionar contenido
+- **SEO Optimizado**: Schema markup, sitemaps dinámicos y meta tags
+- **Responsive Design**: Optimizado para móviles y desktop
 
 ## 🛠️ Stack Tecnológico
 
 - **Framework**: Next.js 14 (App Router)
 - **Lenguaje**: TypeScript
-- **Estilos**: TailwindCSS
-- **Componentes**: shadcn/ui
-- **Iconos**: Lucide React
-- **Mapas**: MapLibre GL
-- **Estado**: Zustand
-- **Validación**: Zod
-- **SEO**: next-seo
-- **Testing**: Playwright + Vitest
+- **Base de Datos**: PostgreSQL con Prisma ORM
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Autenticación**: NextAuth.js
+- **Email**: Resend
+- **Maps**: Leaflet
+- **Analytics**: Google Tag Manager
+- **Ads**: Google AdSense
+- **Deploy**: Vercel
+
+## 📋 Requisitos Previos
+
+- Node.js 18+ 
+- PostgreSQL 14+
+- npm o yarn
 
 ## 🚀 Instalación
 
-### Prerrequisitos
-- Node.js 18+ 
-- npm o yarn
-
-### Pasos
 1. **Clonar el repositorio**
-   ```bash
-   git clone https://github.com/martingalmarino/grabado-autopartes-argentina.git
-   cd grabado-autopartes-argentina
-   ```
+```bash
+git clone <repository-url>
+cd fumigacion-drones-argentina
+```
 
 2. **Instalar dependencias**
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 3. **Configurar variables de entorno**
-   ```bash
-   cp .env.example .env.local
-   # Editar .env.local con tus valores
-   ```
+```bash
+cp env.example .env.local
+```
 
-4. **Ejecutar en desarrollo**
-   ```bash
-   npm run dev
-   ```
+Editar `.env.local` con tus valores:
+```env
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/fumigacion_drones"
 
-5. **Abrir en el navegador**
-   ```
-   http://localhost:3000
-   ```
+# NextAuth
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key-here"
+
+# Admin
+ADMIN_EMAIL="admin@fumigaciondrones.com"
+
+# Email (Resend)
+RESEND_API_KEY="re_xxxxxxxxxx"
+
+# hCaptcha
+HCAPTCHA_SECRET_KEY="0x0000000000000000000000000000000000000000"
+HCAPTCHA_SITE_KEY="10000000-ffff-ffff-ffff-000000000001"
+
+# Analytics
+GTM_ID="GTM-XXXXXXX"
+
+# AdSense
+ADSENSE_CLIENT="ca-pub-xxxxxxxxxx"
+
+# App
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
+```
+
+4. **Configurar base de datos**
+```bash
+# Generar cliente Prisma
+npm run db:generate
+
+# Ejecutar migraciones
+npm run db:migrate
+
+# Poblar con datos iniciales
+npm run db:seed
+```
+
+5. **Ejecutar en desarrollo**
+```bash
+npm run dev
+```
+
+El sitio estará disponible en `http://localhost:3000`
 
 ## 📁 Estructura del Proyecto
 
 ```
-grabado-autopartes-argentina/
-├── app/                          # Next.js App Router
-│   ├── (site)/                  # Grupo de rutas del sitio
-│   ├── j/[slug]/                # Páginas de jurisdicción
-│   ├── jurisdicciones/          # Lista de jurisdicciones
-│   ├── mapa/                    # Mapa global
-│   ├── faq/                     # Preguntas frecuentes
-│   ├── contacto/                # Formulario de contacto
-│   ├── acerca/                  # Acerca de nosotros
-│   └── not-found.tsx           # Página 404
-├── components/                   # Componentes reutilizables
-│   ├── Header.tsx              # Header con navegación
-│   ├── Footer.tsx              # Footer del sitio
-│   ├── CommandK.tsx            # Búsqueda global
-│   ├── JurisdictionCard.tsx    # Tarjeta de jurisdicción
-│   ├── Map.tsx                 # Componente de mapa
-│   ├── CenterList.tsx          # Lista de centros
-│   └── ToC.tsx                 # Tabla de contenidos
-├── lib/                         # Hooks y utilidades
-│   └── useJurisdicciones.ts    # Hook para datos
-├── data/                        # Datos mock
-│   └── jurisdicciones.json     # Datos de jurisdicciones
-├── types/                       # Tipos TypeScript
-│   └── index.ts                # Interfaces del proyecto
-└── public/                      # Archivos estáticos
+├── app/                    # App Router de Next.js
+│   ├── admin/             # Panel de administración
+│   ├── blog/              # Blog y artículos
+│   ├── directorio/        # Directorio de empresas
+│   ├── reviews/           # Reviews de drones
+│   ├── cotizar/           # Formulario de cotizaciones
+│   ├── faq/               # Preguntas frecuentes
+│   ├── api/               # API routes
+│   └── globals.css        # Estilos globales
+├── components/            # Componentes reutilizables
+│   ├── ui/               # Componentes de shadcn/ui
+│   ├── Header.tsx        # Header principal
+│   ├── Footer.tsx        # Footer
+│   ├── AdSlot.tsx        # Componente para anuncios
+│   └── SeoHead.tsx       # SEO y meta tags
+├── lib/                  # Utilidades y configuración
+│   ├── prisma.ts         # Cliente de Prisma
+│   └── utils.ts          # Funciones utilitarias
+├── prisma/               # Schema y migraciones
+│   ├── schema.prisma     # Schema de la base de datos
+│   └── seed.ts           # Datos iniciales
+└── public/               # Archivos estáticos
 ```
 
-## 📊 Modelo de Datos
+## 🗄️ Base de Datos
 
-### Jurisdicción
-```typescript
-interface Jurisdiccion {
-  slug: string                    // Identificador único
-  nombre: string                  // Nombre de la jurisdicción
-  estadoGrabado: 'obligatorio' | 'opcional' | 'no_aplica'
-  fuentes: Fuente[]               // Fuentes de información
-  grabado: GrabadoInfo            // Información de grabado
-  rpa_rpm?: RpaRpmInfo           // Información RPA/RPM
-  cedulas: CedulasInfo           // Información de cédulas
-  centros: Centro[]               // Centros de servicio
-}
-```
+### Modelos Principales
 
-### Centro
-```typescript
-interface Centro {
-  id: string                      // Identificador único
-  nombre: string                  // Nombre del centro
-  lat: number                     // Latitud
-  lng: number                     // Longitud
-  servicios: string[]             // Servicios disponibles
-  horarios: string                // Horarios de atención
-  telefono?: string               // Teléfono de contacto
-  direccion?: string              // Dirección física
-}
-```
+- **Province**: Provincias argentinas
+- **Company**: Empresas de fumigación
+- **Drone**: Modelos de drones agrícolas
+- **Review**: Reviews de equipos
+- **Article**: Artículos del blog
+- **Lead**: Solicitudes de cotización
+- **FAQ**: Preguntas frecuentes
 
-## ⚙️ Configuración
+### Comandos de Base de Datos
 
-### Variables de Entorno
 ```bash
-# .env.local
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_MAPLIBRE_TOKEN=tu_token_aqui
+# Ver base de datos en Prisma Studio
+npm run db:studio
+
+# Resetear base de datos
+npx prisma migrate reset
+
+# Generar nueva migración
+npx prisma migrate dev --name nombre-migracion
 ```
 
-### MapLibre
-Para usar mapas interactivos, obtén un token gratuito en:
-- [MapLibre](https://maplibre.org/)
-- [MapTiler](https://www.maptiler.com/)
+## 🎨 Personalización
+
+### Colores y Tema
+
+Los colores se definen en `tailwind.config.js` y `app/globals.css`:
+
+```css
+:root {
+  --primary: 142 76% 36%;  /* Verde principal */
+  --secondary: 210 40% 98%; /* Gris claro */
+  /* ... más variables */
+}
+```
+
+### Componentes UI
+
+El proyecto usa shadcn/ui. Para agregar nuevos componentes:
+
+```bash
+npx shadcn-ui@latest add [component-name]
+```
+
+## 📊 Panel de Administración
+
+Accede al panel en `/admin` (requiere `ADMIN_EMAIL` configurado).
+
+### Funcionalidades:
+- Dashboard con estadísticas
+- CRUD de empresas, drones, artículos
+- Gestión de leads y cotizaciones
+- Import/export de datos
+
+## 🔍 SEO y Performance
+
+### Optimizaciones Implementadas:
+- Meta tags dinámicos
+- Schema markup (JSON-LD)
+- Sitemap automático
+- Robots.txt
+- Imágenes optimizadas con next/image
+- Lazy loading de componentes
+
+### Lighthouse Score Objetivo:
+- Performance: ≥95
+- SEO: ≥98
+- Accessibility: AA
+
+## 📧 Formularios y Leads
+
+### Formulario de Cotización
+- Multi-step con validación
+- Integración con hCaptcha
+- Envío de emails con Resend
+- Almacenamiento en base de datos
+
+### Configuración de Email
+```typescript
+// Ejemplo de template de email
+const emailTemplate = {
+  to: lead.email,
+  subject: 'Confirmación de solicitud de cotización',
+  html: `Hola ${lead.fullName}, hemos recibido tu solicitud...`
+}
+```
+
+## 🗺️ Mapas
+
+El proyecto usa Leaflet para mostrar ubicaciones:
+
+```typescript
+// Componente de mapa
+import dynamic from 'next/dynamic'
+const Map = dynamic(() => import('@/components/Map'), { ssr: false })
+```
+
+## 📱 Responsive Design
+
+- Mobile-first approach
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Componentes adaptativos
+- Navegación móvil optimizada
+
+## 🚀 Deploy en Vercel
+
+1. **Conectar repositorio a Vercel**
+2. **Configurar variables de entorno** en el dashboard de Vercel
+3. **Deploy automático** en cada push a main
+
+### Variables de Entorno en Vercel:
+```
+DATABASE_URL=postgresql://...
+NEXTAUTH_SECRET=...
+RESEND_API_KEY=...
+# ... resto de variables
+```
 
 ## 🧪 Testing
 
-### Tests Unitarios
 ```bash
+# Tests unitarios
 npm run test
-```
 
-### Tests E2E
-```bash
+# Tests E2E con Playwright
 npm run test:e2e
+
+# Linting
+npm run lint
+
+# Type checking
+npm run typecheck
 ```
 
-## 🚀 Build y Deploy
+## 📈 Analytics y Ads
 
-### Build de Producción
+### Google Tag Manager
+```typescript
+// Configurar en components/GoogleTagManager.tsx
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID
+```
+
+### Google AdSense
+```typescript
+// Componente AdSlot con diferentes variantes
+<AdSlot variant="sidebar" />
+<AdSlot variant="inArticle" />
+<AdSlot variant="leaderboard" />
+```
+
+## 🔧 Scripts Disponibles
+
 ```bash
-npm run build
-npm start
+npm run dev          # Desarrollo
+npm run build        # Build de producción
+npm run start        # Servidor de producción
+npm run lint         # ESLint
+npm run typecheck    # TypeScript check
+npm run db:migrate   # Migraciones de DB
+npm run db:seed      # Poblar DB
+npm run db:studio    # Prisma Studio
 ```
 
-### Deploy en Vercel (Recomendado)
-1. Conecta tu repositorio de GitHub
-2. Vercel detectará automáticamente Next.js
-3. Configura las variables de entorno
-4. ¡Listo! Deploy automático en cada push
+## 📝 Contenido Inicial
 
-## 📱 Responsividad
-
-- **Mobile First**: Diseño optimizado para móviles
-- **Breakpoints**: sm (640px), md (768px), lg (1024px), xl (1280px)
-- **Componentes Adaptativos**: Header, navegación y formularios responsive
-- **Touch Friendly**: Interacciones optimizadas para dispositivos táctiles
-
-## ♿ Accesibilidad
-
-- **Semantic HTML**: Estructura semántica correcta
-- **ARIA Labels**: Atributos de accesibilidad
-- **Keyboard Navigation**: Navegación completa por teclado
-- **Screen Reader**: Compatible con lectores de pantalla
-- **Color Contrast**: Contraste adecuado para texto
-
-## 🔍 SEO
-
-- **Meta Tags**: Títulos, descripciones y Open Graph
-- **Structured Data**: JSON-LD para motores de búsqueda
-- **Sitemap**: Generación automática de sitemap
-- **Performance**: Optimización de Core Web Vitals
-- **Mobile Friendly**: Certificado por Google
-
-## 📝 Personalización de Datos
-
-### Agregar Nueva Jurisdicción
-1. Edita `data/jurisdicciones.json`
-2. Agrega el objeto de jurisdicción siguiendo el modelo
-3. Incluye centros de servicio con coordenadas
-4. Actualiza fuentes y fechas
-
-### Modificar Información Existente
-- Actualiza campos en el JSON
-- Modifica requisitos, costos o exenciones
-- Agrega o quita centros de servicio
-- Actualiza enlaces a turneros
-
-## 🚧 TODOs y Mejoras Futuras
-
-### Prioridad Alta
-- [ ] Conectar con APIs oficiales de jurisdicciones
-- [ ] Implementar sistema de notificaciones
-- [ ] Agregar más jurisdicciones
-- [ ] Implementar cache de datos
-
-### Prioridad Media
-- [ ] Sistema de usuarios y favoritos
-- [ ] Comparador de costos entre jurisdicciones
-- [ ] Calculadora de requisitos
-- [ ] Integración con redes sociales
-
-### Prioridad Baja
-- [ ] App móvil nativa
-- [ ] Sistema de reviews de centros
-- [ ] Chat en vivo
-- [ ] API pública para desarrolladores
+El proyecto incluye:
+- 3 provincias (Córdoba, Santa Fe, Buenos Aires)
+- 3 empresas de ejemplo
+- 4 drones (DJI Agras T25/T40/T50, XAG P150)
+- 3 artículos del blog
+- 1 review de drone
+- 5 FAQs
 
 ## 🤝 Contribución
 
 1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+2. Crear branch para feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit cambios (`git commit -m 'Agregar nueva funcionalidad'`)
+4. Push al branch (`git push origin feature/nueva-funcionalidad`)
+5. Abrir Pull Request
 
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
-## ⚠️ Descargo de Responsabilidad
+## 📞 Soporte
 
-**IMPORTANTE**: Este sitio web NO es oficial y no está afiliado a ningún organismo gubernamental de Argentina.
+- Email: info@fumigaciondrones.com
+- Documentación: [Wiki del proyecto]
+- Issues: [GitHub Issues]
 
-- La información es solo para fines informativos
-- Siempre verifica con fuentes oficiales antes de realizar trámites
-- Los costos y requisitos pueden cambiar sin previo aviso
-- No nos hacemos responsables por errores u omisiones
+## 🎯 Roadmap
 
-## 📞 Contacto
-
-- **Email**: info@grabadoautopartes.com.ar
-- **Sitio Web**: [grabadoautopartes.com.ar](https://grabadoautopartes.com.ar)
-- **GitHub**: [martingalmarino/grabado-autopartes-argentina](https://github.com/martingalmarino/grabado-autopartes-argentina)
-
-## 🙏 Agradecimientos
-
-- Comunidad de Next.js por el excelente framework
-- Equipo de TailwindCSS por las herramientas de diseño
-- Contribuidores de MapLibre por la librería de mapas
-- Usuarios que reportan bugs y sugieren mejoras
+### Próximas funcionalidades:
+- [ ] Sistema de reviews de empresas
+- [ ] Chat en tiempo real
+- [ ] App móvil
+- [ ] Integración con APIs de clima
+- [ ] Sistema de notificaciones push
+- [ ] Dashboard para empresas
+- [ ] Sistema de pagos
+- [ ] Integración con redes sociales
 
 ---
 
-**Desarrollado con ❤️ para la comunidad automotriz argentina**
-# Wed Sep  3 21:09:48 -03 2025
-# Forzar actualización Vercel - Wed Sep  3 21:55:05 -03 2025
+**Desarrollado con ❤️ para la agricultura argentina**

@@ -3,162 +3,234 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 98%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 76% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    @apply bg-neutral-50 text-neutral-900 font-inter;
-  }
-  
-  h1 {
-    @apply text-4xl font-bold text-neutral-900 mb-6;
-  }
-  
-  h2 {
-    @apply text-3xl font-semibold text-neutral-800 mb-4;
-  }
-  
-  h3 {
-    @apply text-2xl font-semibold text-neutral-800 mb-3;
-  }
-  
-  h4 {
-    @apply text-xl font-medium text-neutral-800 mb-2;
+    @apply bg-background text-foreground;
   }
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/30 focus:ring-offset-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform active:translate-y-0 active:shadow-md;
-  }
-  
-  .btn-secondary {
-    @apply bg-white hover:bg-neutral-50 text-neutral-700 font-semibold py-4 px-8 rounded-xl border-2 border-neutral-200 hover:border-primary-300 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/30 focus:ring-offset-2 shadow-md hover:shadow-lg hover:-translate-y-1 transform active:translate-y-0 active:shadow-sm hover:text-primary-700;
-  }
-  
-  .card {
-    @apply bg-white rounded-xl shadow-soft border border-neutral-200 p-4 sm:p-6 flex flex-col;
-  }
-  
-  .input-field {
-    @apply w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
-  }
-  
-  .badge {
-    @apply inline-flex items-center px-2 py-1 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0;
-  }
-  
-  .badge-success {
-    @apply bg-green-100 text-green-800;
-  }
-  
-  .badge-warning {
-    @apply bg-yellow-100 text-yellow-800;
-  }
-  
-  .badge-error {
-    @apply bg-red-100 text-red-800;
-  }
-  
-  .badge-info {
-    @apply bg-blue-100 text-blue-800;
-  }
-  
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+/* Estilos personalizados para el sitio */
+.hero-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
 
-/* Estilos específicos para el mapa de Leaflet */
+.text-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Estilos para anuncios */
+.ad-container {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 1px dashed #dee2e6;
+  border-radius: 8px;
+}
+
+.ad-container.sidebar {
+  min-height: 600px;
+}
+
+.ad-container.leaderboard {
+  min-height: 90px;
+}
+
+/* Estilos para mapas */
 .leaflet-container {
-  z-index: 1 !important;
-  position: relative !important;
-  isolation: isolate !important;
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
 }
 
-.leaflet-pane {
-  z-index: 1 !important;
+/* Estilos para formularios */
+.form-step {
+  display: none;
 }
 
-.leaflet-control {
-  z-index: 1000 !important;
+.form-step.active {
+  display: block;
 }
 
-.leaflet-popup {
-  z-index: 1001 !important;
+/* Estilos para tablas de especificaciones */
+.spec-table {
+  @apply w-full border-collapse;
 }
 
-.leaflet-tooltip {
-  z-index: 1002 !important;
+.spec-table th,
+.spec-table td {
+  @apply border border-gray-200 px-4 py-2 text-left;
 }
 
-.leaflet-marker-icon {
-  z-index: 1003 !important;
+.spec-table th {
+  @apply bg-gray-50 font-semibold;
 }
 
-.leaflet-marker-shadow {
-  z-index: 1004 !important;
+/* Estilos para cards de empresa */
+.company-card {
+  @apply rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md;
 }
 
-.leaflet-tile-pane {
-  z-index: 1 !important;
+/* Estilos para breadcrumbs */
+.breadcrumb {
+  @apply flex items-center space-x-2 text-sm text-gray-600;
 }
 
-.leaflet-overlay-pane {
-  z-index: 2 !important;
+.breadcrumb a {
+  @apply hover:text-primary transition-colors;
 }
 
-.leaflet-marker-pane {
-  z-index: 3 !important;
+/* Estilos para ToC */
+.toc {
+  @apply sticky top-4 max-h-screen overflow-y-auto;
 }
 
-.leaflet-shadow-pane {
-  z-index: 4 !important;
+.toc a {
+  @apply block py-1 text-sm text-gray-600 hover:text-primary transition-colors;
 }
 
-.leaflet-tooltip-pane {
-  z-index: 5 !important;
+.toc a.active {
+  @apply text-primary font-medium;
 }
 
-.leaflet-popup-pane {
-  z-index: 6 !important;
+/* Estilos para reviews */
+.review-rating {
+  @apply flex items-center space-x-1;
 }
 
-/* Contenedor del mapa con isolation */
-.map-container {
-  position: relative;
-  z-index: 1;
-  isolation: isolate;
+.review-rating .star {
+  @apply h-5 w-5;
 }
 
-/* Asegurar que el mapa no interfiera con otros elementos */
-.map-container .leaflet-container {
-  position: relative !important;
-  z-index: 1 !important;
-  isolation: isolate !important;
+.review-rating .star.filled {
+  @apply text-yellow-400;
 }
 
-/* Optimizaciones de rendimiento */
-@layer utilities {
-  /* Optimización de scroll */
-  .scroll-smooth {
-    scroll-behavior: smooth;
+.review-rating .star.empty {
+  @apply text-gray-300;
+}
+
+/* Estilos para loading states */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Estilos para modales */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-50;
+}
+
+.modal-content {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl z-50;
+}
+
+/* Estilos para alertas */
+.alert {
+  @apply rounded-lg border p-4;
+}
+
+.alert.success {
+  @apply border-green-200 bg-green-50 text-green-800;
+}
+
+.alert.error {
+  @apply border-red-200 bg-red-50 text-red-800;
+}
+
+.alert.warning {
+  @apply border-yellow-200 bg-yellow-50 text-yellow-800;
+}
+
+.alert.info {
+  @apply border-blue-200 bg-blue-50 text-blue-800;
+}
+
+/* Estilos para truncar texto */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Mejoras de accesibilidad para touch */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
-  /* Optimización de rendering */
-  .will-change-transform {
-    will-change: transform;
+  .hover\:bg-gray-100:hover {
+    background-color: #f3f4f6;
   }
   
-  /* Optimización de layout */
-  .contain-layout {
-    contain: layout;
-  }
-  
-  /* Optimización de paint */
-  .contain-paint {
-    contain: paint;
+  .hover\:text-primary:hover {
+    color: #10b981;
   }
 }

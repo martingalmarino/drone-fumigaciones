@@ -1,55 +1,48 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Optimizaciones de rendimiento
-  compress: true,
-  poweredByHeader: false,
-  
-  // Optimización de imágenes
-  images: {
-    domains: ['localhost'],
-    formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 31536000, // 1 año
-  },
-  
-  // Optimización de bundle
   experimental: {
-    optimizePackageImports: ['lucide-react'],
+    mdxRs: true,
   },
-  
-  // Headers de seguridad y rendimiento
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
           {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
             key: 'X-Frame-Options',
-            value: 'DENY'
+            value: 'DENY',
           },
           {
             key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          }
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
         ],
       },
-      {
-        source: '/favicon.ico',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
-        ],
-      }
     ]
   },
-  
-  env: {
-    NEXT_PUBLIC_MAPLIBRE_TOKEN: process.env.NEXT_PUBLIC_MAPLIBRE_TOKEN || '',
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+      {
+        source: '/robots.txt',
+        destination: '/api/robots',
+      },
+    ]
   },
 }
 

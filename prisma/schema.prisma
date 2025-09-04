@@ -1,0 +1,121 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Province {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  companies Company[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("provinces")
+}
+
+model Company {
+  id            String    @id @default(cuid())
+  slug          String    @unique
+  name          String
+  description   String?
+  websiteUrl    String?
+  phone         String?
+  whatsapp      String?
+  email         String?
+  address       String?
+  city          String?
+  provinceId    String
+  province      Province  @relation(fields: [provinceId], references: [id])
+  services      String    // JSON string for SQLite
+  certifications String   // JSON string for SQLite
+  lat           Float?
+  lng           Float?
+  isFeatured    Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("companies")
+}
+
+model Drone {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  brand       String   // DJI, XAG, etc.
+  model       String   // Agras T50, P150...
+  capacityL   Int?     // tanque líquidos
+  payloadKg   Int?     // sólidos
+  year        Int?
+  features    String   // JSON string for SQLite
+  pros        String   // JSON string for SQLite
+  cons        String   // JSON string for SQLite
+  specs       String   // JSON string for SQLite
+  reviews     Review[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("drones")
+}
+
+model Lead {
+  id           String   @id @default(cuid())
+  fullName     String
+  email        String
+  phone        String?
+  provinceSlug String
+  service      String   // Service type as string
+  crop         String?
+  hectares     Float?
+  timeWindow   String?  // inmediata/7-15 días/etc
+  details      String?
+  utm          String?  // JSON string for SQLite
+  createdAt    DateTime @default(now())
+
+  @@map("leads")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  droneId   String?
+  drone     Drone?   @relation(fields: [droneId], references: [id])
+  summary   String
+  bodyMdx   String
+  rating    Int      // 1-5
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("reviews")
+}
+
+model Article {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  category  String   // "conceptos", "tecnologia", "normativa", "casos"
+  excerpt   String
+  bodyMdx   String
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("articles")
+}
+
+model Faq {
+  id        String   @id @default(cuid())
+  question  String
+  answerMdx String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("faqs")
+}

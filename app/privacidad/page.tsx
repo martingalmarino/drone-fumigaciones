@@ -1,169 +1,124 @@
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad - Grabado Autopartes Argentina',
-  description: 'Política de privacidad del sitio web de grabado de autopartes Argentina. Información sobre cómo recopilamos, utilizamos y protegemos sus datos.',
-  robots: 'noindex, follow',
+  title: 'Política de Privacidad | Fumigación Drones Argentina',
+  description: 'Política de privacidad y protección de datos personales de Fumigación Drones Argentina.',
 }
 
 export default function PrivacidadPage() {
   return (
-    <div className="min-h-screen py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-4">
-            Política de Privacidad
-          </h1>
-          <p className="text-lg text-neutral-600">
-            Última actualización: {new Date().toLocaleDateString('es-AR')}
-          </p>
-        </div>
-
-        <div className="prose prose-lg max-w-none">
-          <div className="bg-white rounded-xl shadow-soft border border-neutral-200 p-8">
-            
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">1. Información General</h2>
-              <p className="text-neutral-700 mb-4">
-                Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos su información 
-                personal cuando utiliza nuestro sitio web. Al utilizar este sitio, usted acepta las prácticas 
-                descritas en esta política.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">2. Información que Recopilamos</h2>
-              <h3 className="text-xl font-medium text-neutral-900 mb-3">2.1 Información de Navegación</h3>
-              <p className="text-neutral-700 mb-4">
-                Recopilamos automáticamente cierta información cuando visita nuestro sitio web:
-              </p>
-              <ul className="list-disc list-inside text-neutral-700 mb-4 space-y-2">
-                <li>Dirección IP</li>
-                <li>Tipo de navegador y versión</li>
-                <li>Sistema operativo</li>
-                <li>Páginas visitadas y tiempo de permanencia</li>
-                <li>Fecha y hora de acceso</li>
-                <li>Sitio web de referencia</li>
-              </ul>
-
-              <h3 className="text-xl font-medium text-neutral-900 mb-3">2.2 Cookies y Tecnologías Similares</h3>
-              <p className="text-neutral-700 mb-4">
-                Utilizamos cookies y tecnologías similares para mejorar su experiencia de navegación y 
-                analizar el uso del sitio web. Las cookies son pequeños archivos de texto que se almacenan 
-                en su dispositivo.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">3. Cómo Utilizamos su Información</h2>
-              <p className="text-neutral-700 mb-4">
-                Utilizamos la información recopilada para:
-              </p>
-              <ul className="list-disc list-inside text-neutral-700 mb-4 space-y-2">
-                <li>Proporcionar y mejorar nuestros servicios</li>
-                <li>Analizar el uso del sitio web</li>
-                <li>Personalizar el contenido y la experiencia del usuario</li>
-                <li>Detectar y prevenir fraudes</li>
-                <li>Cumplir con obligaciones legales</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">4. Compartir Información</h2>
-              <p className="text-neutral-700 mb-4">
-                No vendemos, alquilamos ni compartimos su información personal con terceros, excepto en 
-                las siguientes circunstancias:
-              </p>
-              <ul className="list-disc list-inside text-neutral-700 mb-4 space-y-2">
-                <li>Con su consentimiento explícito</li>
-                <li>Para cumplir con obligaciones legales</li>
-                <li>Con proveedores de servicios que nos ayudan a operar el sitio</li>
-                <li>En caso de fusión, adquisición o venta de activos</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">5. Google AdSense</h2>
-              <p className="text-neutral-700 mb-4">
-                Este sitio utiliza Google AdSense para mostrar anuncios. Google puede utilizar cookies 
-                para personalizar los anuncios según sus intereses. Puede optar por no participar en 
-                la personalización de anuncios visitando las configuraciones de anuncios de Google.
-              </p>
-              <p className="text-neutral-700 mb-4">
-                Para más información sobre cómo Google utiliza los datos, consulte la 
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" 
-                   className="text-primary-600 hover:text-primary-700 underline">
-                  Política de Privacidad de Google
-                </a>.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">6. Seguridad de los Datos</h2>
-              <p className="text-neutral-700 mb-4">
-                Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger 
-                su información personal contra acceso no autorizado, alteración, divulgación o destrucción.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">7. Retención de Datos</h2>
-              <p className="text-neutral-700 mb-4">
-                Conservamos su información personal solo durante el tiempo necesario para cumplir con 
-                los propósitos descritos en esta política, a menos que la ley requiera un período de 
-                retención más largo.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">8. Sus Derechos</h2>
-              <p className="text-neutral-700 mb-4">
-                Bajo la Ley de Protección de Datos Personales de Argentina, usted tiene derecho a:
-              </p>
-              <ul className="list-disc list-inside text-neutral-700 mb-4 space-y-2">
-                <li>Acceder a sus datos personales</li>
-                <li>Rectificar datos inexactos o incompletos</li>
-                <li>Solicitar la eliminación de sus datos</li>
-                <li>Oponerse al procesamiento de sus datos</li>
-                <li>Retirar su consentimiento en cualquier momento</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">9. Menores de Edad</h2>
-              <p className="text-neutral-700 mb-4">
-                Nuestro sitio web no está dirigido a menores de 13 años. No recopilamos conscientemente 
-                información personal de menores de 13 años. Si descubrimos que hemos recopilado información 
-                de un menor, la eliminaremos inmediatamente.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">10. Cambios a esta Política</h2>
-              <p className="text-neutral-700 mb-4">
-                Podemos actualizar esta Política de Privacidad ocasionalmente. Le notificaremos sobre 
-                cambios significativos publicando la nueva política en esta página con una fecha de 
-                actualización revisada.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-4">11. Contacto</h2>
-              <p className="text-neutral-700 mb-4">
-                Si tiene preguntas sobre esta Política de Privacidad o sobre cómo manejamos su información 
-                personal, puede contactarnos a través de nuestra sección de preguntas frecuentes.
-              </p>
-            </section>
-
-            <div className="border-t border-neutral-200 pt-6 mt-8">
-              <p className="text-sm text-neutral-500 text-center">
-                Esta Política de Privacidad es efectiva a partir de la fecha de última actualización 
-                y se aplica a toda la información recopilada por este sitio web.
-              </p>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <div className="bg-white border-b">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Política de Privacidad
+            </h1>
+            <p className="text-xl text-gray-600">
+              Última actualización: {new Date().toLocaleDateString('es-AR')}
+            </p>
           </div>
         </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Card>
+          <CardContent className="p-8">
+            <div className="prose prose-lg max-w-none">
+              <h2>1. Información que Recopilamos</h2>
+              <p>Recopilamos información que usted nos proporciona directamente, incluyendo:</p>
+              <ul>
+                <li>Información de contacto (nombre, email, teléfono)</li>
+                <li>Información de solicitudes de cotización</li>
+                <li>Comentarios y consultas</li>
+                <li>Información de navegación y uso del sitio web</li>
+              </ul>
+
+              <h2>2. Cómo Utilizamos su Información</h2>
+              <p>Utilizamos la información recopilada para:</p>
+              <ul>
+                <li>Proporcionar y mejorar nuestros servicios</li>
+                <li>Conectarle con empresas relevantes</li>
+                <li>Responder a sus consultas y solicitudes</li>
+                <li>Enviar actualizaciones sobre nuestros servicios</li>
+                <li>Analizar el uso del sitio web para mejorarlo</li>
+              </ul>
+
+              <h2>3. Compartir Información</h2>
+              <p>
+                No vendemos, alquilamos ni compartimos su información personal con 
+                terceros, excepto en las siguientes circunstancias:
+              </p>
+              <ul>
+                <li>Con empresas listadas en nuestro directorio cuando solicite cotizaciones</li>
+                <li>Con proveedores de servicios que nos ayudan a operar nuestro sitio web</li>
+                <li>Cuando sea requerido por ley</li>
+                <li>Con su consentimiento explícito</li>
+              </ul>
+
+              <h2>4. Cookies y Tecnologías Similares</h2>
+              <p>
+                Utilizamos cookies y tecnologías similares para mejorar su experiencia 
+                en nuestro sitio web, analizar el tráfico y personalizar el contenido. 
+                Puede controlar el uso de cookies a través de la configuración de su navegador.
+              </p>
+
+              <h2>5. Seguridad de la Información</h2>
+              <p>
+                Implementamos medidas de seguridad técnicas y organizativas apropiadas 
+                para proteger su información personal contra acceso no autorizado, 
+                alteración, divulgación o destrucción.
+              </p>
+
+              <h2>6. Retención de Datos</h2>
+              <p>
+                Conservamos su información personal solo durante el tiempo necesario 
+                para cumplir con los propósitos descritos en esta política, a menos 
+                que la ley requiera un período de retención más largo.
+              </p>
+
+              <h2>7. Sus Derechos</h2>
+              <p>Usted tiene derecho a:</p>
+              <ul>
+                <li>Acceder a su información personal</li>
+                <li>Corregir información inexacta</li>
+                <li>Solicitar la eliminación de su información</li>
+                <li>Oponerse al procesamiento de su información</li>
+                <li>Retirar su consentimiento en cualquier momento</li>
+              </ul>
+
+              <h2>8. Menores de Edad</h2>
+              <p>
+                Nuestros servicios no están dirigidos a menores de 18 años. 
+                No recopilamos conscientemente información personal de menores 
+                sin el consentimiento de sus padres o tutores.
+              </p>
+
+              <h2>9. Cambios a esta Política</h2>
+              <p>
+                Podemos actualizar esta política de privacidad ocasionalmente. 
+                Le notificaremos sobre cambios significativos publicando la nueva 
+                política en nuestro sitio web.
+              </p>
+
+              <h2>10. Contacto</h2>
+              <p>
+                Si tiene preguntas sobre esta política de privacidad o desea 
+                ejercer sus derechos, puede contactarnos en: 
+                privacidad@fumigaciondrones.com
+              </p>
+
+              <h2>11. Cumplimiento Legal</h2>
+              <p>
+                Esta política cumple con la Ley de Protección de Datos Personales 
+                de Argentina (Ley 25.326) y el Reglamento General de Protección 
+                de Datos (RGPD) de la Unión Europea.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )

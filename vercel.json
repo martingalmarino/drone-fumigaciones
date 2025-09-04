@@ -1,0 +1,25 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "regions": ["iad1"],
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "NEXTAUTH_URL": "@nextauth_url",
+    "ADMIN_EMAIL": "@admin_email",
+    "RESEND_API_KEY": "@resend_api_key",
+    "HCAPTCHA_SECRET_KEY": "@hcaptcha_secret_key",
+    "HCAPTCHA_SITE_KEY": "@hcaptcha_site_key",
+    "GTM_ID": "@gtm_id",
+    "ADSENSE_CLIENT": "@adsense_client",
+    "NEXT_PUBLIC_APP_URL": "@next_public_app_url"
+  }
+}

@@ -1,107 +1,67 @@
 import { MetadataRoute } from 'next'
+import { prisma } from '@/lib/prisma'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.grabadoautopartes.com.ar'
-  const currentDate = new Date().toISOString()
-
-  // Páginas estáticas
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://fumigaciondrones.com'
+  
+  // Static pages
   const staticPages = [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/jurisdicciones`,
-      lastModified: currentDate,
+    '',
+    '/blog',
+    '/reviews',
+    '/directorio',
+    '/cotizar',
+    '/faq',
+    '/acerca',
+    '/contacto',
+    '/terminos',
+    '/privacidad',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 1.0 : 0.8,
+  }))
+
+  // Dynamic pages
+  const [provinces, companies, articles, reviews] = await Promise.all([
+    prisma.province.findMany({ select: { slug: true } }),
+    prisma.company.findMany({ select: { slug: true } }),
+    prisma.article.findMany({ 
+      where: { published: true },
+      select: { slug: true, updatedAt: true } 
+    }),
+    prisma.review.findMany({ 
+      select: { slug: true, updatedAt: true } 
+    }),
+  ])
+
+  const dynamicPages = [
+    ...provinces.map((province) => ({
+      url: `${baseUrl}/directorio/${province.slug}`,
+      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/mapa`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guias`,
-      lastModified: currentDate,
+    })),
+    ...companies.map((company) => ({
+      url: `${baseUrl}/directorio/empresa/${company.slug}`,
+      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: currentDate,
+    })),
+    ...articles.map((article) => ({
+      url: `${baseUrl}/blog/${article.slug}`,
+      lastModified: article.updatedAt,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+    ...reviews.map((review) => ({
+      url: `${baseUrl}/reviews/${review.slug}`,
+      lastModified: review.updatedAt,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contacto`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/acerca`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/terminos`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/privacidad`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
+    })),
   ]
 
-  // Jurisdicciones disponibles
-  const jurisdicciones = [
-    'caba',
-    'buenos-aires',
-    'cordoba',
-    'santa-fe',
-    'mendoza',
-    'rio-negro',
-    'san-juan',
-    'tucuman',
-    'chaco',
-    'misiones',
-    'catamarca',
-    'chubut',
-    'corrientes',
-    'entre-rios',
-    'formosa',
-    'jujuy',
-    'la-pampa',
-    'la-rioja',
-    'neuquen',
-    'salta',
-    'san-luis',
-    'santa-cruz',
-    'santiago-del-estero',
-    'tierra-del-fuego',
-  ]
-
-  // Secciones por jurisdicción
-  const secciones = ['grabado', 'rpa-rpm', 'cedulas', 'centros']
-
-  // Generar páginas de jurisdicciones
-  const jurisdictionPages = jurisdicciones.flatMap((jurisdiccion) =>
-    secciones.map((seccion) => ({
-      url: `${baseUrl}/j/${jurisdiccion}/${seccion}`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    }))
-  )
-
-  return [...staticPages, ...jurisdictionPages]
+  return [...staticPages, ...dynamicPages]
 }

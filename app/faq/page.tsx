@@ -1,275 +1,226 @@
-'use client'
+import { Metadata } from 'next'
+import Link from 'next/link'
+import { HelpCircle, ArrowRight, Calculator, Users, BookOpen } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { prisma } from '@/lib/prisma'
+import AdSlot from '@/components/AdSlot'
+import SeoHead from '@/components/SeoHead'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
-import { useState } from 'react'
-import { Search, ChevronDown, ChevronRight, HelpCircle, FileText, MapPin, Calendar } from 'lucide-react'
-
-interface FAQ {
-  id: string
-  categoria: string
-  pregunta: string
-  respuesta: string
+export const metadata: Metadata = {
+  title: 'Preguntas Frecuentes | Fumigación con Drones Argentina',
+  description: 'Respuestas a las preguntas más comunes sobre fumigación con drones: legalidad, costos, requisitos y más.',
 }
 
-const faqs: FAQ[] = [
+const quickLinks = [
   {
-    id: '1',
-    categoria: 'grabado',
-    pregunta: '¿Qué es el grabado de autopartes?',
-    respuesta: 'El grabado de autopartes es un proceso de identificación que consiste en marcar con láser o ácido las piezas principales del vehículo (chasis, motor, etc.) para prevenir el robo y facilitar su identificación en caso de hurto.'
+    title: 'Solicitar Cotización',
+    description: 'Obtén propuestas de empresas certificadas',
+    href: '/cotizar',
+    icon: Calculator,
   },
   {
-    id: '2',
-    categoria: 'grabado',
-    pregunta: '¿Es obligatorio el grabado en todas las provincias?',
-    respuesta: 'No, el grabado de autopartes no es obligatorio en todas las provincias. Cada jurisdicción tiene su propia normativa. Algunas lo hacen obligatorio, otras opcional, y algunas no lo implementan.'
+    title: 'Ver Directorio',
+    description: 'Encuentra empresas en tu provincia',
+    href: '/directorio',
+    icon: Users,
   },
   {
-    id: '3',
-    categoria: 'grabado',
-    pregunta: '¿Cuánto cuesta el grabado de autopartes?',
-    respuesta: 'El costo varía según la jurisdicción y puede oscilar entre $8,000 y $15,000 ARS. Te recomendamos consultar el costo específico en tu jurisdicción.'
+    title: 'Leer Guías',
+    description: 'Aprende sobre fumigación con drones',
+    href: '/blog',
+    icon: BookOpen,
   },
-  {
-    id: '4',
-    categoria: 'grabado',
-    pregunta: '¿Qué documentos necesito para el grabado?',
-    respuesta: 'Generalmente necesitas: DNI del titular, cédula verde o azul del vehículo, certificado de dominio, y el pago de la tasa correspondiente. Los requisitos pueden variar por jurisdicción.'
-  },
-  {
-    id: '5',
-    categoria: 'rpa-rpm',
-    pregunta: '¿Qué es RPA/RPM?',
-    respuesta: 'RPA significa Registro de Propiedad Automotor y RPM significa Registro de Marcas y Modelos. Son sistemas que permiten verificar la propiedad y autenticidad de los vehículos.'
-  },
-  {
-    id: '6',
-    categoria: 'rpa-rpm',
-    pregunta: '¿Cuándo necesito RPA/RPM?',
-    respuesta: 'Generalmente se requiere para vehículos de más de 10-20 años (según la jurisdicción) o cuando hay modificaciones importantes en el vehículo. Consultá la normativa específica de tu jurisdicción.'
-  },
-  {
-    id: '7',
-    categoria: 'cedulas',
-    pregunta: '¿Qué es la cédula digital?',
-    respuesta: 'La cédula digital es la versión electrónica de tu cédula de identidad, disponible a través de la aplicación Mi Argentina. Tiene la misma validez que la cédula física.'
-  },
-  {
-    id: '8',
-    categoria: 'cedulas',
-    pregunta: '¿Cómo obtengo mi cédula digital?',
-    respuesta: 'Descargá la app Mi Argentina, verificá tu identidad, y solicitá la cédula digital. El proceso es gratuito y se recibe en tu celular.'
-  },
-  {
-    id: '9',
-    categoria: 'cedulas',
-    pregunta: '¿La cédula digital es válida para conducir?',
-    respuesta: 'Sí, la cédula digital tiene la misma validez que la cédula física para conducir y realizar trámites oficiales.'
-  },
-  {
-    id: '10',
-    categoria: 'general',
-    pregunta: '¿Este sitio web es oficial?',
-    respuesta: 'No, este sitio web no es oficial y no está afiliado a ningún organismo gubernamental. La información es solo para fines informativos y debe verificarse con las fuentes oficiales.'
-  },
-  {
-    id: '11',
-    categoria: 'general',
-    pregunta: '¿Con qué frecuencia se actualiza la información?',
-    respuesta: 'La información se actualiza regularmente, pero recomendamos siempre verificar con las fuentes oficiales de tu jurisdicción antes de realizar cualquier trámite.'
-  },
-  {
-    id: '12',
-    categoria: 'general',
-    pregunta: '¿Puedo hacer trámites desde este sitio?',
-    respuesta: 'No, este sitio solo proporciona información. Para realizar trámites debes dirigirte a los centros oficiales o usar los sistemas oficiales de tu jurisdicción.'
-  }
 ]
 
-const categorias = [
-  { id: 'grabado', nombre: 'Grabado de Autopartes', icon: FileText, color: 'text-green-600' },
-  { id: 'rpa-rpm', nombre: 'RPA/RPM', icon: Calendar, color: 'text-blue-600' },
-  { id: 'cedulas', nombre: 'Cédulas', icon: HelpCircle, color: 'text-purple-600' },
-  { id: 'general', nombre: 'General', icon: HelpCircle, color: 'text-neutral-600' }
-]
-
-export default function FAQPage() {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState('')
-  const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set())
-
-  const filteredFAQs = faqs.filter(faq => {
-    const matchesSearch = faq.pregunta.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         faq.respuesta.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesCategory = !selectedCategory || faq.categoria === selectedCategory
-    return matchesSearch && matchesCategory
+export default async function FAQPage() {
+  const faqs = await prisma.faq.findMany({
+    orderBy: { createdAt: 'asc' },
   })
 
-  const toggleQuestion = (id: string) => {
-    const newExpanded = new Set(expandedQuestions)
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id)
-    } else {
-      newExpanded.add(id)
-    }
-    setExpandedQuestions(newExpanded)
-  }
-
-  const getCategoryIcon = (categoriaId: string) => {
-    const categoria = categorias.find(c => c.id === categoriaId)
-    if (categoria) {
-      const Icon = categoria.icon
-      return <Icon className={`h-5 w-5 ${categoria.color}`} />
-    }
-    return null
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answerMdx.replace(/<[^>]*>/g, '')
+      }
+    }))
   }
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      <SeoHead
+        title="Preguntas Frecuentes"
+        description="Respuestas a las preguntas más comunes sobre fumigación con drones: legalidad, costos, requisitos y más."
+        canonical="/faq"
+        jsonLd={jsonLd}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-4">
+        <div className="bg-white border-b">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Preguntas Frecuentes
           </h1>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Encontrá respuestas a las preguntas más comunes sobre grabado de autopartes, 
-            RPA/RPM y cédulas digitales en Argentina.
-          </p>
-        </div>
-
-        {/* Search and Filters */}
-        <div className="bg-white rounded-lg border border-neutral-200 p-6 shadow-soft mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Search */}
-            <div>
-              <label htmlFor="search" className="block text-sm font-medium text-neutral-700 mb-2">
-                Buscar preguntas
-              </label>
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" size={20} />
-                <input
-                  id="search"
-                  type="text"
-                  placeholder="Escribí tu pregunta..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                />
-              </div>
-            </div>
-
-            {/* Category Filter */}
-            <div>
-              <label htmlFor="category-filter" className="block text-sm font-medium text-neutral-700 mb-2">
-                Filtrar por categoría
-              </label>
-              <select
-                id="category-filter"
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-              >
-                <option value="">Todas las categorías</option>
-                {categorias.map(categoria => (
-                  <option key={categoria.id} value={categoria.id}>{categoria.nombre}</option>
-                ))}
-              </select>
+              <p className="text-xl text-gray-600">
+                Encuentra respuestas a las dudas más comunes sobre fumigación con drones
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Results */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold text-neutral-900">
-              Resultados ({filteredFAQs.length})
-            </h2>
-            {(searchQuery || selectedCategory) && (
-              <button
-                onClick={() => {
-                  setSearchQuery('')
-                  setSelectedCategory('')
-                }}
-                className="text-sm text-primary-600 hover:text-primary-700"
-              >
-                Limpiar filtros
-              </button>
-            )}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs items={[{ label: 'FAQ' }]} />
+          {/* Quick Links */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {quickLinks.map((link) => (
+              <Card key={link.title} className="hover:shadow-lg transition-shadow">
+                <CardHeader className="text-center">
+                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <link.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{link.title}</CardTitle>
+                  <CardDescription>{link.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild className="w-full">
+                    <Link href={link.href}>
+                      Acceder
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
-          {filteredFAQs.length === 0 ? (
-            <div className="text-center py-12 text-neutral-500">
-              <HelpCircle className="h-16 w-16 text-neutral-300 mx-auto mb-4" />
-              <p className="text-lg font-medium">No se encontraron preguntas</p>
-              <p className="text-sm">Intenta ajustar los filtros de búsqueda</p>
+          {/* FAQ Section */}
+          <div className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                Preguntas Más Frecuentes
+              </h2>
+              <p className="text-gray-600">
+                Hemos recopilado las consultas más comunes de nuestros usuarios
+              </p>
             </div>
-          ) : (
-            <div className="space-y-4">
-              {filteredFAQs.map((faq) => (
-                <div key={faq.id} className="card">
-                  <button
-                    onClick={() => toggleQuestion(faq.id)}
-                    className="w-full text-left flex items-start justify-between space-x-4"
-                  >
-                    <div className="flex items-start space-x-3 flex-1">
-                      {getCategoryIcon(faq.categoria)}
-                      <div>
-                        <h3 className="font-semibold text-neutral-900 mb-1">
-                          {faq.pregunta}
-                        </h3>
-                        {expandedQuestions.has(faq.id) && (
-                          <p className="text-neutral-600 text-sm leading-relaxed">
-                            {faq.respuesta}
-                          </p>
-                        )}
+
+            {faqs.map((faq, index) => (
+              <Card key={faq.id} className="hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-start">
+                    <HelpCircle className="h-5 w-5 mr-2 text-primary mt-0.5 flex-shrink-0" />
+                    {faq.question}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="prose prose-sm max-w-none">
+                    <div dangerouslySetInnerHTML={{ __html: faq.answerMdx.replace(/\n/g, '<br>') }} />
                       </div>
-                    </div>
-                    <div className="flex-shrink-0 mt-1">
-                      {expandedQuestions.has(faq.id) ? (
-                        <ChevronDown className="h-5 w-5 text-neutral-400" />
-                      ) : (
-                        <ChevronRight className="h-5 w-5 text-neutral-400" />
-                      )}
-                    </div>
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
+                </CardContent>
+              </Card>
+            ))}
         </div>
 
-        {/* Categories Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {categorias.map((categoria) => {
-            const Icon = categoria.icon
-            const count = faqs.filter(f => f.categoria === categoria.id).length
-            
-            return (
-              <div key={categoria.id} className="card text-center hover:shadow-medium transition-shadow cursor-pointer">
-                <div className={`w-12 h-12 bg-${categoria.color.replace('text-', '')}-100 rounded-lg flex items-center justify-center mx-auto mb-3`}>
-                  <Icon className={`h-6 w-6 ${categoria.color}`} />
-                </div>
-                <h3 className="font-semibold text-neutral-900 mb-1">{categoria.nombre}</h3>
-                <p className="text-sm text-neutral-600">{count} preguntas</p>
+          {/* Ad Slot */}
+          <AdSlot variant="leaderboard" className="my-12" />
+
+          {/* Contact Section */}
+          <Card className="bg-primary text-white">
+            <CardContent className="p-8 text-center">
+              <h3 className="text-2xl font-bold mb-4">
+                ¿No encontraste tu respuesta?
+              </h3>
+              <p className="text-lg mb-6 text-green-100">
+                Nuestro equipo de expertos está aquí para ayudarte
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild variant="secondary" size="lg">
+                  <Link href="/contacto">
+                    Contactar Soporte
+                  </Link>
+                </Button>
+                <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">
+                  <Link href="/cotizar">
+                    Solicitar Consulta
+                  </Link>
+                </Button>
               </div>
-            )
-          })}
-        </div>
+            </CardContent>
+          </Card>
 
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <h3 className="text-xl font-semibold text-neutral-900 mb-4">
-            ¿No encontraste tu respuesta?
+          {/* Related Topics */}
+          <div className="mt-12">
+            <h3 className="text-xl font-bold text-gray-900 mb-6">
+              Temas Relacionados
           </h3>
-          <p className="text-neutral-600 mb-6">
-            Si tenés una pregunta específica que no está cubierta aquí, 
-            no dudes en contactarnos.
-          </p>
-          <a href="/contacto" className="btn-primary">
-            Contactanos
-          </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Card className="hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-2">Normativas y Legalidad</h4>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Todo sobre certificaciones ANAC, CEVANT y requisitos legales
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/blog/es-legal-fumigar-con-drones-argentina">
+                      Leer más
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-2">Costos y Precios</h4>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Información sobre precios por hectárea y factores que influyen
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/blog/beneficios-fumigacion-con-drones">
+                      Leer más
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-2">Tecnología y Equipos</h4>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Guías sobre drones, características y especificaciones
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/reviews">
+                      Ver reviews
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-2">Casos de Éxito</h4>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Experiencias reales de productores en Argentina
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/blog/casos-exito-argentina">
+                      Leer casos
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

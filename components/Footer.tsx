@@ -1,133 +1,170 @@
 import Link from 'next/link'
-import { MapPin, FileText, HelpCircle, Mail, Phone } from 'lucide-react'
+import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react'
 
-export function Footer() {
-  const currentYear = new Date().getFullYear()
+const footerLinks = {
+  empresa: [
+    { name: 'Acerca de', href: '/acerca' },
+    { name: 'Contacto', href: '/contacto' },
+    { name: 'Términos y Condiciones', href: '/terminos' },
+    { name: 'Política de Privacidad', href: '/privacidad' },
+  ],
+  servicios: [
+    { name: 'Fumigación con Drones', href: '/blog/que-es-fumigacion-con-drones' },
+    { name: 'Directorio de Empresas', href: '/directorio' },
+    { name: 'Reviews de Drones', href: '/reviews' },
+    { name: 'Guías y Tutoriales', href: '/blog' },
+  ],
+  provincias: [
+    { name: 'Córdoba', href: '/directorio/cordoba' },
+    { name: 'Santa Fe', href: '/directorio/santa-fe' },
+    { name: 'Buenos Aires', href: '/directorio/buenos-aires' },
+  ],
+}
 
+export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">GA</span>
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {/* Logo y descripción */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center mb-4">
+              <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">FD</span>
               </div>
-              <span className="text-xl font-bold">Grabado Argentina</span>
+              <span className="ml-2 text-lg sm:text-xl font-bold">
+                Fumigación Drones
+              </span>
             </div>
-            <p className="text-neutral-300 mb-4 max-w-md">
-              Información oficial sobre grabado de autopartes, RPA/RPM y cédulas digitales 
-              por jurisdicción en Argentina.
+            <p className="text-gray-300 text-sm sm:text-base mb-4 leading-relaxed">
+              El directorio más completo de empresas de fumigación con drones en Argentina. 
+              Encuentra proveedores certificados y tecnología de última generación.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors">
-                <span className="sr-only">Facebook</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors">
-                <span className="sr-only">Twitter</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-4">Enlaces Rápidos</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/jurisdicciones" className="text-neutral-300 hover:text-white transition-colors flex items-center space-x-2">
-                  <MapPin size={16} />
-                  <span>Jurisdicciones</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/mapa" className="text-neutral-300 hover:text-white transition-colors flex items-center space-x-2">
-                  <MapPin size={16} />
-                  <span>Mapa de Centros</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-neutral-300 hover:text-white transition-colors flex items-center space-x-2">
-                  <HelpCircle size={16} />
-                  <span>Preguntas Frecuentes</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacto" className="text-neutral-300 hover:text-white transition-colors flex items-center space-x-2">
-                  <Mail size={16} />
-                  <span>Contacto</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-4">Servicios</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/j/caba/grabado" className="text-neutral-300 hover:text-white transition-colors flex items-center space-x-2">
-                  <FileText size={16} />
-                  <span>Grabado de Autopartes</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/j/caba/rpa-rpm" className="text-neutral-300 hover:text-white transition-colors flex items-center space-x-2">
-                  <FileText size={16} />
-                  <span>RPA/RPM</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/j/caba/cedulas" className="text-neutral-300 hover:text-white transition-colors flex items-center space-x-2">
-                  <FileText size={16} />
-                  <span>Cédulas Digitales</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="border-t border-neutral-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-neutral-400 text-sm">
-              <p>&copy; {currentYear} Grabado Autopartes Argentina. Todos los derechos reservados.</p>
-            </div>
-            <div className="flex space-x-6 text-sm text-neutral-400">
-              <Link href="/acerca" className="hover:text-white transition-colors">Acerca de</Link>
-              <Link href="/contacto" className="hover:text-white transition-colors">Contacto</Link>
-              <Link href="/terminos" className="hover:text-white transition-colors">Términos</Link>
-              <Link href="/privacidad" className="hover:text-white transition-colors">Privacidad</Link>
-            </div>
-          </div>
-          
-          {/* Developer Credit */}
-          <div className="mt-4 pt-4 border-t border-neutral-800">
-            <p className="text-xs text-neutral-500 text-center">
-              Desarrollado por{' '}
-              <a 
-                href="mailto:m.galmarino@gmail.com" 
-                className="text-neutral-400 hover:text-white transition-colors"
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
               >
-                Martín Galmarino
+                <span className="sr-only">Facebook</span>
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M20 10C20 4.477 15.523 0 10 0S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </a>
-              {' '}🤖
-            </p>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <span className="sr-only">Instagram</span>
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Enlaces de empresa */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Empresa
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.empresa.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Enlaces de servicios */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Servicios
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.servicios.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Provincias */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Provincias
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.provincias.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Legal Disclaimer */}
-        <div className="mt-8 p-4 bg-neutral-800 rounded-lg">
-          <p className="text-xs text-neutral-400 text-center">
-            <strong>Descargo de responsabilidad:</strong> Este sitio web no es oficial y no está afiliado 
-            a ningún organismo gubernamental. La información proporcionada es solo para fines informativos 
-            y debe verificarse con las fuentes oficiales correspondientes.
+        {/* Aviso legal */}
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="text-xs sm:text-sm text-gray-400">
+              <p>
+                © 2025 Fumigación Drones Argentina. Todos los derechos reservados.
+              </p>
+              <p className="mt-1">
+                Información proporcionada con fines informativos. Consulte siempre con profesionales certificados.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400">
+              <span className="flex items-center">
+                <MapPin className="h-4 w-4 mr-1" />
+                Argentina
+              </span>
+              <a
+                href="mailto:info@fumigaciondrones.com"
+                className="flex items-center hover:text-white transition-colors"
+              >
+                <Mail className="h-4 w-4 mr-1" />
+                Contacto
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-yellow-900/20 border border-yellow-800/30 rounded-lg">
+          <p className="text-xs sm:text-sm text-yellow-200 leading-relaxed">
+            <strong>Importante:</strong> El uso de productos fitosanitarios debe realizarse 
+            siguiendo las normativas vigentes y con personal certificado. Consulte siempre 
+            con profesionales habilitados y respete las buenas prácticas agrícolas.
           </p>
         </div>
       </div>
