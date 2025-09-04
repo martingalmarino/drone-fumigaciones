@@ -17,6 +17,8 @@ export function JurisdictionCard({ jurisdiccion }: JurisdictionCardProps) {
         return 'bg-yellow-100 text-yellow-800'
       case 'no_aplica':
         return 'bg-gray-100 text-gray-800'
+      case 'indeterminado':
+        return 'bg-blue-100 text-blue-800'
       default:
         return 'bg-gray-100 text-gray-800'
     }
@@ -30,6 +32,8 @@ export function JurisdictionCard({ jurisdiccion }: JurisdictionCardProps) {
         return 'Opcional'
       case 'no_aplica':
         return 'No aplica'
+      case 'indeterminado':
+        return 'Consultar'
       default:
         return 'Desconocido'
     }
@@ -45,40 +49,40 @@ export function JurisdictionCard({ jurisdiccion }: JurisdictionCardProps) {
 
   return (
     <Link href={`/j/${jurisdiccion.slug}`}>
-      <div className="card hover:shadow-medium transition-all duration-200 hover:-translate-y-1 cursor-pointer group">
-        <div className="flex items-start justify-between mb-4">
-          <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">
+      <div className="card hover:shadow-medium transition-all duration-200 hover:-translate-y-1 cursor-pointer group h-full">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+          <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors leading-tight flex-1 min-w-0">
             {jurisdiccion.nombre}
           </h3>
-          <span className={`badge ${getEstadoColor(jurisdiccion.estadoGrabado)}`}>
+          <span className={`badge ${getEstadoColor(jurisdiccion.estadoGrabado)} whitespace-nowrap flex-shrink-0 text-xs sm:text-sm px-2 py-1`}>
             {getEstadoText(jurisdiccion.estadoGrabado)}
           </span>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 flex-1">
           {/* Servicios disponibles */}
           <div className="flex items-center space-x-2 text-sm text-neutral-600">
-            <FileText size={16} />
-            <span>{getServiciosDisponibles().join(', ')}</span>
+            <FileText size={16} className="flex-shrink-0" />
+            <span className="truncate">{getServiciosDisponibles().join(', ')}</span>
           </div>
 
           {/* Centros disponibles */}
           <div className="flex items-center space-x-2 text-sm text-neutral-600">
-            <MapPin size={16} />
+            <MapPin size={16} className="flex-shrink-0" />
             <span>{jurisdiccion.centros.length} centro{jurisdiccion.centros.length !== 1 ? 's' : ''} disponible{jurisdiccion.centros.length !== 1 ? 's' : ''}</span>
           </div>
 
           {/* Turnero disponible */}
           {jurisdiccion.grabado.turneroUrl && (
             <div className="flex items-center space-x-2 text-sm text-green-600">
-              <Calendar size={16} />
+              <Calendar size={16} className="flex-shrink-0" />
               <span>Turnero disponible</span>
             </div>
           )}
 
           {/* Última actualización */}
           <div className="flex items-center space-x-2 text-xs text-neutral-500">
-            <Clock size={14} />
+            <Clock size={14} className="flex-shrink-0" />
             <span>Actualizado: {jurisdiccion.fuentes[0]?.fecha || 'N/A'}</span>
           </div>
         </div>
@@ -96,12 +100,12 @@ export function JurisdictionCard({ jurisdiccion }: JurisdictionCardProps) {
 // Skeleton loading component
 export function JurisdictionCardSkeleton() {
   return (
-    <div className="card animate-pulse">
-      <div className="flex items-start justify-between mb-4">
+    <div className="card animate-pulse h-full">
+      <div className="flex flex-col sm:flex-row gap-3 mb-4">
         <div className="h-6 bg-neutral-200 rounded w-3/4"></div>
         <div className="h-6 bg-neutral-200 rounded w-16"></div>
       </div>
-      <div className="space-y-3">
+      <div className="space-y-3 flex-1">
         <div className="h-4 bg-neutral-200 rounded w-1/2"></div>
         <div className="h-4 bg-neutral-200 rounded w-2/3"></div>
         <div className="h-4 bg-neutral-200 rounded w-1/3"></div>
