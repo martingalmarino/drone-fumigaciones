@@ -515,5 +515,199 @@
         "direccion": "Av. Libertador 1234"
       }
     ]
+  },
+  {
+    "slug": "tucuman",
+    "nombre": "Provincia de Tucumán",
+    "estadoGrabado": "indeterminado",
+    "fuentes": [
+      {
+        "nombre": "Dirección de Tránsito Tucumán",
+        "url": "https://www.tucuman.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.tucuman.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Verificar requisitos en planta VPA"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Es obligatorio el grabado de autopartes?",
+          "respuesta": "Se exige grabado de cristales (nacional). Para autopartes, consultar en planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Según verificación y autorización del Registro",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro si corresponde"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "tuc-001",
+        "nombre": "Planta VPA Tucumán",
+        "lat": -26.8083,
+        "lng": -65.2176,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0381-123-4567",
+        "direccion": "Av. Sarmiento 1234"
+      }
+    ]
+  },
+  {
+    "slug": "chaco",
+    "nombre": "Provincia del Chaco",
+    "estadoGrabado": "indeterminado",
+    "fuentes": [
+      {
+        "nombre": "Policía del Chaco",
+        "url": "https://www.chaco.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.chaco.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Verificar requisitos en planta VPA"
+      ],
+      "costo": "Consultar en planta",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué grabado es obligatorio?",
+          "respuesta": "Cristales (nacional). Para autopartes, confirmar en planta al pedir turno."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Según verificación y Registro",
+      "pasos": [
+        "Solicitar turno en planta VPA",
+        "Presentar documentación",
+        "Autorización del Registro"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "cha-001",
+        "nombre": "Planta VPA Chaco",
+        "lat": -27.4512,
+        "lng": -58.9866,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0362-123-4567",
+        "direccion": "Av. 25 de Mayo 1234"
+      }
+    ]
+  },
+  {
+    "slug": "misiones",
+    "nombre": "Provincia de Misiones",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Dirección de Verificación del Automotor Misiones",
+        "url": "https://www.misiones.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://verificacion.misiones.gob.ar/",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "Consultar aranceles publicados",
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Qué servicios ofrece la planta?",
+          "respuesta": "Verificación técnica, RPA/RPM con arancel publicado. Consultar turnos y aranceles."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Servicio ofrecido en planta",
+      "pasos": [
+        "Solicitar turno en portal oficial",
+        "Presentar documentación",
+        "Pagar arancel correspondiente"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "mis-001",
+        "nombre": "Portal de Verificación Misiones",
+        "lat": -27.3671,
+        "lng": -55.8965,
+        "servicios": ["verificacion", "rpa_rpm"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0376-123-4567",
+        "direccion": "Portal online - consultar ubicación"
+      }
+    ]
   }
 ]
