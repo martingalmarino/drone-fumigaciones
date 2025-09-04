@@ -38,6 +38,7 @@
     "@playwright/test": "^1.40.1",
     "@types/leaflet": "^1.9.20",
     "@vitejs/plugin-react": "^4.2.1",
+    "puppeteer": "^24.18.0",
     "vitest": "^1.1.0"
   }
 }
