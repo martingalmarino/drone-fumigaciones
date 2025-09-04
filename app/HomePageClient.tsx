@@ -1,39 +1,13 @@
-'use client'
-
-import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { Search, MapPin, FileText, Calendar, CheckCircle } from 'lucide-react'
+import { Search, MapPin, FileText, Calendar } from 'lucide-react'
 import { JurisdictionCard } from '@/components/JurisdictionCard'
-import { useJurisdicciones } from '@/lib/useJurisdicciones'
+import { getJurisdicciones } from '@/lib/jurisdicciones'
 
-export function HomePageClient() {
-  const { jurisdicciones, loading, error } = useJurisdicciones()
+export async function HomePageClient() {
+  const jurisdicciones = await getJurisdicciones()
 
   // Obtener las 3 jurisdicciones más populares
   const jurisdiccionesPopulares = jurisdicciones.slice(0, 3)
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600 mx-auto mb-4"></div>
-          <p className="text-lg text-neutral-600">Cargando jurisdicciones...</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-lg text-red-600 mb-4">Error al cargar las jurisdicciones</p>
-          <p className="text-neutral-600">{error}</p>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen">
