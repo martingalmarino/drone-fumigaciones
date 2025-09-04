@@ -2,6 +2,8 @@ import { JurisdictionCard } from '@/components/JurisdictionCard'
 import { getJurisdicciones } from '@/lib/jurisdicciones'
 import { JurisdiccionesFilters } from './JurisdiccionesFilters'
 
+// Force deploy update
+
 export async function JurisdiccionesClient() {
   const jurisdicciones = await getJurisdicciones()
 
