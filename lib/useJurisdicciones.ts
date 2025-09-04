@@ -10,7 +10,6 @@ export function useJurisdicciones() {
     const fetchJurisdicciones = async () => {
       try {
         setLoading(true)
-        console.log('useJurisdicciones: Iniciando fetch...')
         // TODO: FETCH_JURISDICCIONES - Conectar con API oficial
         const response = await fetch('/data/jurisdicciones.json')
         if (!response.ok) {
@@ -19,10 +18,8 @@ export function useJurisdicciones() {
         const data = await response.json()
         // Filtrar solo las jurisdicciones válidas (excluir metadata)
         const jurisdiccionesValidas = data.filter((item: any) => item.slug && item.nombre)
-        console.log('useJurisdicciones: Jurisdicciones cargadas:', jurisdiccionesValidas.length)
         setJurisdicciones(jurisdiccionesValidas)
       } catch (err) {
-        console.error('useJurisdicciones: Error:', err)
         setError(err instanceof Error ? err.message : 'Error desconocido')
       } finally {
         setLoading(false)
