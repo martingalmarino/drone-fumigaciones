@@ -2,7 +2,7 @@ import { JurisdictionCard } from '@/components/JurisdictionCard'
 import { getJurisdicciones } from '@/lib/jurisdicciones'
 import { JurisdiccionesFilters } from './JurisdiccionesFilters'
 
-// Force deploy update
+// Force deploy update - Vercel manual trigger
 
 export async function JurisdiccionesClient() {
   const jurisdicciones = await getJurisdicciones()

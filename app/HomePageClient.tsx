@@ -3,7 +3,7 @@ import { Search, MapPin, FileText, Calendar } from 'lucide-react'
 import { JurisdictionCard } from '@/components/JurisdictionCard'
 import { getJurisdicciones } from '@/lib/jurisdicciones'
 
-// Force deploy update
+// Force deploy update - Vercel manual trigger
 
 export async function HomePageClient() {
   const jurisdicciones = await getJurisdicciones()
