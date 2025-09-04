@@ -1,17 +1,10 @@
-'use client'
+import { redirect } from 'next/navigation'
 
-import { useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+interface JurisdictionPageProps {
+  params: { slug: string }
+}
 
-export default function JurisdictionPage() {
-  const params = useParams()
-  const router = useRouter()
-  const slug = params.slug as string
-
-  useEffect(() => {
-    // Redirect to grabado tab by default
-    router.replace(`/j/${slug}/grabado`)
-  }, [slug, router])
-
-  return null
+export default function JurisdictionPage({ params }: JurisdictionPageProps) {
+  // Redirect to grabado tab by default
+  redirect(`/j/${params.slug}/grabado`)
 }

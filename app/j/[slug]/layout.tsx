@@ -8,6 +8,8 @@ interface JurisdictionLayoutProps {
 
 export default async function JurisdictionLayout({ children, params }: JurisdictionLayoutProps) {
   const jurisdiccion = await getJurisdiccionBySlug(params.slug)
+  
+  console.log('Layout - Slug:', params.slug, 'Jurisdicción encontrada:', !!jurisdiccion)
 
   if (!jurisdiccion) {
     return (
