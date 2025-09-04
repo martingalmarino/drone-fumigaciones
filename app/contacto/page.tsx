@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { useJurisdicciones } from '@/lib/useJurisdicciones'
 
 interface FormData {
@@ -244,48 +244,6 @@ export default function ContactoPage() {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-6">
-                Información de Contacto
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Mail className="h-6 w-6 text-primary-600 mt-1" />
-                  <div>
-                    <h3 className="font-medium text-neutral-900">Email</h3>
-                    <p className="text-neutral-600">info@grabadoautopartes.com.ar</p>
-                    <p className="text-sm text-neutral-500">Respuesta en 24-48 horas</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <Phone className="h-6 w-6 text-primary-600 mt-1" />
-                  <div>
-                    <h3 className="font-medium text-neutral-900">Teléfono</h3>
-                    <p className="text-neutral-600">+54 11 1234-5678</p>
-                    <p className="text-sm text-neutral-500">Lunes a Viernes 9:00-18:00</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-6 w-6 text-primary-600 mt-1" />
-                  <div>
-                    <h3 className="font-medium text-neutral-900">Ubicación</h3>
-                    <p className="text-neutral-600">Ciudad Autónoma de Buenos Aires</p>
-                    <p className="text-sm text-neutral-500">Argentina</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <Clock className="h-6 w-6 text-primary-600 mt-1" />
-                  <div>
-                    <h3 className="font-medium text-neutral-900">Horarios de Atención</h3>
-                    <p className="text-neutral-600">Lunes a Viernes: 9:00 - 18:00</p>
-                    <p className="text-sm text-neutral-500">Sábados: 9:00 - 13:00</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Quick Links */}
             <div className="card bg-neutral-50">
