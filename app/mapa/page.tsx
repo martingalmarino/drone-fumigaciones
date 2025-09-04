@@ -6,7 +6,7 @@ import { useJurisdicciones } from '@/lib/useJurisdicciones'
 import dynamic from 'next/dynamic'
 
 // Lazy load del mapa para mejor rendimiento
-const Map = dynamic(() => import('@/components/Map').then(mod => ({ default: mod.default })), {
+const Map = dynamic(() => import('@/components/Map').then(mod => ({ default: mod.Map })), {
   loading: () => <div className="h-96 bg-neutral-100 rounded-lg flex items-center justify-center">Cargando mapa...</div>,
   ssr: false
 })
