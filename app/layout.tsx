@@ -12,24 +12,75 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'Grabado de Autopartes, RPA/RPM y Cédulas - Argentina',
-  description: 'Información oficial sobre grabado de autopartes, RPA/RPM y cédulas digitales por jurisdicción en Argentina. Encontrá requisitos, costos y turnos.',
-  keywords: 'grabado autopartes, RPA RPM, cédulas digitales, Argentina, turnos, requisitos',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://grabado-autopartes-argentina.vercel.app'),
+  title: {
+    default: 'Grabado de Autopartes Argentina - RPA/RPM y Cédulas Digitales',
+    template: '%s | Grabado Autopartes Argentina'
+  },
+  description: 'Información completa sobre grabado de autopartes, RPA/RPM y cédulas digitales en Argentina. Requisitos, costos, turnos y centros por jurisdicción. Guía oficial actualizada.',
+  keywords: [
+    'grabado autopartes Argentina',
+    'RPA RPM Argentina',
+    'cédulas digitales',
+    'verificación policial',
+    'grabado obligatorio',
+    'turnos grabado',
+    'requisitos grabado',
+    'costo grabado autopartes',
+    'centros grabado',
+    'jurisdicciones Argentina',
+    'CABA grabado',
+    'Buenos Aires grabado',
+    'Córdoba grabado',
+    'Mendoza grabado'
+  ],
   authors: [{ name: 'Grabado Autopartes Argentina' }],
+  creator: 'Grabado Autopartes Argentina',
+  publisher: 'Grabado Autopartes Argentina',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: 'Grabado de Autopartes, RPA/RPM y Cédulas - Argentina',
-    description: 'Información oficial sobre grabado de autopartes, RPA/RPM y cédulas digitales por jurisdicción en Argentina.',
     type: 'website',
     locale: 'es_AR',
+    url: 'https://grabado-autopartes-argentina.vercel.app',
     siteName: 'Grabado Autopartes Argentina',
+    title: 'Grabado de Autopartes Argentina - RPA/RPM y Cédulas Digitales',
+    description: 'Información completa sobre grabado de autopartes, RPA/RPM y cédulas digitales en Argentina. Requisitos, costos, turnos y centros por jurisdicción.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Grabado de Autopartes Argentina',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Grabado de Autopartes, RPA/RPM y Cédulas - Argentina',
-    description: 'Información oficial sobre grabado de autopartes, RPA/RPM y cédulas digitales por jurisdicción en Argentina.',
+    title: 'Grabado de Autopartes Argentina - RPA/RPM y Cédulas Digitales',
+    description: 'Información completa sobre grabado de autopartes, RPA/RPM y cédulas digitales en Argentina.',
+    images: ['/og-image.jpg'],
   },
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Reemplazar con código real
+  },
+  alternates: {
+    canonical: 'https://grabado-autopartes-argentina.vercel.app',
+  },
 }
 
 export default function RootLayout({
@@ -37,8 +88,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Grabado Autopartes Argentina",
+    "description": "Información oficial sobre grabado de autopartes, RPA/RPM y cédulas digitales por jurisdicción en Argentina",
+    "url": "https://grabado-autopartes-argentina.vercel.app",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://grabado-autopartes-argentina.vercel.app/jurisdicciones?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grabado Autopartes Argentina",
+      "url": "https://grabado-autopartes-argentina.vercel.app"
+    }
+  }
+
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
           <Header />

@@ -1,3 +1,14 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Política de Privacidad - Grabado Autopartes Argentina',
+  description: 'Política de privacidad del sitio web de grabado de autopartes Argentina. Información sobre cómo recopilamos, utilizamos y protegemos sus datos.',
+  robots: 'noindex, follow',
+  alternates: {
+    canonical: 'https://grabado-autopartes-argentina.vercel.app/privacidad',
+  },
+}
+
 export default function PrivacidadPage() {
   return (
     <div className="min-h-screen py-20">
