@@ -71,3 +71,72 @@
     display: none;
   }
 }
+
+/* Estilos específicos para el mapa de Leaflet */
+.leaflet-container {
+  z-index: 1 !important;
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-control {
+  z-index: 1000 !important;
+}
+
+.leaflet-popup {
+  z-index: 1001 !important;
+}
+
+.leaflet-tooltip {
+  z-index: 1002 !important;
+}
+
+.leaflet-marker-icon {
+  z-index: 1003 !important;
+}
+
+.leaflet-marker-shadow {
+  z-index: 1004 !important;
+}
+
+.leaflet-tile-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-overlay-pane {
+  z-index: 2 !important;
+}
+
+.leaflet-marker-pane {
+  z-index: 3 !important;
+}
+
+.leaflet-shadow-pane {
+  z-index: 4 !important;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 5 !important;
+}
+
+.leaflet-popup-pane {
+  z-index: 6 !important;
+}
+
+/* Contenedor del mapa con isolation */
+.map-container {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+/* Asegurar que el mapa no interfiera con otros elementos */
+.map-container .leaflet-container {
+  position: relative !important;
+  z-index: 1 !important;
+  isolation: isolate !important;
+}

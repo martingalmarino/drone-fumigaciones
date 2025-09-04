@@ -76,7 +76,7 @@ export function Map({ centers, onCenterSelect, className = '' }: MapProps) {
   }
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative map-container ${className}`}>
       <MapContainer
         center={center}
         zoom={centers.length > 0 ? 8 : 10}
