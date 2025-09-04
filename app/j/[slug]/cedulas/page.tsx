@@ -1,17 +1,16 @@
-'use client'
-
-import { useParams } from 'next/navigation'
 import { Smartphone, CreditCard, Download, CheckCircle, Info, ExternalLink } from 'lucide-react'
-import { useJurisdicciones } from '@/lib/useJurisdicciones'
+import { getJurisdiccionBySlug } from '@/lib/jurisdicciones'
+import { notFound } from 'next/navigation'
 
-export default function CedulasPage() {
-  const params = useParams()
-  const slug = params.slug as string
-  const { getJurisdiccionBySlug } = useJurisdicciones()
-  const jurisdiccion = getJurisdiccionBySlug(slug)
+interface CedulasPageProps {
+  params: { slug: string }
+}
+
+export default async function CedulasPage({ params }: CedulasPageProps) {
+  const jurisdiccion = await getJurisdiccionBySlug(params.slug)
 
   if (!jurisdiccion) {
-    return <div>Jurisdicción no encontrada</div>
+    notFound()
   }
 
   const { cedulas } = jurisdiccion

@@ -1,18 +1,17 @@
-'use client'
-
-import { useParams } from 'next/navigation'
 import { CheckCircle, AlertCircle, Info, ExternalLink, DollarSign, Clock, FileText } from 'lucide-react'
-import { useJurisdicciones } from '@/lib/useJurisdicciones'
+import { getJurisdiccionBySlug } from '@/lib/jurisdicciones'
 import { ToC } from '@/components/ToC'
+import { notFound } from 'next/navigation'
 
-export default function GrabadoPage() {
-  const params = useParams()
-  const slug = params.slug as string
-  const { getJurisdiccionBySlug } = useJurisdicciones()
-  const jurisdiccion = getJurisdiccionBySlug(slug)
+interface GrabadoPageProps {
+  params: { slug: string }
+}
+
+export default async function GrabadoPage({ params }: GrabadoPageProps) {
+  const jurisdiccion = await getJurisdiccionBySlug(params.slug)
 
   if (!jurisdiccion) {
-    return <div>Jurisdicción no encontrada</div>
+    notFound()
   }
 
   const { grabado } = jurisdiccion
