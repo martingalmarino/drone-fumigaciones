@@ -266,3 +266,4 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 **Desarrollado con ❤️ para la comunidad automotriz argentina**
 # Wed Sep  3 21:09:48 -03 2025
+# Forzar actualización Vercel - Wed Sep  3 21:55:05 -03 2025
