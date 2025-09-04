@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://grabadoautopartes.com.ar'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.grabadoautopartes.com.ar'),
   title: {
     default: 'Grabado de Autopartes Argentina - RPA/RPM y Cédulas Digitales',
     template: '%s | Grabado Autopartes Argentina'
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     google: 'OUp8j_5FVI1zbM-6LRt9ccsRAmmBXJq_8dDHkbINCVk',
   },
   alternates: {
-    canonical: 'https://grabadoautopartes.com.ar',
+    canonical: 'https://www.grabadoautopartes.com.ar',
   },
 }
 

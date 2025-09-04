@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Todas las Jurisdicciones - Grabado de Autopartes Argentina',
     description: 'Lista completa de todas las jurisdicciones de Argentina con información sobre grabado de autopartes, RPA/RPM y cédulas digitales.',
-    url: 'https://grabadoautopartes.com.ar/jurisdicciones',
+    url: 'https://www.grabadoautopartes.com.ar/jurisdicciones',
   },
   alternates: {
-    canonical: 'https://grabadoautopartes.com.ar/jurisdicciones',
+    canonical: 'https://www.grabadoautopartes.com.ar/jurisdicciones',
   },
 }
 

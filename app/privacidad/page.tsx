@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Política de privacidad del sitio web de grabado de autopartes Argentina. Información sobre cómo recopilamos, utilizamos y protegemos sus datos.',
   robots: 'noindex, follow',
   alternates: {
-    canonical: 'https://grabadoautopartes.com.ar/privacidad',
+    canonical: 'https://www.grabadoautopartes.com.ar/privacidad',
   },
 }
 

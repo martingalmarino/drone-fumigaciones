@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://grabadoautopartes.com.ar',
+    canonical: 'https://www.grabadoautopartes.com.ar',
   },
 }
 
