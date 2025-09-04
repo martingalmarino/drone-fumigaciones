@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Jurisdiccion } from '@/types'
-import fs from 'fs'
-import path from 'path'
 
 export function useJurisdicciones() {
   const [jurisdicciones, setJurisdicciones] = useState<Jurisdiccion[]>([])
@@ -53,20 +51,5 @@ export function useJurisdicciones() {
     getJurisdiccionBySlug,
     getJurisdiccionesByEstado,
     searchJurisdicciones
-  }
-}
-
-// Función server-side para obtener jurisdicciones
-export async function getJurisdicciones(): Promise<Jurisdiccion[]> {
-  try {
-    const filePath = path.join(process.cwd(), 'public', 'data', 'jurisdicciones.json')
-    const fileContents = fs.readFileSync(filePath, 'utf8')
-    const data = JSON.parse(fileContents)
-    
-    // Filtrar solo las jurisdicciones válidas (excluir metadata)
-    return data.filter((item: any) => item.slug && item.nombre)
-  } catch (error) {
-    console.error('Error loading jurisdicciones:', error)
-    return []
   }
 }

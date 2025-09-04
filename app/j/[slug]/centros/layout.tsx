@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getJurisdicciones } from '@/lib/useJurisdicciones'
+import { getJurisdicciones } from '@/lib/jurisdicciones'
 
 interface CentrosLayoutProps {
   children: React.ReactNode
