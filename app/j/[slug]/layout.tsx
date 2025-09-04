@@ -28,17 +28,12 @@ export default function JurisdictionLayout({ children, params }: JurisdictionLay
     else if (pathname.includes('/centros')) setActiveTab('centros')
   }, [pathname])
 
+  // Si está cargando, mostrar solo el contenido de los children (que ya tiene el título correcto del servidor)
   if (loading) {
-    return (
-      <div className="min-h-screen py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
-          <p className="mt-4 text-neutral-600">Cargando jurisdicción...</p>
-        </div>
-      </div>
-    )
+    return <>{children}</>
   }
 
+  // Si hay error, mostrar mensaje de error
   if (error) {
     return (
       <div className="min-h-screen py-20">
@@ -55,6 +50,7 @@ export default function JurisdictionLayout({ children, params }: JurisdictionLay
 
   const jurisdiccion = jurisdicciones.find(j => j.slug === slug)
 
+  // Si no encuentra la jurisdicción, mostrar mensaje de error
   if (!jurisdiccion) {
     return (
       <div className="min-h-screen py-20">
