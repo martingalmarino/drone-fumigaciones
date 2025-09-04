@@ -7,7 +7,7 @@ const articulos = [
     id: 'rpa-rpm-cedula-digital',
     titulo: 'Lo que nadie te explicó sobre RPA, RPM y cédula digital (y necesitás saber ya)',
     descripcion: 'Guía completa sobre RPA, RPM y cédula digital en Argentina. Qué significan, cuándo se tramitan y cómo evitar problemas en el Registro del Automotor.',
-    fecha: '2024-01-15',
+    fecha: '2025-01-15',
     autor: 'Equipo Grabado Argentina',
     categoria: 'Trámites Registrales',
     tiempoLectura: '8 min',

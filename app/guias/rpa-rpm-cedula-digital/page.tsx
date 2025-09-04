@@ -42,7 +42,7 @@ export default function ArticuloRPARPM() {
             </span>
             <div className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
-              15 de enero de 2024
+              15 de enero de 2025
             </div>
             <div className="flex items-center gap-1">
               <User className="h-4 w-4" />
