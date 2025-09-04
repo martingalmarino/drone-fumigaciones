@@ -167,17 +167,13 @@ export default function HomePage() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-            ¿Necesitás ayuda personalizada?
+            ¿Necesitás más información?
           </h2>
           <p className="text-lg text-neutral-600 mb-8">
-            Nuestro equipo está listo para ayudarte con cualquier consulta sobre 
-            grabado de autopartes, RPA/RPM o cédulas digitales.
+            Para cualquier consulta sobre grabado de autopartes, RPA/RPM o cédulas digitales visita nuestra sección de preguntas frecuentes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contacto" className="btn-primary">
-              Contactanos
-            </Link>
-            <Link href="/faq" className="btn-secondary">
+            <Link href="/faq" className="btn-primary">
               Ver preguntas frecuentes
             </Link>
           </div>
