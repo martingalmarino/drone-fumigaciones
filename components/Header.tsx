@@ -30,6 +30,9 @@ export function Header() {
             <Link href="/mapa" className="text-neutral-600 hover:text-primary-600 transition-colors">
               Mapa
             </Link>
+            <Link href="/guias" className="text-neutral-600 hover:text-primary-600 transition-colors">
+              Guías
+            </Link>
             <Link href="/faq" className="text-neutral-600 hover:text-primary-600 transition-colors">
               FAQ
             </Link>
@@ -69,6 +72,14 @@ export function Header() {
               >
                 <MapPin size={20} />
                 <span>Mapa</span>
+              </Link>
+              <Link 
+                href="/guias" 
+                className="flex items-center space-x-3 text-neutral-600 hover:text-primary-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <FileText size={20} />
+                <span>Guías</span>
               </Link>
               <Link 
                 href="/faq" 
