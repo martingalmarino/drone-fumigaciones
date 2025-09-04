@@ -54,7 +54,7 @@ export default function HomePage() {
               <input
                 type="text"
                 placeholder="Buscar por jurisdicción..."
-                className="w-full pl-12 pr-4 py-4 text-lg border-0 rounded-xl shadow-soft focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                className="w-full pl-12 pr-4 py-5 text-lg border-2 border-neutral-200 rounded-xl shadow-lg focus:ring-4 focus:ring-primary-500/30 focus:border-primary-500 transition-all duration-300 hover:border-primary-300 focus:outline-none"
               />
             </div>
           </div>
