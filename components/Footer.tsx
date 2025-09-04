@@ -106,6 +106,20 @@ export function Footer() {
               <Link href="/privacidad" className="hover:text-white transition-colors">Privacidad</Link>
             </div>
           </div>
+          
+          {/* Developer Credit */}
+          <div className="mt-4 pt-4 border-t border-neutral-800">
+            <p className="text-xs text-neutral-500 text-center">
+              Desarrollado por{' '}
+              <a 
+                href="mailto:m.galmarino@gmail.com" 
+                className="text-neutral-400 hover:text-white transition-colors"
+              >
+                Martín Galmarino
+              </a>
+              {' '}🤖
+            </p>
+          </div>
         </div>
 
         {/* Legal Disclaimer */}
