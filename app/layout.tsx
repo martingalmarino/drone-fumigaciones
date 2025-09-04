@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // Reemplazar con código real
+    google: 'OUp8j_5FVI1zbM-6LRt9ccsRAmmBXJq_8dDHkbINCVk',
   },
   alternates: {
     canonical: 'https://grabadoautopartes.com.ar',
