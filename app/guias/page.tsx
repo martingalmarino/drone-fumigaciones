@@ -4,6 +4,16 @@ import { BookOpen, Calendar, User, ArrowRight } from 'lucide-react'
 // Datos de los artículos (en el futuro esto vendrá de una base de datos)
 const articulos = [
   {
+    id: 'grabado-autopartes-provincias-2025',
+    titulo: 'Grabado de autopartes en Argentina: requisitos provincia por provincia (2025)',
+    descripcion: 'Grabado de autopartes en Argentina 2025: conocé requisitos, leyes y costos provincia por provincia. Evitá multas y problemas en el registro automotor.',
+    fecha: '2025-01-15',
+    autor: 'Equipo Grabado Argentina',
+    categoria: 'Requisitos por Provincia',
+    tiempoLectura: '12 min',
+    destacado: true
+  },
+  {
     id: 'rpa-rpm-cedula-digital',
     titulo: 'Lo que nadie te explicó sobre RPA, RPM y cédula digital (y necesitás saber ya)',
     descripcion: 'Guía completa sobre RPA, RPM y cédula digital en Argentina. Qué significan, cuándo se tramitan y cómo evitar problemas en el Registro del Automotor.',
@@ -11,7 +21,7 @@ const articulos = [
     autor: 'Equipo Grabado Argentina',
     categoria: 'Trámites Registrales',
     tiempoLectura: '8 min',
-    destacado: true
+    destacado: false
   }
 ]
 
