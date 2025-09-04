@@ -28,7 +28,6 @@ export async function getJurisdicciones(): Promise<Jurisdiccion[]> {
     }
     
     if (!fileContents) {
-      console.error('No se pudo encontrar el archivo jurisdicciones.json en ninguna ruta')
       return []
     }
     
@@ -39,7 +38,6 @@ export async function getJurisdicciones(): Promise<Jurisdiccion[]> {
     
     return jurisdicciones
   } catch (error) {
-    console.error('Error loading jurisdicciones:', error)
     return []
   }
 }
@@ -52,7 +50,6 @@ export async function getJurisdiccionBySlug(slug: string): Promise<Jurisdiccion 
     
     return jurisdiccion || null
   } catch (error) {
-    console.error('Error loading jurisdiccion by slug:', error)
     return null
   }
 }
