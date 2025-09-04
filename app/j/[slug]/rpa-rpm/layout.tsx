@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getJurisdicciones } from '@/lib/jurisdicciones'
+import { getJurisdiccionBySlug } from '@/lib/jurisdicciones'
 
 interface RpaRpmLayoutProps {
   children: React.ReactNode
@@ -8,8 +8,7 @@ interface RpaRpmLayoutProps {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const jurisdicciones = await getJurisdicciones()
-  const jurisdiccion = jurisdicciones.find(j => j.slug === params.slug)
+  const jurisdiccion = await getJurisdiccionBySlug(params.slug)
   
   if (!jurisdiccion) {
     return {
