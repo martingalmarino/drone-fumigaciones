@@ -6,6 +6,8 @@ import { Map } from '@/components/Map'
 import { CenterList } from '@/components/CenterList'
 import { Jurisdiccion } from '@/types'
 
+// Force Vercel cache refresh
+
 interface CentrosInteractiveProps {
   jurisdiccion: Jurisdiccion
   centros: any[]

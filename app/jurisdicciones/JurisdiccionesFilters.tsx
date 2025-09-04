@@ -5,6 +5,8 @@ import { Search, Filter } from 'lucide-react'
 import { JurisdictionCard } from '@/components/JurisdictionCard'
 import { Jurisdiccion } from '@/types'
 
+// Force Vercel cache refresh
+
 interface JurisdiccionesFiltersProps {
   jurisdicciones: Jurisdiccion[]
   estadosConCount: Array<{

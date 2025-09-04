@@ -17,6 +17,8 @@ const CenterList = dynamic(() => import('@/components/CenterList').then(mod => (
   ssr: false
 })
 
+// Force Vercel cache refresh
+
 interface MapaInteractiveProps {
   jurisdicciones: Jurisdiccion[]
 }
