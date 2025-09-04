@@ -16,7 +16,9 @@ export function useJurisdicciones() {
           throw new Error('Error al cargar jurisdicciones')
         }
         const data = await response.json()
-        setJurisdicciones(data)
+        // Filtrar solo las jurisdicciones válidas (excluir metadata)
+        const jurisdiccionesValidas = data.filter((item: any) => item.slug && item.nombre)
+        setJurisdicciones(jurisdiccionesValidas)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error desconocido')
       } finally {

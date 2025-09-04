@@ -41,9 +41,9 @@ export function JurisdictionCard({ jurisdiccion }: JurisdictionCardProps) {
 
   const getServiciosDisponibles = () => {
     const servicios = []
-    if (jurisdiccion.grabado.turneroUrl) servicios.push('Grabado')
+    if (jurisdiccion.grabado?.turneroUrl) servicios.push('Grabado')
     if (jurisdiccion.rpa_rpm) servicios.push('RPA/RPM')
-    if (jurisdiccion.cedulas.tipos.length > 0) servicios.push('Cédulas')
+    if (jurisdiccion.cedulas?.tipos?.length > 0) servicios.push('Cédulas')
     return servicios
   }
 
@@ -69,11 +69,11 @@ export function JurisdictionCard({ jurisdiccion }: JurisdictionCardProps) {
           {/* Centros disponibles */}
           <div className="flex items-center space-x-2 text-sm text-neutral-600">
             <MapPin size={16} className="flex-shrink-0" />
-            <span>{jurisdiccion.centros.length} centro{jurisdiccion.centros.length !== 1 ? 's' : ''} disponible{jurisdiccion.centros.length !== 1 ? 's' : ''}</span>
+            <span>{jurisdiccion.centros?.length || 0} centro{(jurisdiccion.centros?.length || 0) !== 1 ? 's' : ''} disponible{(jurisdiccion.centros?.length || 0) !== 1 ? 's' : ''}</span>
           </div>
 
           {/* Turnero disponible */}
-          {jurisdiccion.grabado.turneroUrl && (
+          {jurisdiccion.grabado?.turneroUrl && (
             <div className="flex items-center space-x-2 text-sm text-green-600">
               <Calendar size={16} className="flex-shrink-0" />
               <span>Turnero disponible</span>
