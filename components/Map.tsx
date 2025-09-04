@@ -1,7 +1,26 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Centro } from '@/types'
+import dynamic from 'next/dynamic'
+
+// Dynamic import to avoid SSR issues
+const MapContainer = dynamic(
+  () => import('react-leaflet').then((mod) => mod.MapContainer),
+  { ssr: false }
+)
+const TileLayer = dynamic(
+  () => import('react-leaflet').then((mod) => mod.TileLayer),
+  { ssr: false }
+)
+const Marker = dynamic(
+  () => import('react-leaflet').then((mod) => mod.Marker),
+  { ssr: false }
+)
+const Popup = dynamic(
+  () => import('react-leaflet').then((mod) => mod.Popup),
+  { ssr: false }
+)
 
 interface MapProps {
   centers: Centro[]
@@ -10,145 +29,100 @@ interface MapProps {
 }
 
 export function Map({ centers, onCenterSelect, className = '' }: MapProps) {
-  const mapContainer = useRef<HTMLDivElement>(null)
-  const map = useRef<any>(null)
-  const markers = useRef<any[]>([])
   const [mapLoaded, setMapLoaded] = useState(false)
 
   useEffect(() => {
-    if (!mapContainer.current) return
+    // Import Leaflet CSS
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
+    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY='
+    link.crossOrigin = ''
+    document.head.appendChild(link)
 
-    const initMap = async () => {
-      try {
-        // Dynamic import of MapLibre
-        const maplibregl = await import('maplibre-gl')
-        
-        // TODO: FETCH_MAPLIBRE_TOKEN - Obtener token real para producción
-        const token = process.env.NEXT_PUBLIC_MAPLIBRE_TOKEN || ''
-
-        map.current = new maplibregl.Map({
-          container: mapContainer.current!,
-          style: {
-            version: 8,
-            sources: {
-              'osm': {
-                type: 'raster',
-                tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-                tileSize: 256,
-                attribution: '© OpenStreetMap contributors'
-              }
-            },
-            layers: [
-              {
-                id: 'osm',
-                type: 'raster',
-                source: 'osm',
-                minzoom: 0,
-                maxzoom: 22
-              }
-            ]
-          },
-          center: [-58.3816, -34.6037], // Buenos Aires
-          zoom: 10
-        })
-
-        // Add navigation controls
-        map.current.addControl(new maplibregl.NavigationControl())
-
-        map.current.on('load', () => {
-          setMapLoaded(true)
-        })
-
-      } catch (error) {
-        console.error('Error loading MapLibre:', error)
-      }
-    }
-
-    initMap()
+    setMapLoaded(true)
 
     return () => {
-      if (map.current) {
-        map.current.remove()
+      // Cleanup
+      const existingLink = document.querySelector('link[href*="leaflet"]')
+      if (existingLink) {
+        existingLink.remove()
       }
     }
   }, [])
 
-  useEffect(() => {
-    if (!mapLoaded || !map.current) return
-
-    // Clear existing markers
-    markers.current.forEach(marker => marker.remove())
-    markers.current = []
-
-    // Add new markers
-    centers.forEach((center) => {
-      if (!map.current) return
-
-      // Create custom marker element
-      const el = document.createElement('div')
-      el.className = 'custom-marker'
-      el.innerHTML = `
-        <div class="w-8 h-8 bg-primary-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-          </svg>
-        </div>
-      `
-
-      // Add click event
-      el.addEventListener('click', () => {
-        if (onCenterSelect) {
-          onCenterSelect(center)
-        }
-      })
-
-      // Create and add marker
-      const maplibregl = require('maplibre-gl')
-      const marker = new maplibregl.Marker(el)
-        .setLngLat([center.lng, center.lat])
-        .addTo(map.current)
-
-      markers.current.push(marker)
-    })
-
-    // Fit map to markers if there are any
-    if (centers.length > 0) {
-      const bounds = new (require('maplibre-gl')).LngLatBounds()
-      centers.forEach(center => {
-        bounds.extend([center.lng, center.lat])
-      })
-      map.current.fitBounds(bounds, { padding: 50 })
-    }
-  }, [centers, mapLoaded, onCenterSelect])
-
-  return (
-    <div className={`relative ${className}`}>
-      <div 
-        ref={mapContainer} 
-        className="w-full h-96 rounded-lg overflow-hidden border border-neutral-200"
-      />
-      {!mapLoaded && (
-        <div className="absolute inset-0 bg-neutral-100 flex items-center justify-center">
+  if (!mapLoaded) {
+    return (
+      <div className={`relative ${className}`}>
+        <div className="w-full h-96 rounded-lg overflow-hidden border border-neutral-200 bg-neutral-100 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto mb-2"></div>
             <p className="text-neutral-600">Cargando mapa...</p>
           </div>
         </div>
-      )}
+      </div>
+    )
+  }
+
+  // Default center (Buenos Aires)
+  const defaultCenter: [number, number] = [-34.6037, -58.3816]
+
+  // Calculate center based on markers if available
+  let center: [number, number] = defaultCenter
+  if (centers.length > 0) {
+    const avgLat = centers.reduce((sum, c) => sum + c.lat, 0) / centers.length
+    const avgLng = centers.reduce((sum, c) => sum + c.lng, 0) / centers.length
+    center = [avgLat, avgLng]
+  }
+
+  return (
+    <div className={`relative ${className}`}>
+      <MapContainer
+        center={center}
+        zoom={centers.length > 0 ? 8 : 10}
+        className="w-full h-96 rounded-lg overflow-hidden border border-neutral-200"
+        style={{ height: '384px' }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        
+        {centers.map((center, index) => (
+          <Marker
+            key={`${center.id}-${index}`}
+            position={[center.lat, center.lng]}
+            eventHandlers={{
+              click: () => {
+                if (onCenterSelect) {
+                  onCenterSelect(center)
+                }
+              }
+            }}
+          >
+            <Popup>
+              <div className="p-2">
+                <h3 className="font-semibold text-neutral-900 mb-2">{center.nombre}</h3>
+                <p className="text-sm text-neutral-600 mb-1">
+                  <strong>Jurisdicción:</strong> {center.jurisdiccion || 'N/A'}
+                </p>
+                <p className="text-sm text-neutral-600 mb-1">
+                  <strong>Servicios:</strong> {center.servicios.join(', ')}
+                </p>
+                <p className="text-sm text-neutral-600 mb-1">
+                  <strong>Horarios:</strong> {center.horarios}
+                </p>
+                <p className="text-sm text-neutral-600 mb-1">
+                  <strong>Teléfono:</strong> {center.telefono}
+                </p>
+                <p className="text-sm text-neutral-600">
+                  <strong>Dirección:</strong> {center.direccion}
+                </p>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     </div>
   )
-}
-
-// Add custom styles for markers
-if (typeof document !== 'undefined') {
-  const style = document.createElement('style')
-  style.textContent = `
-    .custom-marker {
-      cursor: pointer;
-    }
-    .custom-marker:hover {
-      z-index: 1000;
-    }
-  `
-  document.head.appendChild(style)
 }
