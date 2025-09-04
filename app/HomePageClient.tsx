@@ -1,6 +1,8 @@
 'use client'
 
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Search, MapPin, FileText, Calendar, CheckCircle } from 'lucide-react'
 import { JurisdictionCard } from '@/components/JurisdictionCard'
 import { useJurisdicciones } from '@/lib/useJurisdicciones'

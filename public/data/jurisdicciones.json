@@ -1,5 +1,11 @@
 [
   {
+    "_metadata": {
+      "note": "Los enlaces de turneros pueden cambiar. Verificar periódicamente con las autoridades competentes.",
+      "last_updated": "2024-01-15"
+    }
+  },
+  {
     "slug": "caba",
     "nombre": "Ciudad Autónoma de Buenos Aires",
     "estadoGrabado": "obligatorio",
@@ -114,7 +120,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.gba.gob.ar/grabado",
+      "turneroUrl": "https://www.gba.gob.ar/tramites/grabado-de-autopartes",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo",
@@ -186,7 +192,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.cba.gov.ar/grabado",
+      "turneroUrl": "https://www.cba.gov.ar/tramites/grabado-autopartes",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo",
@@ -246,7 +252,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.santafe.gob.ar/grabado",
+      "turneroUrl": "https://www.santafe.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -378,7 +384,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.rionegro.gob.ar/verificacion",
+      "turneroUrl": "https://www.rionegro.gov.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo",
@@ -458,7 +464,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.sanjuan.gob.ar/verificacion",
+      "turneroUrl": "https://www.sanjuan.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo",
@@ -528,7 +534,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.tucuman.gob.ar/verificacion",
+      "turneroUrl": "https://www.tucuman.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo",
@@ -593,7 +599,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.chaco.gob.ar/verificacion",
+      "turneroUrl": "https://www.chaco.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo",
@@ -722,7 +728,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.catamarca.gob.ar/verificacion",
+      "turneroUrl": "https://www.catamarca.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -786,7 +792,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.chubut.gob.ar/verificacion",
+      "turneroUrl": "https://www.chubut.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -850,7 +856,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.corrientes.gob.ar/verificacion",
+      "turneroUrl": "https://www.corrientes.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -914,7 +920,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.entrerios.gob.ar/verificacion",
+      "turneroUrl": "https://www.entrerios.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -978,7 +984,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.formosa.gob.ar/verificacion",
+      "turneroUrl": "https://www.formosa.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1042,7 +1048,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.jujuy.gob.ar/verificacion",
+      "turneroUrl": "https://www.jujuy.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1106,7 +1112,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.lapampa.gob.ar/verificacion",
+      "turneroUrl": "https://www.lapampa.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1170,7 +1176,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.larioja.gob.ar/verificacion",
+      "turneroUrl": "https://www.larioja.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1234,7 +1240,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.neuquen.gob.ar/verificacion",
+      "turneroUrl": "https://www.neuquen.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1298,7 +1304,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.salta.gob.ar/verificacion",
+      "turneroUrl": "https://www.salta.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1362,7 +1368,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.sanluis.gob.ar/verificacion",
+      "turneroUrl": "https://www.sanluis.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1426,7 +1432,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.santacruz.gob.ar/verificacion",
+      "turneroUrl": "https://www.santacruz.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1490,7 +1496,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.santiago.gob.ar/verificacion",
+      "turneroUrl": "https://www.santiago.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
@@ -1554,7 +1560,7 @@
       }
     ],
     "grabado": {
-      "turneroUrl": "https://turnos.tierradelfuego.gob.ar/verificacion",
+      "turneroUrl": "https://www.tierradelfuego.gob.ar/tramites/verificacion-vehicular",
       "requisitos": [
         "DNI del titular",
         "Cédula del vehículo"
