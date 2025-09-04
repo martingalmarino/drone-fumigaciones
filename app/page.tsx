@@ -60,11 +60,17 @@ export default function HomePage() {
           </div>
 
           {/* Quick Actions */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/jurisdicciones" className="btn-primary">
+          <div className="flex flex-wrap justify-center gap-6">
+            <Link 
+              href="/jurisdicciones" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary-500/30 focus:ring-offset-2"
+            >
               Ver todas las jurisdicciones
             </Link>
-            <Link href="/mapa" className="btn-secondary">
+            <Link 
+              href="/mapa" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold text-lg rounded-xl border-2 border-neutral-200 hover:border-primary-300 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary-500/30 focus:ring-offset-2 hover:text-primary-700"
+            >
               <MapPin size={20} className="mr-2" />
               Mapa de centros
             </Link>
@@ -101,7 +107,10 @@ export default function HomePage() {
           )}
 
           <div className="text-center mt-8">
-            <Link href="/jurisdicciones" className="btn-secondary">
+            <Link 
+              href="/jurisdicciones" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold text-lg rounded-xl border-2 border-neutral-200 hover:border-primary-300 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary-500/30 focus:ring-offset-2 hover:text-primary-700"
+            >
               Ver todas las jurisdicciones
             </Link>
           </div>
