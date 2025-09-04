@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -139,4 +138,27 @@
   position: relative !important;
   z-index: 1 !important;
   isolation: isolate !important;
+}
+
+/* Optimizaciones de rendimiento */
+@layer utilities {
+  /* Optimización de scroll */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimización de rendering */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  /* Optimización de layout */
+  .contain-layout {
+    contain: layout;
+  }
+  
+  /* Optimización de paint */
+  .contain-paint {
+    contain: paint;
+  }
 }

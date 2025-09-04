@@ -3,7 +3,13 @@
 import { useState, useMemo } from 'react'
 import { Search, Filter, MapPin, Globe } from 'lucide-react'
 import { useJurisdicciones } from '@/lib/useJurisdicciones'
-import { Map } from '@/components/Map'
+import dynamic from 'next/dynamic'
+
+// Lazy load del mapa para mejor rendimiento
+const Map = dynamic(() => import('@/components/Map'), {
+  loading: () => <div className="h-96 bg-neutral-100 rounded-lg flex items-center justify-center">Cargando mapa...</div>,
+  ssr: false
+})
 import { CenterList } from '@/components/CenterList'
 
 export default function MapaPage() {

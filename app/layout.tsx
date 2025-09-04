@@ -4,7 +4,11 @@ import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -87,6 +91,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.grabadoautopartes.com.ar',
+  },
+  other: {
+    'preload': '/data/jurisdicciones.json',
   },
 }
 
