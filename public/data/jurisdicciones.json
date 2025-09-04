@@ -295,23 +295,35 @@
   {
     "slug": "mendoza",
     "nombre": "Provincia de Mendoza",
-    "estadoGrabado": "no_aplica",
+    "estadoGrabado": "obligatorio",
     "fuentes": [
       {
-        "nombre": "Gobierno de Mendoza",
-        "url": "https://www.mendoza.gob.ar/",
+        "nombre": "Verificación Oficial Mendoza",
+        "url": "https://www.verificacionmendoza.com.ar/",
         "fecha": "2024-01-15"
       }
     ],
     "grabado": {
-      "turneroUrl": null,
-      "requisitos": [],
-      "costo": null,
-      "exenciones": [],
+      "turneroUrl": "https://www.verificacionmendoza.com.ar/",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio",
+        "Pago de tasa provincial"
+      ],
+      "costo": "$9,500 ARS",
+      "exenciones": [
+        "Vehículos de más de 30 años",
+        "Vehículos de colección certificados"
+      ],
       "faqs": [
         {
-          "pregunta": "¿Por qué no es obligatorio el grabado en Mendoza?",
-          "respuesta": "La provincia no ha implementado aún la normativa de grabado obligatorio."
+          "pregunta": "¿Por qué es obligatorio el grabado en Mendoza?",
+          "respuesta": "Según las leyes 8.248/8.626, la verificación técnica es obligatoria para todos los vehículos."
+        },
+        {
+          "pregunta": "¿Dónde puedo hacer la verificación?",
+          "respuesta": "En los centros autorizados de verificación oficial de la provincia."
         }
       ]
     },
@@ -319,11 +331,13 @@
       "cuandoAplica": "Para vehículos de más de 18 años",
       "pasos": [
         "Solicitar turno",
-        "Presentar documentación"
+        "Presentar documentación",
+        "Pagar tasa correspondiente"
       ],
       "documentacion": [
         "DNI del titular",
-        "Cédula del vehículo"
+        "Cédula del vehículo",
+        "Certificado de dominio"
       ]
     },
     "cedulas": {
@@ -342,13 +356,163 @@
     "centros": [
       {
         "id": "mza-001",
-        "nombre": "Centro de Servicios Mendoza",
+        "nombre": "Centro de Verificación Oficial Mendoza",
         "lat": -32.8908,
         "lng": -68.8272,
-        "servicios": ["rpa_rpm", "cedulas"],
+        "servicios": ["grabado", "rpa_rpm", "cedulas"],
         "horarios": "Lunes a Viernes 8:00-16:00",
         "telefono": "0261-123-4567",
         "direccion": "Av. San Martín 1234"
+      }
+    ]
+  },
+  {
+    "slug": "rio-negro",
+    "nombre": "Provincia de Río Negro",
+    "estadoGrabado": "obligatorio",
+    "fuentes": [
+      {
+        "nombre": "Legislatura de Río Negro",
+        "url": "https://web.legisrn.gov.ar/legislativa/legislacion/ver?id=9862",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.rionegro.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio",
+        "Pago de tasa provincial"
+      ],
+      "costo": "$11,000 ARS",
+      "exenciones": [
+        "Vehículos de más de 25 años",
+        "Vehículos de colección"
+      ],
+      "faqs": [
+        {
+          "pregunta": "¿Dónde puedo hacer la verificación?",
+          "respuesta": "En los centros autorizados de verificación de la provincia de Río Negro."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Para vehículos de más de 15 años",
+      "pasos": [
+        "Solicitar turno",
+        "Presentar documentación",
+        "Pagar tasa correspondiente"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "rn-001",
+        "nombre": "Centro de Verificación Viedma",
+        "lat": -40.8135,
+        "lng": -62.9967,
+        "servicios": ["grabado", "rpa_rpm", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "02920-123-456",
+        "direccion": "Av. Costanera 1234"
+      },
+      {
+        "id": "rn-002",
+        "nombre": "Centro de Verificación Bariloche",
+        "lat": -41.1335,
+        "lng": -71.3103,
+        "servicios": ["grabado", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "02944-123-456",
+        "direccion": "Av. Bustillo 5678"
+      }
+    ]
+  },
+  {
+    "slug": "san-juan",
+    "nombre": "Provincia de San Juan",
+    "estadoGrabado": "obligatorio",
+    "fuentes": [
+      {
+        "nombre": "Digesto San Juan - Ley 1707-C",
+        "url": "https://digestosanjuan.gob.ar/digesto/detalle_ley/4fb3ff6c-e8f9-4140-927f-a13a0744c275",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.sanjuan.gob.ar/verificacion",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio",
+        "Pago de tasa provincial"
+      ],
+      "costo": "$10,500 ARS",
+      "exenciones": [
+        "Vehículos de más de 20 años",
+        "Vehículos de colección certificados"
+      ],
+      "faqs": [
+        {
+          "pregunta": "¿Por qué es obligatorio en San Juan?",
+          "respuesta": "Según la Ley 1707-C y Decreto 2-C, la verificación técnica es obligatoria."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Para vehículos de más de 12 años",
+      "pasos": [
+        "Solicitar turno",
+        "Presentar documentación",
+        "Pagar tasa correspondiente"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "sj-001",
+        "nombre": "Centro de Verificación San Juan Capital",
+        "lat": -31.5375,
+        "lng": -68.5364,
+        "servicios": ["grabado", "rpa_rpm", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0264-123-4567",
+        "direccion": "Av. Libertador 1234"
       }
     ]
   }
