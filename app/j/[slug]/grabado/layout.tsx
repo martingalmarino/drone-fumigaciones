@@ -39,9 +39,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `Grabado de Autopartes en ${jurisdiccion.nombre}`,
       description: `Información completa sobre grabado de autopartes en ${jurisdiccion.nombre}.`,
     },
-    alternates: {
-      canonical: `https://www.grabadoautopartes.com.ar/j/${params.slug}/grabado`,
-    },
   }
 }
 

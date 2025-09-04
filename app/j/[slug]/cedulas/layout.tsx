@@ -38,9 +38,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `Cédulas Digitales en ${jurisdiccion.nombre}`,
       description: `Información sobre cédulas digitales en ${jurisdiccion.nombre}.`,
     },
-    alternates: {
-      canonical: `https://www.grabadoautopartes.com.ar/j/${params.slug}/cedulas`,
-    },
   }
 }
 

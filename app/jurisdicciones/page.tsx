@@ -19,9 +19,6 @@ export const metadata: Metadata = {
     description: 'Lista completa de todas las jurisdicciones de Argentina con información sobre grabado de autopartes, RPA/RPM y cédulas digitales.',
     url: 'https://www.grabadoautopartes.com.ar/jurisdicciones',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/jurisdicciones',
-  },
 }
 
 export default function JurisdiccionesPage() {

@@ -16,9 +16,6 @@ export const metadata: Metadata = {
     description: 'Respuestas a las preguntas más frecuentes sobre grabado de autopartes en Argentina.',
     url: 'https://www.grabadoautopartes.com.ar/faq',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/faq',
-  },
 }
 
 export default function FaqLayout({

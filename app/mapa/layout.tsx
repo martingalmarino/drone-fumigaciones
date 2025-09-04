@@ -16,9 +16,6 @@ export const metadata: Metadata = {
     description: 'Mapa interactivo con todos los centros de grabado de autopartes en Argentina.',
     url: 'https://www.grabadoautopartes.com.ar/mapa',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/mapa',
-  },
 }
 
 export default function MapaLayout({

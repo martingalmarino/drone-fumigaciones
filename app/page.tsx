@@ -29,9 +29,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar',
-  },
 }
 
 export default function HomePage() {

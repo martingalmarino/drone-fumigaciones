@@ -39,9 +39,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `Centros de Grabado en ${jurisdiccion.nombre}`,
       description: `Lista completa de centros de grabado en ${jurisdiccion.nombre}.`,
     },
-    alternates: {
-      canonical: `https://www.grabadoautopartes.com.ar/j/${params.slug}/centros`,
-    },
   }
 }
 

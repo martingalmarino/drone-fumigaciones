@@ -39,9 +39,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `RPA y RPM en ${jurisdiccion.nombre}`,
       description: `Información sobre RPA y RPM en ${jurisdiccion.nombre}.`,
     },
-    alternates: {
-      canonical: `https://www.grabadoautopartes.com.ar/j/${params.slug}/rpa-rpm`,
-    },
   }
 }
 

@@ -17,9 +17,6 @@ export const metadata = {
     description: 'Guía completa sobre RPA, RPM y cédula digital en Argentina. Qué significan, cuándo se tramitan y cómo evitar problemas en el Registro del Automotor.',
     url: 'https://www.grabadoautopartes.com.ar/guias/rpa-rpm-cedula-digital',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/guias/rpa-rpm-cedula-digital',
-  },
 }
 
 export default function ArticuloRPARPM() {

@@ -4,9 +4,6 @@ export const metadata: Metadata = {
   title: 'Términos y Condiciones - Grabado Autopartes Argentina',
   description: 'Términos y condiciones de uso del sitio web de grabado de autopartes Argentina. Información legal sobre el uso de la plataforma.',
   robots: 'noindex, follow',
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/terminos',
-  },
 }
 
 export default function TerminosPage() {

@@ -92,9 +92,6 @@ export const metadata: Metadata = {
     ],
     apple: '/favicon.svg',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar',
-  },
   other: {
     'preload': '/data/jurisdicciones.json',
   },

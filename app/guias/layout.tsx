@@ -16,9 +16,6 @@ export const metadata: Metadata = {
     description: 'Guías completas sobre grabado de autopartes y trámites registrales en Argentina.',
     url: 'https://www.grabadoautopartes.com.ar/guias',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/guias',
-  },
 }
 
 export default function GuiasLayout({

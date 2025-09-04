@@ -17,9 +17,6 @@ export const metadata = {
     description: 'Grabado de autopartes en Argentina 2025: conocé requisitos, leyes y costos provincia por provincia. Evitá multas y problemas en el registro automotor.',
     url: 'https://www.grabadoautopartes.com.ar/guias/grabado-autopartes-provincias-2025',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/guias/grabado-autopartes-provincias-2025',
-  },
 }
 
 export default function ArticuloGrabadoProvincias() {

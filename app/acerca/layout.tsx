@@ -16,9 +16,6 @@ export const metadata: Metadata = {
     description: 'Conoce más sobre nuestro sitio web de información sobre grabado de autopartes.',
     url: 'https://www.grabadoautopartes.com.ar/acerca',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/acerca',
-  },
 }
 
 export default function AcercaLayout({

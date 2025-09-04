@@ -16,9 +16,6 @@ export const metadata: Metadata = {
     description: 'Formulario de contacto y enlaces útiles para consultas sobre grabado de autopartes.',
     url: 'https://www.grabadoautopartes.com.ar/contacto',
   },
-  alternates: {
-    canonical: 'https://www.grabadoautopartes.com.ar/contacto',
-  },
 }
 
 export default function ContactoLayout({
