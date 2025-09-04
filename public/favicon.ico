@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular -->
+  <circle cx="16" cy="16" r="16" fill="#1f2937"/>
+  
+  <!-- Engranaje exterior -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+  
+  <!-- Dientes del engranaje -->
+  <rect x="15" y="2" width="2" height="4" fill="#3b82f6"/>
+  <rect x="15" y="26" width="2" height="4" fill="#3b82f6"/>
+  <rect x="2" y="15" width="4" height="2" fill="#3b82f6"/>
+  <rect x="26" y="15" width="4" height="2" fill="#3b82f6"/>
+  
+  <!-- Dientes diagonales -->
+  <rect x="22.5" y="5.5" width="2" height="3" fill="#3b82f6" transform="rotate(45 23.5 7)"/>
+  <rect x="7.5" y="23.5" width="2" height="3" fill="#3b82f6" transform="rotate(45 8.5 25)"/>
+  <rect x="5.5" y="7.5" width="2" height="3" fill="#3b82f6" transform="rotate(-45 6.5 9)"/>
+  <rect x="24.5" y="22.5" width="2" height="3" fill="#3b82f6" transform="rotate(-45 25.5 24)"/>
+  
+  <!-- Círculo central -->
+  <circle cx="16" cy="16" r="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  
+  <!-- Letras GA -->
+  <text x="16" y="20" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#3b82f6">GA</text>
+</svg>

@@ -78,6 +78,13 @@ export const metadata: Metadata = {
   verification: {
     google: 'OUp8j_5FVI1zbM-6LRt9ccsRAmmBXJq_8dDHkbINCVk',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/favicon.svg',
+  },
   alternates: {
     canonical: 'https://www.grabadoautopartes.com.ar',
   },
