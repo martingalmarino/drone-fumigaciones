@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.grabadoautopartes.com.ar/sitemap.xml
+
+# Crawl-delay para ser respetuoso con los servidores
+Crawl-delay: 1
+
+# Permitir acceso a recursos estáticos
+Allow: /_next/static/
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /data/
+
+# Bloquear acceso a archivos de desarrollo
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /node_modules/
