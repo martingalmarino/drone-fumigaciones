@@ -1,0 +1,355 @@
+[
+  {
+    "slug": "caba",
+    "nombre": "Ciudad Autónoma de Buenos Aires",
+    "estadoGrabado": "obligatorio",
+    "fuentes": [
+      {
+        "nombre": "Gobierno de la Ciudad",
+        "url": "https://www.buenosaires.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.buenosaires.gob.ar/grabado-autopartes",
+      "requisitos": [
+        "DNI del titular del vehículo",
+        "Cédula verde o azul",
+        "Certificado de dominio",
+        "Pago de tasa municipal"
+      ],
+      "costo": "$15,000 ARS",
+      "exenciones": [
+        "Vehículos de más de 20 años",
+        "Vehículos de colección"
+      ],
+      "faqs": [
+        {
+          "pregunta": "¿Cuánto tiempo tarda el grabado?",
+          "respuesta": "El proceso completo toma aproximadamente 2 horas."
+        },
+        {
+          "pregunta": "¿Puedo hacer el grabado en cualquier momento?",
+          "respuesta": "Sí, pero debes solicitar turno previamente."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Para vehículos de más de 10 años o con modificaciones",
+      "pasos": [
+        "Solicitar turno en el registro",
+        "Presentar documentación requerida",
+        "Pagar tasa correspondiente",
+        "Recibir certificado RPA/RPM"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio",
+        "Formulario RPA/RPM"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica con chip",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad",
+            "Solicitar cédula digital",
+            "Recibir en domicilio"
+          ]
+        },
+        {
+          "nombre": "Cédula para Autorizado",
+          "descripcion": "Cédula física para representantes",
+          "pasos": [
+            "Solicitar turno en el registro",
+            "Presentar documentación",
+            "Pagar tasa correspondiente",
+            "Retirar en el registro"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "pregunta": "¿La cédula digital es válida para conducir?",
+          "respuesta": "Sí, tiene la misma validez que la cédula física."
+        }
+      ]
+    },
+    "centros": [
+      {
+        "id": "caba-001",
+        "nombre": "Centro de Grabado CABA Norte",
+        "lat": -34.6037,
+        "lng": -58.3816,
+        "servicios": ["grabado", "rpa_rpm", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "011-1234-5678",
+        "direccion": "Av. del Libertador 1234"
+      },
+      {
+        "id": "caba-002",
+        "nombre": "Centro de Grabado CABA Sur",
+        "lat": -34.6237,
+        "lng": -58.3816,
+        "servicios": ["grabado", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "011-8765-4321",
+        "direccion": "Av. San Juan 5678"
+      }
+    ]
+  },
+  {
+    "slug": "buenos-aires",
+    "nombre": "Provincia de Buenos Aires",
+    "estadoGrabado": "obligatorio",
+    "fuentes": [
+      {
+        "nombre": "Gobierno de la Provincia",
+        "url": "https://www.gba.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.gba.gob.ar/grabado",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio",
+        "Pago de tasa provincial"
+      ],
+      "costo": "$12,000 ARS",
+      "exenciones": [
+        "Vehículos de más de 25 años",
+        "Vehículos de colección certificados"
+      ],
+      "faqs": [
+        {
+          "pregunta": "¿Dónde puedo hacer el grabado?",
+          "respuesta": "En cualquier centro autorizado de la provincia."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Para vehículos de más de 15 años",
+      "pasos": [
+        "Solicitar turno",
+        "Presentar documentación",
+        "Pagar tasa",
+        "Recibir certificado"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad",
+            "Solicitar cédula digital"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "ba-001",
+        "nombre": "Centro de Grabado La Plata",
+        "lat": -34.9215,
+        "lng": -57.9545,
+        "servicios": ["grabado", "rpa_rpm", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0221-123-4567",
+        "direccion": "Calle 7 1234"
+      }
+    ]
+  },
+  {
+    "slug": "cordoba",
+    "nombre": "Provincia de Córdoba",
+    "estadoGrabado": "obligatorio",
+    "fuentes": [
+      {
+        "nombre": "Gobierno de Córdoba",
+        "url": "https://www.cba.gov.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.cba.gov.ar/grabado",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo",
+        "Certificado de dominio"
+      ],
+      "costo": "$10,000 ARS",
+      "exenciones": [],
+      "faqs": []
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Para vehículos de más de 12 años",
+      "pasos": [
+        "Solicitar turno",
+        "Presentar documentación",
+        "Pagar tasa"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "cba-001",
+        "nombre": "Centro de Grabado Córdoba Capital",
+        "lat": -31.4201,
+        "lng": -64.1888,
+        "servicios": ["grabado", "rpa_rpm", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0351-123-4567",
+        "direccion": "Av. Colón 1234"
+      }
+    ]
+  },
+  {
+    "slug": "santa-fe",
+    "nombre": "Provincia de Santa Fe",
+    "estadoGrabado": "opcional",
+    "fuentes": [
+      {
+        "nombre": "Gobierno de Santa Fe",
+        "url": "https://www.santafe.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": "https://turnos.santafe.gob.ar/grabado",
+      "requisitos": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ],
+      "costo": "$8,000 ARS",
+      "exenciones": [],
+      "faqs": []
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Para vehículos de más de 20 años",
+      "pasos": [
+        "Solicitar turno",
+        "Presentar documentación"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "sf-001",
+        "nombre": "Centro de Grabado Rosario",
+        "lat": -32.9442,
+        "lng": -60.6505,
+        "servicios": ["grabado", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0341-123-4567",
+        "direccion": "Av. Pellegrini 1234"
+      }
+    ]
+  },
+  {
+    "slug": "mendoza",
+    "nombre": "Provincia de Mendoza",
+    "estadoGrabado": "no_aplica",
+    "fuentes": [
+      {
+        "nombre": "Gobierno de Mendoza",
+        "url": "https://www.mendoza.gob.ar/",
+        "fecha": "2024-01-15"
+      }
+    ],
+    "grabado": {
+      "turneroUrl": null,
+      "requisitos": [],
+      "costo": null,
+      "exenciones": [],
+      "faqs": [
+        {
+          "pregunta": "¿Por qué no es obligatorio el grabado en Mendoza?",
+          "respuesta": "La provincia no ha implementado aún la normativa de grabado obligatorio."
+        }
+      ]
+    },
+    "rpa_rpm": {
+      "cuandoAplica": "Para vehículos de más de 18 años",
+      "pasos": [
+        "Solicitar turno",
+        "Presentar documentación"
+      ],
+      "documentacion": [
+        "DNI del titular",
+        "Cédula del vehículo"
+      ]
+    },
+    "cedulas": {
+      "tipos": [
+        {
+          "nombre": "Cédula Digital",
+          "descripcion": "Cédula electrónica",
+          "pasos": [
+            "Descargar app Mi Argentina",
+            "Verificar identidad"
+          ]
+        }
+      ],
+      "faqs": []
+    },
+    "centros": [
+      {
+        "id": "mza-001",
+        "nombre": "Centro de Servicios Mendoza",
+        "lat": -32.8908,
+        "lng": -68.8272,
+        "servicios": ["rpa_rpm", "cedulas"],
+        "horarios": "Lunes a Viernes 8:00-16:00",
+        "telefono": "0261-123-4567",
+        "direccion": "Av. San Martín 1234"
+      }
+    ]
+  }
+]

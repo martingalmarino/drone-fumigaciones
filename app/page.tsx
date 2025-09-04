@@ -1,9 +1,38 @@
+'use client'
+
 import Link from 'next/link'
 import { Search, MapPin, FileText, Calendar, CheckCircle } from 'lucide-react'
 import { JurisdictionCard } from '@/components/JurisdictionCard'
 import { useJurisdicciones } from '@/lib/useJurisdicciones'
 
 export default function HomePage() {
+  const { jurisdicciones, loading, error } = useJurisdicciones()
+
+  // Obtener las 3 jurisdicciones más populares
+  const jurisdiccionesPopulares = jurisdicciones.slice(0, 3)
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600 mx-auto mb-4"></div>
+          <p className="text-lg text-neutral-600">Cargando jurisdicciones...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg text-red-600 mb-4">Error al cargar las jurisdicciones</p>
+          <p className="text-neutral-600">{error}</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -56,41 +85,20 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <JurisdictionCard 
-              jurisdiccion={{
-                slug: 'caba',
-                nombre: 'Ciudad Autónoma de Buenos Aires',
-                estadoGrabado: 'obligatorio',
-                fuentes: [{ nombre: 'Gobierno de la Ciudad', url: '', fecha: '2024-01-15' }],
-                grabado: { turneroUrl: 'https://example.com', requisitos: [], costo: '$15,000', exenciones: [], faqs: [] },
-                cedulas: { tipos: [], faqs: [] },
-                centros: [{ id: '1', nombre: 'Centro Norte', lat: 0, lng: 0, servicios: [], horarios: '', telefono: '', direccion: '' }]
-              }}
-            />
-            <JurisdictionCard 
-              jurisdiccion={{
-                slug: 'buenos-aires',
-                nombre: 'Provincia de Buenos Aires',
-                estadoGrabado: 'obligatorio',
-                fuentes: [{ nombre: 'Gobierno de la Provincia', url: '', fecha: '2024-01-15' }],
-                grabado: { turneroUrl: 'https://example.com', requisitos: [], costo: '$12,000', exenciones: [], faqs: [] },
-                cedulas: { tipos: [], faqs: [] },
-                centros: [{ id: '1', nombre: 'Centro La Plata', lat: 0, lng: 0, servicios: [], horarios: '', telefono: '', direccion: '' }]
-              }}
-            />
-            <JurisdictionCard 
-              jurisdiccion={{
-                slug: 'cordoba',
-                nombre: 'Provincia de Córdoba',
-                estadoGrabado: 'obligatorio',
-                fuentes: [{ nombre: 'Gobierno de Córdoba', url: '', fecha: '2024-01-15' }],
-                grabado: { turneroUrl: 'https://example.com', requisitos: [], costo: '$10,000', exenciones: [], faqs: [] },
-                cedulas: { tipos: [], faqs: [] },
-                centros: [{ id: '1', nombre: 'Centro Capital', lat: 0, lng: 0, servicios: [], horarios: '', telefono: '', direccion: '' }]
-              }}
-            />
-          </div>
+          {jurisdiccionesPopulares.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {jurisdiccionesPopulares.map((jurisdiccion) => (
+                <JurisdictionCard 
+                  key={jurisdiccion.slug}
+                  jurisdiccion={jurisdiccion}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <p className="text-neutral-600">No hay jurisdicciones disponibles</p>
+            </div>
+          )}
 
           <div className="text-center mt-8">
             <Link href="/jurisdicciones" className="btn-secondary">
