@@ -106,6 +106,12 @@ const provinces = [
 
 const recentArticles = [
   {
+    title: '¿Es legal fumigar con drones en Argentina? – Regulaciones y requisitos (2025)',
+    excerpt: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
+    slug: 'es-legal-fumigar-con-drones-argentina-2025',
+    category: 'Normativa'
+  },
+  {
     title: 'Drones vs. aviones vs. pulverizadoras terrestres: comparativa de costos y efectividad',
     excerpt: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
     slug: 'drones-vs-aviones-vs-pulverizadoras',
