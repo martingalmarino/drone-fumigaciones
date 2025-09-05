@@ -228,7 +228,7 @@ export default function HomePage() {
                 Solicitar Cotización
               </Link>
             </Button>
-            <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary min-h-[48px] w-full sm:w-auto">
+            <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary min-h-[48px] w-full sm:w-auto">
               <Link href="/directorio">
                 <Users className="mr-2 h-5 w-5" />
                 Ver Directorio
