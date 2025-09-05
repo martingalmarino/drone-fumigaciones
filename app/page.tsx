@@ -211,7 +211,7 @@ export default function HomePage() {
                     <MapPin className="h-5 w-5 text-gray-400 flex-shrink-0" />
                   </div>
                   <CardDescription className="text-sm sm:text-base">
-                    {province.companies} {province.companies === 1 ? 'empresa' : 'empresas'} certificada{province.companies === 1 ? '' : 's'}
+                    {province.companies} {province.companies === 1 ? 'empresa' : 'empresas'} certificada{province.companies === 1 ? '' : 's'} • Actualizado
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
