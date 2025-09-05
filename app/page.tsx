@@ -132,11 +132,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {provinces.map((province) => (
               <Card key={province.slug} className="relative overflow-hidden h-full">
-                {province.featured && (
-                  <Badge className="absolute top-3 right-3 bg-primary text-xs">
-                    Destacado
-                  </Badge>
-                )}
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-lg sm:text-xl">{province.name}</CardTitle>
