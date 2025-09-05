@@ -359,15 +359,17 @@ export default async function DirectorioPage() {
                         </div>
                       </div>
                       
-                      <div className="ml-6 flex flex-col space-y-2">
-                        <Button asChild size="sm">
-                          <Link href={`/directorio/empresa/${company.slug}`}>
+                      <div className="ml-6 flex flex-col sm:flex-row gap-2">
+                        <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-white font-medium">
+                          <Link href={`/directorio/empresa/${company.slug}`} className="flex items-center justify-center">
+                            <Users className="h-4 w-4 mr-2" />
                             Ver Perfil
                           </Link>
                         </Button>
-                        <Button asChild variant="outline" size="sm">
-                          <Link href={`/cotizar?empresa=${company.slug}`}>
-                            Solicitar Cotización
+                        <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-white font-medium">
+                          <Link href={`/cotizar?empresa=${company.slug}`} className="flex items-center justify-center">
+                            <Calculator className="h-4 w-4 mr-2" />
+                            Cotizar
                           </Link>
                         </Button>
                       </div>

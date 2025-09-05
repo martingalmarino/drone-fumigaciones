@@ -290,14 +290,16 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
                         ))}
                       </div>
                       
-                      <div className="flex space-x-2">
-                        <Button asChild size="sm" className="flex-1">
-                          <Link href={`/directorio/empresa/${company.slug}`}>
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <Button asChild size="sm" className="flex-1 bg-primary hover:bg-primary/90 text-white font-medium">
+                          <Link href={`/directorio/empresa/${company.slug}`} className="flex items-center justify-center">
+                            <Users className="h-4 w-4 mr-2" />
                             Ver Perfil
                           </Link>
                         </Button>
-                        <Button asChild variant="outline" size="sm" className="flex-1">
-                          <Link href={`/cotizar?empresa=${company.slug}`}>
+                        <Button asChild variant="outline" size="sm" className="flex-1 border-primary text-primary hover:bg-primary hover:text-white font-medium">
+                          <Link href={`/cotizar?empresa=${company.slug}`} className="flex items-center justify-center">
+                            <Calculator className="h-4 w-4 mr-2" />
                             Cotizar
                           </Link>
                         </Button>
@@ -389,15 +391,17 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
                       </div>
                       
                       {/* Action Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-2">
-                        <Button asChild size="sm" className="flex-1">
-                          <Link href={`/directorio/empresa/${company.slug}`}>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button asChild size="sm" className="flex-1 bg-primary hover:bg-primary/90 text-white font-medium">
+                          <Link href={`/directorio/empresa/${company.slug}`} className="flex items-center justify-center">
+                            <Users className="h-4 w-4 mr-2" />
                             Ver Perfil
                           </Link>
                         </Button>
-                        <Button asChild variant="outline" size="sm" className="flex-1">
-                          <Link href={`/cotizar?empresa=${company.slug}`}>
-                            Solicitar Cotización
+                        <Button asChild variant="outline" size="sm" className="flex-1 border-primary text-primary hover:bg-primary hover:text-white font-medium">
+                          <Link href={`/cotizar?empresa=${company.slug}`} className="flex items-center justify-center">
+                            <Calculator className="h-4 w-4 mr-2" />
+                            Cotizar
                           </Link>
                         </Button>
                       </div>
