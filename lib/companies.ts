@@ -122,7 +122,7 @@ export function getCompanyBySlug(slug: string) {
 export function getCompanyStats() {
   const totalCompanies = allCompanies.length
   const featuredCompanies = allCompanies.filter(company => company.isFeatured).length
-  const provinces = [...new Set(allCompanies.map(company => company.province))]
+  const provinces = Array.from(new Set(allCompanies.map(company => company.province)))
   
   return {
     totalCompanies,
