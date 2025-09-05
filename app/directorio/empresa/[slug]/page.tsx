@@ -277,12 +277,6 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
                     <span className="text-gray-600">Destacada:</span>
                     <span className="font-medium">{company.isFeatured ? 'Sí' : 'No'}</span>
                   </div>
-                  {company.establishedYear && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Fundada:</span>
-                      <span className="font-medium">{company.establishedYear}</span>
-                    </div>
-                  )}
                 </CardContent>
               </Card>
 
