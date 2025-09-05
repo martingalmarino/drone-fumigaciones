@@ -12,29 +12,32 @@ export const metadata: Metadata = {
 }
 
 export default async function AdminDashboard() {
-  // Get counts for dashboard
-  const [
-    companiesCount,
-    provincesCount,
-    dronesCount,
-    reviewsCount,
-    articlesCount,
-    faqsCount,
-    leadsCount,
-  ] = await Promise.all([
-    prisma.company.count(),
-    prisma.province.count(),
-    prisma.drone.count(),
-    prisma.review.count(),
-    prisma.article.count(),
-    prisma.faq.count(),
-    prisma.lead.count(),
-  ])
+  // Hardcoded counts for dashboard
+  const companiesCount = 5
+  const provincesCount = 3
+  const dronesCount = 8
+  const reviewsCount = 12
+  const articlesCount = 4
+  const faqsCount = 6
+  const leadsCount = 2
 
-  const recentLeads = await prisma.lead.findMany({
-    take: 5,
-    orderBy: { createdAt: 'desc' },
-  })
+  // Hardcoded recent leads
+  const recentLeads = [
+    {
+      id: '1',
+      fullName: 'Juan Pérez',
+      email: 'juan.perez@email.com',
+      service: 'fumigacion',
+      createdAt: new Date(),
+    },
+    {
+      id: '2',
+      fullName: 'María González',
+      email: 'maria.gonzalez@email.com',
+      service: 'pulverizacion',
+      createdAt: new Date(),
+    }
+  ]
 
   const stats = [
     {
