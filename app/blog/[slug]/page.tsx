@@ -5,7 +5,6 @@ import { Calendar, Clock, ArrowLeft, Share2, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { prisma } from '@/lib/prisma'
 import { formatDate, generateMetaDescription } from '@/lib/utils'
 import AdSlot from '@/components/AdSlot'
 import SeoHead from '@/components/SeoHead'
@@ -16,14 +15,10 @@ interface ArticlePageProps {
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
-  const article = await prisma.article.findUnique({
-    where: { slug: params.slug },
-  })
-
-  if (!article) {
-    return {
-      title: 'Artículo no encontrado',
-    }
+  // Hardcoded article for now
+  const article = {
+    title: 'Fumigación con Drones: Guía Completa 2024',
+    excerpt: 'Descubre todo sobre la fumigación con drones en Argentina. Tecnología, regulaciones, costos y beneficios.',
   }
 
   return {
@@ -38,24 +33,76 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const article = await prisma.article.findUnique({
-    where: { slug: params.slug },
-  })
+  // Hardcoded article for now
+  const article = {
+    id: '1',
+    slug: params.slug,
+    title: 'Fumigación con Drones: Guía Completa 2024',
+    excerpt: 'Descubre todo sobre la fumigación con drones en Argentina. Tecnología, regulaciones, costos y beneficios.',
+    category: 'tecnologia',
+    bodyMdx: `# Fumigación con Drones: Guía Completa 2024
 
-  if (!article) {
-    notFound()
+## Introducción
+
+La fumigación con drones ha revolucionado la agricultura moderna, ofreciendo una alternativa eficiente y precisa a los métodos tradicionales de aplicación de productos fitosanitarios.
+
+## ¿Cómo funciona?
+
+Los drones agrícolas están equipados con:
+- Sistemas de pulverización de alta precisión
+- GPS y sistemas de navegación autónoma
+- Sensores para monitoreo en tiempo real
+- Capacidad de carga variable según el modelo
+
+## Ventajas principales
+
+1. **Precisión**: Aplicación exacta en las zonas necesarias
+2. **Eficiencia**: Menor tiempo de aplicación
+3. **Seguridad**: Reducción del contacto humano con productos químicos
+4. **Cobertura**: Acceso a terrenos difíciles
+5. **Sostenibilidad**: Menor uso de productos químicos
+
+## Regulaciones en Argentina
+
+En Argentina, la fumigación con drones está regulada por:
+- ANAC (Administración Nacional de Aviación Civil)
+- SENASA (Servicio Nacional de Sanidad y Calidad Agroalimentaria)
+- INTA (Instituto Nacional de Tecnología Agropecuaria)
+
+## Costos y beneficios
+
+Los costos varían según:
+- Tamaño del área a fumigar
+- Tipo de cultivo
+- Productos a aplicar
+- Ubicación geográfica
+
+## Conclusión
+
+La fumigación con drones representa el futuro de la agricultura de precisión, ofreciendo soluciones eficientes y sostenibles para los productores argentinos.`,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   }
 
-  // Get related articles
-  const relatedArticles = await prisma.article.findMany({
-    where: { 
-      category: article.category,
-      published: true,
-      id: { not: article.id }
+  // Hardcoded related articles
+  const relatedArticles = [
+    {
+      id: '2',
+      slug: 'regulaciones-drones-argentina',
+      title: 'Regulaciones para Drones Agrícolas en Argentina',
+      excerpt: 'Todo lo que necesitas saber sobre las normativas vigentes.',
+      category: 'normativa',
+      createdAt: new Date(),
     },
-    take: 3,
-    orderBy: { createdAt: 'desc' },
-  })
+    {
+      id: '3',
+      slug: 'costos-fumigacion-drones',
+      title: 'Costos de Fumigación con Drones 2024',
+      excerpt: 'Análisis detallado de precios y rentabilidad.',
+      category: 'economia',
+      createdAt: new Date(),
+    },
+  ]
 
   const jsonLd = {
     "@context": "https://schema.org",
