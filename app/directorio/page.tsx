@@ -184,14 +184,14 @@ export default async function DirectorioPage() {
                   <CardContent className="p-4 sm:p-6">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       <div className="flex-1">
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4">
                           <h3 className="text-lg sm:text-xl font-semibold">{company.name}</h3>
                           {company.isFeatured && (
-                            <Badge className="bg-primary text-xs w-fit">Destacado</Badge>
+                            <Badge className="bg-primary text-xs w-fit relative z-10">Destacado</Badge>
                           )}
                         </div>
                         
-                        <div className="flex items-center text-gray-600 mb-2">
+                        <div className="flex items-center text-gray-600 mb-2 relative z-0">
                           <MapPin className="h-4 w-4 mr-1" />
                           {company.city}, {company.province.name}
                         </div>
