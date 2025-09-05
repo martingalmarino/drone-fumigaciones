@@ -332,4 +332,4 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 ---
 
-**Desarrollado con ❤️ para la agricultura argentina**
+**Desarrollado con ❤️ para la agricultura argentina**# Deploy trigger
