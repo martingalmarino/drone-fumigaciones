@@ -28,6 +28,7 @@ export default async function AdminDashboard() {
       fullName: 'Juan Pérez',
       email: 'juan.perez@email.com',
       service: 'fumigacion',
+      provinceSlug: 'buenos-aires',
       createdAt: new Date(),
     },
     {
@@ -35,6 +36,7 @@ export default async function AdminDashboard() {
       fullName: 'María González',
       email: 'maria.gonzalez@email.com',
       service: 'pulverizacion',
+      provinceSlug: 'buenos-aires',
       createdAt: new Date(),
     }
   ]
