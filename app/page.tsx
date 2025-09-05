@@ -106,22 +106,10 @@ const provinces = [
 
 const recentArticles = [
   {
-    title: '¿Qué es la fumigación con drones?',
-    excerpt: 'Descubre cómo funciona esta tecnología revolucionaria',
+    title: '¿Qué es la fumigación con drones y cómo funciona?',
+    excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
     slug: 'que-es-fumigacion-con-drones',
     category: 'Conceptos'
-  },
-  {
-    title: 'Mejores drones agrícolas 2025',
-    excerpt: 'Análisis completo de los modelos más destacados',
-    slug: 'mejores-drones-agricolas-2025',
-    category: 'Tecnología'
-  },
-  {
-    title: '¿Es legal fumigar con drones?',
-    excerpt: 'Normativas y requisitos en Argentina',
-    slug: 'es-legal-fumigar-con-drones-argentina',
-    category: 'Normativa'
   }
 ]
 

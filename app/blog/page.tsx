@@ -23,39 +23,16 @@ const categories = [
 ]
 
 export default async function BlogPage() {
-  // Hardcoded articles data for now
+  // Artículos reales del blog
   const articles = [
     {
       id: '1',
-      slug: 'fumigacion-drones-guia-completa',
-      title: 'Fumigación con Drones: Guía Completa 2024',
-      category: 'tecnologia',
-      excerpt: 'Descubre todo sobre la fumigación con drones en Argentina. Tecnología, regulaciones, costos y beneficios.',
-      createdAt: new Date(),
-    },
-    {
-      id: '2',
-      slug: 'regulaciones-drones-argentina',
-      title: 'Regulaciones para Drones Agrícolas en Argentina',
-      category: 'normativa',
-      excerpt: 'Todo lo que necesitas saber sobre las normativas vigentes para operar drones agrícolas.',
-      createdAt: new Date(),
-    },
-    {
-      id: '3',
-      slug: 'costos-fumigacion-drones',
-      title: 'Costos de Fumigación con Drones 2024',
+      slug: 'que-es-fumigacion-con-drones',
+      title: '¿Qué es la fumigación con drones y cómo funciona?',
       category: 'conceptos',
-      excerpt: 'Análisis detallado de precios y rentabilidad de la fumigación con drones.',
-      createdAt: new Date(),
-    },
-    {
-      id: '4',
-      slug: 'caso-exito-soja-cordoba',
-      title: 'Caso de Éxito: Soja en Córdoba',
-      category: 'casos',
-      excerpt: 'Cómo un productor de Córdoba aumentó su rendimiento un 15% con fumigación con drones.',
-      createdAt: new Date(),
+      excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
+      createdAt: new Date('2025-01-15'),
+      readingTime: 10,
     }
   ]
 
@@ -155,7 +132,7 @@ export default async function BlogPage() {
                         </div>
                         <div className="flex items-center">
                           <Clock className="h-4 w-4 mr-1" />
-                          5 min lectura
+                          {article.readingTime || 5} min lectura
                         </div>
                       </div>
                     </CardContent>
@@ -179,6 +156,9 @@ export default async function BlogPage() {
                             <Badge variant="outline">{article.category}</Badge>
                             <span className="text-sm text-gray-500">
                               {formatDate(article.createdAt)}
+                            </span>
+                            <span className="text-sm text-gray-500">
+                              • {article.readingTime || 5} min lectura
                             </span>
                           </div>
                           <h3 className="text-xl font-semibold mb-2">
