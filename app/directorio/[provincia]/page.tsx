@@ -169,17 +169,22 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   }
 
   // Transform companies data for map (add coordinates)
-  const mapCenters = provinceCompanies.map(company => ({
-    id: company.id,
-    nombre: company.name,
-    lat: company.lat || getDefaultCoordinates(params.provincia).lat,
-    lng: company.lng || getDefaultCoordinates(params.provincia).lng,
-    servicios: company.services ? JSON.parse(company.services) : [],
-    horarios: 'Lunes a Viernes 8:00-18:00',
-    telefono: company.phone,
-    direccion: company.address,
-    jurisdiccion: province.name
-  }))
+  const mapCenters = provinceCompanies.map((company, index) => {
+    const defaultCoords = getDefaultCoordinates(params.provincia)
+    // Add slight offset for multiple companies in same province
+    const offset = index * 0.01
+    return {
+      id: company.id,
+      nombre: company.name,
+      lat: defaultCoords.lat + offset,
+      lng: defaultCoords.lng + offset,
+      servicios: company.services ? JSON.parse(company.services) : [],
+      horarios: 'Lunes a Viernes 8:00-18:00',
+      telefono: company.phone,
+      direccion: company.address,
+      jurisdiccion: province.name
+    }
+  })
 
   // Default coordinates for each province
   function getDefaultCoordinates(provinceSlug: string) {
