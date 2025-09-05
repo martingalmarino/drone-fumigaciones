@@ -181,7 +181,7 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
       servicios: company.services ? JSON.parse(company.services) : [],
       horarios: 'Lunes a Viernes 8:00-18:00',
       telefono: company.phone,
-      direccion: company.address,
+      direccion: company.city,
       jurisdiccion: province.name
     }
   })
