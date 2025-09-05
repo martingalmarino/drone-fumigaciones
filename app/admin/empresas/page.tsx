@@ -16,12 +16,47 @@ export const metadata: Metadata = {
 }
 
 export default async function AdminEmpresas() {
-  const companies = await prisma.company.findMany({
-    include: {
-      province: true,
+  // Hardcoded companies data for now
+  const companies = [
+    {
+      id: '1',
+      slug: 'agro-drones-buenos-aires',
+      name: 'Agro Drones Buenos Aires',
+      description: 'Especialistas en fumigación con drones para cultivos extensivos.',
+      websiteUrl: 'https://agrodronesba.com',
+      phone: '+54 221 123-4567',
+      email: 'info@agrodronesba.com',
+      address: 'Ruta 2, Km 45',
+      city: 'La Plata',
+      isFeatured: true,
+      services: '["fumigacion", "pulverizacion", "siembra"]',
+      createdAt: new Date(),
+      province: {
+        id: '1',
+        name: 'Buenos Aires',
+        slug: 'buenos-aires'
+      }
     },
-    orderBy: { createdAt: 'desc' },
-  })
+    {
+      id: '2',
+      slug: 'drones-agricolas-sa',
+      name: 'Drones Agrícolas S.A.',
+      description: 'Servicios profesionales de fumigación con drones en la costa atlántica.',
+      websiteUrl: null,
+      phone: '+54 223 456-7890',
+      email: 'contacto@dronesagricolas.com',
+      address: 'Av. Constitución 1234',
+      city: 'Mar del Plata',
+      isFeatured: false,
+      services: '["fumigacion", "fertilizacion"]',
+      createdAt: new Date(),
+      province: {
+        id: '2',
+        name: 'Buenos Aires',
+        slug: 'buenos-aires'
+      }
+    }
+  ]
 
   return (
     <div className="space-y-6">
