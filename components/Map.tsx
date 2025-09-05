@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Centro } from '@/types'
 
 interface MapProps {
-  centers: Centro[]
+  centers: (Centro & { jurisdiccion?: string; jurisdiccionSlug?: string })[]
   onCenterSelect?: (center: Centro) => void
   className?: string
 }
@@ -71,7 +71,7 @@ export function Map({ centers, onCenterSelect, className = '' }: MapProps) {
             const popupContent = `
               <div class="p-2">
                 <h3 class="font-semibold text-sm mb-1">${center.nombre}</h3>
-                <p class="text-xs text-gray-600 mb-2">${center.jurisdiccion}</p>
+                ${center.jurisdiccion ? `<p class="text-xs text-gray-600 mb-2">${center.jurisdiccion}</p>` : ''}
                 ${center.servicios && center.servicios.length > 0 ? `
                   <div class="mb-2">
                     <p class="text-xs font-medium text-gray-700 mb-1">Servicios:</p>
