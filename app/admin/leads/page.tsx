@@ -15,9 +15,37 @@ export const metadata: Metadata = {
 }
 
 export default async function AdminLeads() {
-  const leads = await prisma.lead.findMany({
-    orderBy: { createdAt: 'desc' },
-  })
+  // Hardcoded leads data for now
+  const leads = [
+    {
+      id: '1',
+      fullName: 'Juan Pérez',
+      email: 'juan.perez@email.com',
+      phone: '+54 221 123-4567',
+      provinceSlug: 'buenos-aires',
+      service: 'fumigacion',
+      crop: 'soja',
+      hectares: 150,
+      timeWindow: '7-15 días',
+      details: 'Necesito fumigación para soja en 150 hectáreas',
+      utm: '{"source": "google", "medium": "cpc"}',
+      createdAt: new Date(),
+    },
+    {
+      id: '2',
+      fullName: 'María González',
+      email: 'maria.gonzalez@email.com',
+      phone: '+54 223 456-7890',
+      provinceSlug: 'buenos-aires',
+      service: 'pulverizacion',
+      crop: 'maíz',
+      hectares: 80,
+      timeWindow: 'inmediata',
+      details: 'Urgente: pulverización para maíz',
+      utm: '{"source": "facebook", "medium": "social"}',
+      createdAt: new Date(),
+    }
+  ]
 
   const stats = {
     total: leads.length,
