@@ -298,7 +298,7 @@ export default function CotizarPage() {
               {/* Step 5: Contacto */}
               {currentStep === 5 && (
                 <div className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Nombre completo *
@@ -309,6 +309,7 @@ export default function CotizarPage() {
                         value={formData.fullName}
                         onChange={(e) => updateFormData('fullName', e.target.value)}
                         required
+                        className="w-full"
                       />
                     </div>
                     <div>
@@ -320,11 +321,12 @@ export default function CotizarPage() {
                         placeholder="Nombre de tu empresa"
                         value={formData.company}
                         onChange={(e) => updateFormData('company', e.target.value)}
+                        className="w-full"
                       />
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Email *
@@ -335,6 +337,7 @@ export default function CotizarPage() {
                         value={formData.email}
                         onChange={(e) => updateFormData('email', e.target.value)}
                         required
+                        className="w-full"
                       />
                     </div>
                     <div>

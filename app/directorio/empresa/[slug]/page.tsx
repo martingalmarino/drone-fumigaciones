@@ -36,28 +36,191 @@ export async function generateMetadata({ params }: CompanyPageProps): Promise<Me
 }
 
 export default async function CompanyPage({ params }: CompanyPageProps) {
-  // Hardcoded company data for now
-  const company = {
-    id: '1',
-    slug: params.slug,
-    name: 'Agro Drones Buenos Aires',
-    description: 'Especialistas en fumigación con drones para cultivos extensivos. Servicios profesionales de pulverización agrícola con tecnología de última generación.',
-    websiteUrl: 'https://agrodronesba.com',
-    phone: '+54 221 123-4567',
-    whatsapp: '+54 221 123-4567',
-    email: 'info@agrodronesba.com',
-    address: 'Ruta 2, Km 45',
-    city: 'La Plata',
-    isFeatured: true,
-    services: '["fumigacion", "pulverizacion", "siembra", "fertilizacion"]',
-    certifications: '["ANAC", "SENASA", "INTA"]',
-    lat: -34.9214,
-    lng: -57.9544,
-    province: {
+  // Real companies data
+  const companies = [
+    {
       id: '1',
-      name: 'Buenos Aires',
-      slug: 'buenos-aires'
+      slug: 'fitosanitarios-martin-paez',
+      name: 'Fitosanitarios Martín Páez',
+      description: 'Especialistas en fumigación con drones para agricultura. Tecnología avanzada para aplicaciones precisas y eficientes en el campo.',
+      websiteUrl: 'https://fitosanitariosmartinpaez.com/servicios/fumigacion-con-dron/',
+      phone: '957 202 591',
+      whatsapp: '957 202 591',
+      email: null,
+      address: null,
+      city: 'Córdoba',
+      isFeatured: true,
+      services: '["Fumigación con drones", "Agricultura drones"]',
+      certifications: '["ANAC", "SENASA"]',
+      lat: -31.4201,
+      lng: -64.1888,
+      province: {
+        id: '1',
+        name: 'Córdoba',
+        slug: 'cordoba'
+      }
+    },
+    {
+      id: '2',
+      slug: 'drones-agricolas-de-cordoba',
+      name: 'Drones Agrícolas de Córdoba',
+      description: 'Servicios de fumigación agrícola y análisis NDVI con tecnología de drones. Especialistas en monitoreo de cultivos.',
+      websiteUrl: 'https://www.instagram.com/drones_agricolas_de_cordoba/',
+      phone: null,
+      whatsapp: null,
+      email: null,
+      address: null,
+      city: 'Córdoba',
+      isFeatured: false,
+      services: '["Fumigación agricultura", "NDVI", "NDVI y drones"]',
+      certifications: '["ANAC"]',
+      lat: -31.4201,
+      lng: -64.1888,
+      province: {
+        id: '2',
+        name: 'Córdoba',
+        slug: 'cordoba'
+      }
+    },
+    {
+      id: '3',
+      slug: 'mb-logistica',
+      name: 'MB Logística',
+      description: 'Servicios de siembra y fumigación con drones. Equipados con DJI Agras T30 para máxima eficiencia en el campo.',
+      websiteUrl: null,
+      phone: null,
+      whatsapp: null,
+      email: null,
+      address: null,
+      city: 'Córdoba',
+      isFeatured: false,
+      services: '["Siembra", "Fumigación con drones", "DJI Agras T30"]',
+      certifications: '["ANAC"]',
+      lat: -31.4201,
+      lng: -64.1888,
+      province: {
+        id: '3',
+        name: 'Córdoba',
+        slug: 'cordoba'
+      }
+    },
+    {
+      id: '4',
+      slug: 'agro-mision-servicios',
+      name: 'Agro Misión Servicios',
+      description: 'Pulverización agrícola con drones. Equipados con DJI Agras T40 para máxima eficiencia y cobertura en cultivos.',
+      websiteUrl: null,
+      phone: null,
+      whatsapp: null,
+      email: null,
+      address: null,
+      city: 'Buenos Aires',
+      isFeatured: false,
+      services: '["Pulverización agrícola con drones", "DJI Agras T40"]',
+      certifications: '["ANAC"]',
+      lat: -34.6037,
+      lng: -58.3816,
+      province: {
+        id: '4',
+        name: 'Buenos Aires',
+        slug: 'buenos-aires'
+      }
+    },
+    {
+      id: '5',
+      slug: 'estudio-gd',
+      name: 'Estudio G&D',
+      description: 'Pulverización con drones multirotor. Servicios profesionales para el sector agrícola con tecnología de última generación.',
+      websiteUrl: 'https://estudiogyd.com.ar/servicioDrones',
+      phone: '+54 9 249 469-7996',
+      whatsapp: '+54 9 249 469-7996',
+      email: null,
+      address: null,
+      city: 'Buenos Aires',
+      isFeatured: true,
+      services: '["Pulverización con drones", "Drones multirotor"]',
+      certifications: '["ANAC", "SENASA"]',
+      lat: -34.6037,
+      lng: -58.3816,
+      province: {
+        id: '5',
+        name: 'Buenos Aires',
+        slug: 'buenos-aires'
+      }
+    },
+    {
+      id: '6',
+      slug: 'uss-alarmas',
+      name: 'USS Alarmas',
+      description: 'Drones fumigadores con varios modelos disponibles. Soluciones integrales para agricultura y control de plagas.',
+      websiteUrl: 'https://uss.com.ar/corporativo/drones-e-industria-4-0/drone-fumigador/',
+      phone: '+54 11 4011 3000',
+      whatsapp: '+54 11 4011 3000',
+      email: null,
+      address: null,
+      city: 'Buenos Aires',
+      isFeatured: false,
+      services: '["Drones fumigadores", "Varios modelos"]',
+      certifications: '["ANAC"]',
+      lat: -34.6037,
+      lng: -58.3816,
+      province: {
+        id: '6',
+        name: 'Buenos Aires',
+        slug: 'buenos-aires'
+      }
+    },
+    {
+      id: '7',
+      slug: 'biodrone',
+      name: 'BioDrone',
+      description: 'Control de plagas con drones de combustión interna. Tecnología especializada para protección de cultivos y manejo integrado.',
+      websiteUrl: null,
+      phone: null,
+      whatsapp: null,
+      email: null,
+      address: null,
+      city: 'Santa Fe',
+      isFeatured: false,
+      services: '["Control de plagas con drones", "Combustión interna"]',
+      certifications: '["ANAC"]',
+      lat: -31.6333,
+      lng: -60.7000,
+      province: {
+        id: '7',
+        name: 'Santa Fe',
+        slug: 'santa-fe'
+      }
+    },
+    {
+      id: '8',
+      slug: 'gd-pulverizacion',
+      name: 'G&D Pulverización',
+      description: 'Servicios agro con drones multirotor. Soluciones profesionales para el campo con tecnología de precisión.',
+      websiteUrl: 'https://www.agroads.com.ar/detalle.asp?clasi=714687',
+      phone: '+54 9 249 469-7996',
+      whatsapp: '+54 9 249 469-7996',
+      email: null,
+      address: null,
+      city: 'Santa Fe',
+      isFeatured: true,
+      services: '["Servicios agro con drones", "Drones multirotor"]',
+      certifications: '["ANAC", "SENASA"]',
+      lat: -31.6333,
+      lng: -60.7000,
+      province: {
+        id: '8',
+        name: 'Santa Fe',
+        slug: 'santa-fe'
+      }
     }
+  ]
+
+  // Find company by slug
+  const company = companies.find(c => c.slug === params.slug)
+  
+  if (!company) {
+    notFound()
   }
 
   // Parse JSON fields

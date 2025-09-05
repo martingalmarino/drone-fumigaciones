@@ -317,87 +317,85 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
             <div className="space-y-6">
               {province.companies.map((company) => (
                 <Card key={company.id} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <h3 className="text-xl font-semibold">{company.name}</h3>
-                          {company.isFeatured && (
-                            <Badge className="bg-primary">Destacado</Badge>
-                          )}
-                        </div>
-                        
-                        <div className="flex items-center text-gray-600 mb-2">
-                          <MapPin className="h-4 w-4 mr-1" />
-                          {company.city}, {province.name}
-                        </div>
-                        
-                        {company.description && (
-                          <p className="text-gray-600 mb-4">{company.description}</p>
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="space-y-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
+                        <h3 className="text-lg sm:text-xl font-semibold">{company.name}</h3>
+                        {company.isFeatured && (
+                          <Badge className="bg-primary w-fit">Destacado</Badge>
                         )}
-                        
-                        {/* Services */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {company.services && JSON.parse(company.services).map((service: string, index: number) => (
-                            <Badge key={index} variant="outline">
-                              {service}
-                            </Badge>
-                          ))}
-                        </div>
-                        
-                        
-                        {/* Contact Info */}
-                        <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                          {company.phone && (
-                            <a 
-                              href={`tel:${company.phone}`}
-                              className="flex items-center hover:text-primary transition-colors"
-                            >
-                              <Phone className="h-4 w-4 mr-1" />
-                              {formatPhone(company.phone)}
-                            </a>
-                          )}
-                          {company.whatsapp && (
-                            <a 
-                              href={getWhatsAppUrl(company.whatsapp, `Hola, me interesa conocer más sobre sus servicios de fumigación con drones en ${province.name}.`)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center hover:text-primary transition-colors"
-                            >
-                              <Phone className="h-4 w-4 mr-1" />
-                              WhatsApp
-                            </a>
-                          )}
-                          {company.email && (
-                            <a 
-                              href={`mailto:${company.email}`}
-                              className="flex items-center hover:text-primary transition-colors"
-                            >
-                              <Mail className="h-4 w-4 mr-1" />
-                              Email
-                            </a>
-                          )}
-                          {company.websiteUrl && (
-                            <a 
-                              href={company.websiteUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center hover:text-primary transition-colors"
-                            >
-                              <ExternalLink className="h-4 w-4 mr-1" />
-                              Sitio web
-                            </a>
-                          )}
-                        </div>
                       </div>
                       
-                      <div className="ml-6 flex flex-col space-y-2">
-                        <Button asChild size="sm">
+                      <div className="flex items-center text-gray-600 mb-2">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {company.city}, {province.name}
+                      </div>
+                      
+                      {company.description && (
+                        <p className="text-gray-600 mb-4">{company.description}</p>
+                      )}
+                      
+                      {/* Services */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {company.services && JSON.parse(company.services).map((service: string, index: number) => (
+                          <Badge key={index} variant="outline">
+                            {service}
+                          </Badge>
+                        ))}
+                      </div>
+                      
+                      {/* Contact Info */}
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                        {company.phone && (
+                          <a 
+                            href={`tel:${company.phone}`}
+                            className="flex items-center hover:text-primary transition-colors"
+                          >
+                            <Phone className="h-4 w-4 mr-1" />
+                            {formatPhone(company.phone)}
+                          </a>
+                        )}
+                        {company.whatsapp && (
+                          <a 
+                            href={getWhatsAppUrl(company.whatsapp, `Hola, me interesa conocer más sobre sus servicios de fumigación con drones en ${province.name}.`)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center hover:text-primary transition-colors"
+                          >
+                            <Phone className="h-4 w-4 mr-1" />
+                            WhatsApp
+                          </a>
+                        )}
+                        {company.email && (
+                          <a 
+                            href={`mailto:${company.email}`}
+                            className="flex items-center hover:text-primary transition-colors"
+                          >
+                            <Mail className="h-4 w-4 mr-1" />
+                            Email
+                          </a>
+                        )}
+                        {company.websiteUrl && (
+                          <a 
+                            href={company.websiteUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center hover:text-primary transition-colors"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-1" />
+                            Sitio web
+                          </a>
+                        )}
+                      </div>
+                      
+                      {/* Action Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <Button asChild size="sm" className="flex-1">
                           <Link href={`/directorio/empresa/${company.slug}`}>
                             Ver Perfil
                           </Link>
                         </Button>
-                        <Button asChild variant="outline" size="sm">
+                        <Button asChild variant="outline" size="sm" className="flex-1">
                           <Link href={`/cotizar?empresa=${company.slug}`}>
                             Solicitar Cotización
                           </Link>
