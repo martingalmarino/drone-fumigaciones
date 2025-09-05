@@ -33,53 +33,138 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
 }
 
 export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
-  // Hardcoded province data for now
+  // Province data with companies
+  const allCompanies = [
+    {
+      id: '1',
+      slug: 'fitosanitarios-martin-paez',
+      name: 'Fitosanitarios Martín Páez',
+      city: 'Córdoba',
+      description: 'Especialistas en fumigación con drones para agricultura. Tecnología avanzada para aplicaciones precisas.',
+      isFeatured: true,
+      services: '["Fumigación con drones", "Agricultura drones"]',
+      phone: '957 202 591',
+      whatsapp: '957 202 591',
+      email: null,
+      websiteUrl: 'https://fitosanitariosmartinpaez.com/servicios/fumigacion-con-dron/',
+      province: 'cordoba'
+    },
+    {
+      id: '2',
+      slug: 'drones-agricolas-de-cordoba',
+      name: 'Drones Agrícolas de Córdoba',
+      city: 'Córdoba',
+      description: 'Servicios de fumigación agrícola y análisis NDVI con tecnología de drones.',
+      isFeatured: false,
+      services: '["Fumigación agricultura", "NDVI", "NDVI y drones"]',
+      phone: null,
+      whatsapp: null,
+      email: null,
+      websiteUrl: 'https://www.instagram.com/drones_agricolas_de_cordoba/',
+      province: 'cordoba'
+    },
+    {
+      id: '3',
+      slug: 'mb-logistica',
+      name: 'MB Logística',
+      city: 'Córdoba',
+      description: 'Servicios de siembra y fumigación con drones. Equipados con DJI Agras T30.',
+      isFeatured: false,
+      services: '["Siembra", "Fumigación con drones", "DJI Agras T30"]',
+      phone: null,
+      whatsapp: null,
+      email: null,
+      websiteUrl: null,
+      province: 'cordoba'
+    },
+    {
+      id: '4',
+      slug: 'agro-mision-servicios',
+      name: 'Agro Misión Servicios',
+      city: 'Buenos Aires',
+      description: 'Pulverización agrícola con drones. Equipados con DJI Agras T40 para máxima eficiencia.',
+      isFeatured: false,
+      services: '["Pulverización agrícola con drones", "DJI Agras T40"]',
+      phone: null,
+      whatsapp: null,
+      email: null,
+      websiteUrl: null,
+      province: 'buenos-aires'
+    },
+    {
+      id: '5',
+      slug: 'estudio-gd',
+      name: 'Estudio G&D',
+      city: 'Buenos Aires',
+      description: 'Pulverización con drones multirotor. Servicios profesionales para el sector agrícola.',
+      isFeatured: true,
+      services: '["Pulverización con drones", "Drones multirotor"]',
+      phone: '+54 9 249 469-7996',
+      whatsapp: '+54 9 249 469-7996',
+      email: null,
+      websiteUrl: 'https://estudiogyd.com.ar/servicioDrones',
+      province: 'buenos-aires'
+    },
+    {
+      id: '6',
+      slug: 'uss-alarmas',
+      name: 'USS Alarmas',
+      city: 'Buenos Aires',
+      description: 'Drones fumigadores con varios modelos disponibles. Soluciones integrales para agricultura.',
+      isFeatured: false,
+      services: '["Drones fumigadores", "Varios modelos"]',
+      phone: '+54 11 4011 3000',
+      whatsapp: '+54 11 4011 3000',
+      email: null,
+      websiteUrl: 'https://uss.com.ar/corporativo/drones-e-industria-4-0/drone-fumigador/',
+      province: 'buenos-aires'
+    },
+    {
+      id: '7',
+      slug: 'biodrone',
+      name: 'BioDrone',
+      city: 'Santa Fe',
+      description: 'Control de plagas con drones de combustión interna. Tecnología especializada para protección de cultivos.',
+      isFeatured: false,
+      services: '["Control de plagas con drones", "Combustión interna"]',
+      phone: null,
+      whatsapp: null,
+      email: null,
+      websiteUrl: null,
+      province: 'santa-fe'
+    },
+    {
+      id: '8',
+      slug: 'gd-pulverizacion',
+      name: 'G&D Pulverización',
+      city: 'Santa Fe',
+      description: 'Servicios agro con drones multirotor. Soluciones profesionales para el campo.',
+      isFeatured: true,
+      services: '["Servicios agro con drones", "Drones multirotor"]',
+      phone: '+54 9 249 469-7996',
+      whatsapp: '+54 9 249 469-7996',
+      email: null,
+      websiteUrl: 'https://www.agroads.com.ar/detalle.asp?clasi=714687',
+      province: 'santa-fe'
+    }
+  ]
+
+  // Filter companies by province
+  const provinceCompanies = allCompanies.filter(company => company.province === params.provincia)
+  
+  // Get province name
+  const provinceNames = {
+    'cordoba': 'Córdoba',
+    'buenos-aires': 'Buenos Aires',
+    'santa-fe': 'Santa Fe'
+  }
+
   const province = {
     id: '1',
-    name: 'Buenos Aires',
+    name: provinceNames[params.provincia as keyof typeof provinceNames] || params.provincia,
     slug: params.provincia,
-    companies: [
-      {
-        id: '1',
-        slug: 'agro-drones-buenos-aires',
-        name: 'Agro Drones Buenos Aires',
-        city: 'La Plata',
-        description: 'Especialistas en fumigación con drones para cultivos extensivos.',
-        isFeatured: true,
-        services: '["fumigacion", "pulverizacion", "siembra"]',
-        phone: '+54 221 123-4567',
-        whatsapp: '+54 221 123-4567',
-        email: 'info@agrodronesba.com',
-        websiteUrl: 'https://agrodronesba.com',
-      },
-      {
-        id: '2',
-        slug: 'drones-agricolas-sa',
-        name: 'Drones Agrícolas S.A.',
-        city: 'Mar del Plata',
-        description: 'Servicios profesionales de fumigación con drones en la costa atlántica.',
-        isFeatured: false,
-        services: '["fumigacion", "fertilizacion"]',
-        phone: '+54 223 456-7890',
-        whatsapp: '+54 223 456-7890',
-        email: 'contacto@dronesagricolas.com',
-        websiteUrl: null,
-      },
-      {
-        id: '3',
-        slug: 'precision-aerea-ba',
-        name: 'Precisión Aérea B.A.',
-        city: 'Tandil',
-        description: 'Tecnología de precisión para aplicaciones agrícolas.',
-        isFeatured: true,
-        services: '["fumigacion", "pulverizacion", "monitoreo"]',
-        phone: '+54 249 789-0123',
-        whatsapp: '+54 249 789-0123',
-        email: 'info@precisionaerea.com',
-        websiteUrl: 'https://precisionaerea.com',
-      },
-    ],
-    companiesCount: 3,
+    companies: provinceCompanies,
+    companiesCount: provinceCompanies.length,
   }
 
   const jsonLd = {
