@@ -23,11 +23,41 @@ const categories = [
 ]
 
 export default async function BlogPage() {
-  const articles = await prisma.article.findMany({
-    where: { published: true },
-    orderBy: { createdAt: 'desc' },
-    take: 12,
-  })
+  // Hardcoded articles data for now
+  const articles = [
+    {
+      id: '1',
+      slug: 'fumigacion-drones-guia-completa',
+      title: 'Fumigación con Drones: Guía Completa 2024',
+      category: 'tecnologia',
+      excerpt: 'Descubre todo sobre la fumigación con drones en Argentina. Tecnología, regulaciones, costos y beneficios.',
+      createdAt: new Date(),
+    },
+    {
+      id: '2',
+      slug: 'regulaciones-drones-argentina',
+      title: 'Regulaciones para Drones Agrícolas en Argentina',
+      category: 'normativa',
+      excerpt: 'Todo lo que necesitas saber sobre las normativas vigentes para operar drones agrícolas.',
+      createdAt: new Date(),
+    },
+    {
+      id: '3',
+      slug: 'costos-fumigacion-drones',
+      title: 'Costos de Fumigación con Drones 2024',
+      category: 'conceptos',
+      excerpt: 'Análisis detallado de precios y rentabilidad de la fumigación con drones.',
+      createdAt: new Date(),
+    },
+    {
+      id: '4',
+      slug: 'caso-exito-soja-cordoba',
+      title: 'Caso de Éxito: Soja en Córdoba',
+      category: 'casos',
+      excerpt: 'Cómo un productor de Córdoba aumentó su rendimiento un 15% con fumigación con drones.',
+      createdAt: new Date(),
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-gray-50">
