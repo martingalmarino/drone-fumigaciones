@@ -29,6 +29,7 @@ export default async function AdminDashboard() {
       email: 'juan.perez@email.com',
       service: 'fumigacion',
       provinceSlug: 'buenos-aires',
+      hectares: 150,
       createdAt: new Date(),
     },
     {
@@ -37,6 +38,7 @@ export default async function AdminDashboard() {
       email: 'maria.gonzalez@email.com',
       service: 'pulverizacion',
       provinceSlug: 'buenos-aires',
+      hectares: 80,
       createdAt: new Date(),
     }
   ]
