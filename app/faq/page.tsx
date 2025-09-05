@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { HelpCircle, ArrowRight, Calculator, Users, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { prisma } from '@/lib/prisma'
 import AdSlot from '@/components/AdSlot'
 import SeoHead from '@/components/SeoHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -35,9 +34,39 @@ const quickLinks = [
 ]
 
 export default async function FAQPage() {
-  const faqs = await prisma.faq.findMany({
-    orderBy: { createdAt: 'asc' },
-  })
+  // Hardcoded FAQs data for now
+  const faqs = [
+    {
+      id: '1',
+      question: '¿Es legal fumigar con drones en Argentina?',
+      answerMdx: 'Sí, es legal fumigar con drones en Argentina. Sin embargo, requiere certificaciones específicas de ANAC (Administración Nacional de Aviación Civil) y CEVANT (Centro de Validación de Tecnologías Nucleares). Las empresas deben estar registradas y cumplir con todas las normativas vigentes.',
+      createdAt: new Date()
+    },
+    {
+      id: '2',
+      question: '¿Cuánto cuesta fumigar con drones por hectárea?',
+      answerMdx: 'El costo varía entre $15,000 y $35,000 pesos argentinos por hectárea, dependiendo del tipo de cultivo, tamaño del lote, tipo de producto a aplicar y ubicación geográfica. Los lotes más grandes suelen tener mejores precios por hectárea.',
+      createdAt: new Date()
+    },
+    {
+      id: '3',
+      question: '¿Qué ventajas tiene la fumigación con drones?',
+      answerMdx: 'Las principales ventajas incluyen: mayor precisión en la aplicación, reducción del uso de productos químicos, menor compactación del suelo, acceso a terrenos difíciles, menor tiempo de aplicación y mejor cobertura del cultivo.',
+      createdAt: new Date()
+    },
+    {
+      id: '4',
+      question: '¿Qué tipos de productos se pueden aplicar con drones?',
+      answerMdx: 'Los drones pueden aplicar herbicidas, insecticidas, fungicidas, fertilizantes líquidos y algunos productos biológicos. Es importante verificar la compatibilidad del producto con la tecnología de aplicación aérea.',
+      createdAt: new Date()
+    },
+    {
+      id: '5',
+      question: '¿Cuántas hectáreas puede fumigar un drone por día?',
+      answerMdx: 'Un drone agrícola puede fumigar entre 50 y 150 hectáreas por día, dependiendo del modelo, tipo de cultivo, condiciones climáticas y logística. Los drones más grandes y eficientes pueden cubrir más superficie.',
+      createdAt: new Date()
+    }
+  ]
 
   const jsonLd = {
     "@context": "https://schema.org",
