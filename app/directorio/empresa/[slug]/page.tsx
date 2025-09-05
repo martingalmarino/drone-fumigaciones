@@ -271,7 +271,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Estado:</span>
-                    <span className="font-medium">{company.isActive ? 'Activa' : 'Inactiva'}</span>
+                    <span className="font-medium">{company.isFeatured ? 'Destacada' : 'Activa'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Destacada:</span>
