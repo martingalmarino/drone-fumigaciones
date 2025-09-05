@@ -7,6 +7,79 @@ import AdSlot from '@/components/AdSlot'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
+// Datos de empresas reales
+const allCompanies = [
+  {
+    id: '1',
+    slug: 'fitosanitarios-martin-paez',
+    name: 'Fitosanitarios Martín Páez',
+    province: 'Córdoba',
+    services: '["Fumigación con drones", "Agricultura drones"]',
+    isFeatured: true
+  },
+  {
+    id: '2',
+    slug: 'drones-agricolas-de-cordoba',
+    name: 'Drones Agrícolas de Córdoba',
+    province: 'Córdoba',
+    services: '["Fumigación agricultura", "NDVI y drones"]',
+    isFeatured: true
+  },
+  {
+    id: '3',
+    slug: 'mb-logistica',
+    name: 'MB Logística',
+    province: 'Córdoba',
+    services: '["Siembra y fumigación con drones", "DJI Agras T30"]',
+    isFeatured: false
+  },
+  {
+    id: '4',
+    slug: 'agro-mision-servicios',
+    name: 'Agro Misión Servicios',
+    province: 'Buenos Aires',
+    services: '["Pulverización agrícola con drones", "DJI Agras T40"]',
+    isFeatured: true
+  },
+  {
+    id: '5',
+    slug: 'estudio-gyd',
+    name: 'Estudio G&D',
+    province: 'Buenos Aires',
+    services: '["Pulverización con drones", "Drones multirotor"]',
+    isFeatured: true
+  },
+  {
+    id: '6',
+    slug: 'uss-alarmas',
+    name: 'USS Alarmas',
+    province: 'Buenos Aires',
+    services: '["Drones fumigadores", "Varios modelos"]',
+    isFeatured: true
+  },
+  {
+    id: '7',
+    slug: 'biodrone',
+    name: 'BioDrone',
+    province: 'Santa Fe',
+    services: '["Control de plagas con drones", "Combustión interna"]',
+    isFeatured: true
+  },
+  {
+    id: '8',
+    slug: 'gd-pulverizacion',
+    name: 'G&D Pulverización',
+    province: 'Santa Fe',
+    services: '["Servicios agro con drones", "Drones multirotor"]',
+    isFeatured: true
+  }
+]
+
+// Función para contar empresas por provincia
+function getCompanyCountByProvince(provinceName: string) {
+  return allCompanies.filter(company => company.province === provinceName).length
+}
+
 const features = [
   {
     icon: Zap,
@@ -26,9 +99,9 @@ const features = [
 ]
 
 const provinces = [
-  { name: 'Córdoba', slug: 'cordoba', companies: 12, featured: true },
-  { name: 'Santa Fe', slug: 'santa-fe', companies: 8, featured: true },
-  { name: 'Buenos Aires', slug: 'buenos-aires', companies: 15, featured: true },
+  { name: 'Córdoba', slug: 'cordoba', companies: getCompanyCountByProvince('Córdoba'), featured: true },
+  { name: 'Santa Fe', slug: 'santa-fe', companies: getCompanyCountByProvince('Santa Fe'), featured: true },
+  { name: 'Buenos Aires', slug: 'buenos-aires', companies: getCompanyCountByProvince('Buenos Aires'), featured: true },
 ]
 
 const recentArticles = [

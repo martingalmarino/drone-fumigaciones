@@ -77,15 +77,65 @@ export function Map({ centers, onCenterSelect, className = '' }: MapProps) {
 
   return (
     <div className={`relative map-container ${className}`}>
-      <div className="w-full h-96 rounded-lg overflow-hidden border border-neutral-200 bg-neutral-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-neutral-600 mb-2">🗺️</div>
-          <p className="text-neutral-600">Mapa interactivo</p>
-          <p className="text-sm text-neutral-500 mt-1">
-            {centers.length} centro{centers.length !== 1 ? 's' : ''} encontrado{centers.length !== 1 ? 's' : ''}
-          </p>
-        </div>
-      </div>
+      <MapContainer
+        center={center}
+        zoom={centers.length > 1 ? 6 : 10}
+        className="w-full h-96 rounded-lg overflow-hidden border border-neutral-200"
+        style={{ height: '384px', width: '100%' }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {centers.map((center, index) => (
+          <Marker
+            key={index}
+            position={[center.lat, center.lng]}
+            eventHandlers={{
+              click: () => onCenterSelect?.(center),
+            }}
+          >
+            <Popup>
+              <div className="p-2">
+                <h3 className="font-semibold text-sm mb-1">{center.nombre}</h3>
+                <p className="text-xs text-gray-600 mb-2">{center.jurisdiccion}</p>
+                {center.servicios && center.servicios.length > 0 && (
+                  <div className="mb-2">
+                    <p className="text-xs font-medium text-gray-700 mb-1">Servicios:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {center.servicios.map((servicio, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                        >
+                          {servicio === 'grabado' ? 'Grabado' : 
+                           servicio === 'rpa_rpm' ? 'RPA/RPM' : 
+                           servicio === 'cedulas' ? 'Cédulas' : servicio}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {center.direccion && (
+                  <p className="text-xs text-gray-600 mb-1">
+                    📍 {center.direccion}
+                  </p>
+                )}
+                {center.telefono && (
+                  <p className="text-xs text-gray-600 mb-1">
+                    📞 {center.telefono}
+                  </p>
+                )}
+                {center.horarios && (
+                  <p className="text-xs text-gray-600">
+                    🕒 {center.horarios}
+                  </p>
+                )}
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     </div>
   )
 }
