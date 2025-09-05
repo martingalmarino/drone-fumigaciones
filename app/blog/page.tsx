@@ -31,7 +31,7 @@ export default async function BlogPage() {
       title: '¿Qué es la fumigación con drones y cómo funciona?',
       category: 'conceptos',
       excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
-      createdAt: new Date('2025-01-15'),
+      createdAt: new Date(),
       readingTime: 10,
     }
   ]

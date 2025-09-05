@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: '¿Qué es la fumigación con drones y cómo funciona?',
     description: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
     type: 'article',
-    publishedTime: '2025-01-15T00:00:00.000Z',
+    publishedTime: new Date().toISOString(),
     authors: ['AgryFly'],
   }
 }
@@ -46,7 +46,11 @@ export default function BlogPost() {
             <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-600">
               <div className="flex items-center">
                 <Calendar className="h-4 w-4 mr-1" />
-                15 de enero, 2025
+                {new Date().toLocaleDateString('es-AR', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}
               </div>
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-1" />
