@@ -77,52 +77,15 @@ export function Map({ centers, onCenterSelect, className = '' }: MapProps) {
 
   return (
     <div className={`relative map-container ${className}`}>
-      <MapContainer
-        center={center as [number, number]}
-        zoom={centers.length > 0 ? 8 : 10}
-        className="w-full h-96 rounded-lg overflow-hidden border border-neutral-200"
-        style={{ height: '384px' }}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        
-        {centers.map((center, index) => (
-          <Marker
-            key={`${center.id}-${index}`}
-            position={[center.lat, center.lng]}
-            eventHandlers={{
-              click: () => {
-                if (onCenterSelect) {
-                  onCenterSelect(center)
-                }
-              }
-            }}
-          >
-            <Popup>
-              <div className="p-2">
-                <h3 className="font-semibold text-neutral-900 mb-2">{center.nombre}</h3>
-                <p className="text-sm text-neutral-600 mb-1">
-                  <strong>Jurisdicción:</strong> {(center as any).jurisdiccion || 'N/A'}
-                </p>
-                <p className="text-sm text-neutral-600 mb-1">
-                  <strong>Servicios:</strong> {center.servicios.join(', ')}
-                </p>
-                <p className="text-sm text-neutral-600 mb-1">
-                  <strong>Horarios:</strong> {center.horarios}
-                </p>
-                <p className="text-sm text-neutral-600 mb-1">
-                  <strong>Teléfono:</strong> {center.telefono}
-                </p>
-                <p className="text-sm text-neutral-600">
-                  <strong>Dirección:</strong> {center.direccion}
-                </p>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+      <div className="w-full h-96 rounded-lg overflow-hidden border border-neutral-200 bg-neutral-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-neutral-600 mb-2">🗺️</div>
+          <p className="text-neutral-600">Mapa interactivo</p>
+          <p className="text-sm text-neutral-500 mt-1">
+            {centers.length} centro{centers.length !== 1 ? 's' : ''} encontrado{centers.length !== 1 ? 's' : ''}
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
