@@ -184,7 +184,7 @@ export default async function DirectorioPage() {
                   <CardContent className="p-4 sm:p-6">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       <div className="flex-1">
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
                           <h3 className="text-lg sm:text-xl font-semibold">{company.name}</h3>
                           {company.isFeatured && (
                             <Badge className="bg-primary text-xs w-fit">Destacado</Badge>
