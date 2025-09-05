@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Clock, Calendar, User, Tag, ExternalLink } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -129,7 +129,7 @@ export default function BlogPost() {
                   <thead>
                     <tr className="bg-gray-50">
                       <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Aspecto</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Drones <25 kg (Categoría abierta)</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Drones &lt;25 kg (Categoría abierta)</th>
                       <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Drones 25–150 kg (Categoría específica)</th>
                     </tr>
                   </thead>
