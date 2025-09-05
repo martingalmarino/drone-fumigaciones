@@ -145,9 +145,9 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
                     </a>
                   )}
                   
-                  {company.website && (
+                  {company.websiteUrl && (
                     <a 
-                      href={company.website}
+                      href={company.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center text-gray-600 hover:text-primary transition-colors"
