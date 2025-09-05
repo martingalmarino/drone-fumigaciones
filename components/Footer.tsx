@@ -29,11 +29,24 @@ export default function Footer() {
           {/* Logo y descripción */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center mb-4">
-              <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
-                <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
-                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                  <path d="M8 12L10 14L16 8" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+              <div className="h-8 w-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-sm">
+                <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Drone body */}
+                  <rect x="10" y="11" width="4" height="2" rx="1" fill="currentColor"/>
+                  {/* Drone arms */}
+                  <rect x="7" y="11.5" width="3" height="1" rx="0.5" fill="currentColor"/>
+                  <rect x="14" y="11.5" width="3" height="1" rx="0.5" fill="currentColor"/>
+                  <rect x="11.5" y="8" width="1" height="3" rx="0.5" fill="currentColor"/>
+                  <rect x="11.5" y="13" width="1" height="3" rx="0.5" fill="currentColor"/>
+                  {/* Propellers */}
+                  <circle cx="8.5" cy="12" r="1.2" fill="none" stroke="currentColor" strokeWidth="0.8"/>
+                  <circle cx="15.5" cy="12" r="1.2" fill="none" stroke="currentColor" strokeWidth="0.8"/>
+                  <circle cx="12" cy="8.5" r="1.2" fill="none" stroke="currentColor" strokeWidth="0.8"/>
+                  <circle cx="12" cy="15.5" r="1.2" fill="none" stroke="currentColor" strokeWidth="0.8"/>
+                  {/* Spray droplets */}
+                  <circle cx="11" y="17" r="0.8" fill="currentColor" opacity="0.7"/>
+                  <circle cx="13" y="18" r="0.6" fill="currentColor" opacity="0.5"/>
+                  <circle cx="12" y="19.5" r="0.4" fill="currentColor" opacity="0.3"/>
                 </svg>
               </div>
               <span className="ml-2 text-lg sm:text-xl font-bold">
