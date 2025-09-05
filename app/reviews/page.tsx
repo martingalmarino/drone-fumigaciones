@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { prisma } from '@/lib/prisma'
 import AdSlot from '@/components/AdSlot'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
@@ -33,19 +32,84 @@ const useTypes = [
 ]
 
 export default async function ReviewsPage() {
-  const drones = await prisma.drone.findMany({
-    include: {
-      reviews: true,
+  // Hardcoded drones and reviews data for now
+  const drones = [
+    {
+      id: '1',
+      slug: 'dji-agras-t50',
+      brand: 'DJI',
+      model: 'Agras T50',
+      capacityL: 50,
+      payloadKg: 70,
+      year: 2023,
+      features: '["GPS RTK", "Pulverización de precisión", "Vuelo autónomo"]',
+      pros: '["Alta eficiencia", "Precisión GPS", "Resistencia"]',
+      cons: '["Costo elevado", "Tamaño grande", "Mantenimiento complejo"]',
+      reviews: [
+        {
+          id: '1',
+          slug: 'dji-agras-t50-review',
+          title: 'DJI Agras T50 - Análisis Completo',
+          rating: 5,
+          createdAt: new Date(),
+        }
+      ]
     },
-    orderBy: { year: 'desc' },
-  })
+    {
+      id: '2',
+      slug: 'xag-p150',
+      brand: 'XAG',
+      model: 'P150',
+      capacityL: 50,
+      payloadKg: 50,
+      year: 2023,
+      features: '["Sistema de pulverización", "Vuelo autónomo", "Monitoreo en tiempo real"]',
+      pros: '["Buena relación precio-calidad", "Fácil mantenimiento", "Soporte técnico"]',
+      cons: '["Menor autonomía", "Limitaciones climáticas", "Curva de aprendizaje"]',
+      reviews: [
+        {
+          id: '2',
+          slug: 'xag-p150-review',
+          title: 'XAG P150 - Review Detallado',
+          rating: 4,
+          createdAt: new Date(),
+        }
+      ]
+    }
+  ]
 
-  const reviews = await prisma.review.findMany({
-    include: {
-      drone: true,
+  const reviews = [
+    {
+      id: '1',
+      slug: 'dji-agras-t50-review',
+      title: 'DJI Agras T50 - Análisis Completo',
+      summary: 'El DJI Agras T50 es uno de los drones agrícolas más avanzados del mercado.',
+      rating: 5,
+      createdAt: new Date(),
+      drone: {
+        id: '1',
+        brand: 'DJI',
+        model: 'Agras T50',
+        capacityL: 50,
+        year: 2023
+      }
     },
-    orderBy: { createdAt: 'desc' },
-  })
+    {
+      id: '2',
+      slug: 'xag-p150-review',
+      title: 'XAG P150 - Review Detallado',
+      summary: 'Análisis completo del XAG P150, un drone agrícola con excelente relación precio-calidad.',
+      rating: 4,
+      createdAt: new Date(),
+      drone: {
+        id: '2',
+        brand: 'XAG',
+        model: 'P150',
+        capacityL: 50,
+        year: 2023
+      }
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-gray-50">
