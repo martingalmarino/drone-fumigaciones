@@ -110,10 +110,10 @@ export default function CotizarPage() {
           </div>
           
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">
               Solicitar Cotización
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-base sm:text-xl text-gray-600">
               Completa el formulario y recibe propuestas de empresas certificadas
             </p>
           </div>
@@ -123,7 +123,7 @@ export default function CotizarPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Progress */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
+          <div className="hidden sm:flex items-center justify-between mb-4">
             {steps.map((step) => (
               <div key={step.id} className="flex items-center">
                 <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 ${
@@ -150,16 +150,43 @@ export default function CotizarPage() {
               </div>
             ))}
           </div>
+          
+          {/* Mobile Progress */}
+          <div className="sm:hidden mb-4">
+            <div className="flex items-center justify-between">
+              {steps.map((step) => (
+                <div key={step.id} className="flex flex-col items-center">
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full border-2 ${
+                    currentStep >= step.id 
+                      ? 'bg-primary border-primary text-white' 
+                      : 'border-gray-300 text-gray-500'
+                  }`}>
+                    {currentStep > step.id ? (
+                      <Check className="h-4 w-4" />
+                    ) : (
+                      <step.icon className="h-4 w-4" />
+                    )}
+                  </div>
+                  <span className={`mt-1 text-xs font-medium ${
+                    currentStep >= step.id ? 'text-primary' : 'text-gray-500'
+                  }`}>
+                    {step.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
           <Progress value={progress} className="h-2" />
         </div>
 
         <form onSubmit={handleSubmit}>
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">
+              <CardTitle className="text-lg sm:text-2xl">
                 Paso {currentStep}: {steps[currentStep - 1].title}
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm sm:text-base">
                 {currentStep === 1 && 'Selecciona la provincia donde necesitas el servicio'}
                 {currentStep === 2 && 'Indica el tipo de cultivo'}
                 {currentStep === 3 && 'Elige el servicio que necesitas'}
@@ -170,13 +197,13 @@ export default function CotizarPage() {
             <CardContent className="space-y-6">
               {/* Step 1: Provincia */}
               {currentStep === 1 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-3">
                   {provinces.map((province) => (
                     <button
                       key={province.slug}
                       type="button"
                       onClick={() => updateFormData('province', province.slug)}
-                      className={`p-4 rounded-lg border-2 text-left transition-colors ${
+                      className={`w-full p-4 rounded-lg border-2 text-left transition-colors ${
                         formData.province === province.slug
                           ? 'border-primary bg-primary/5'
                           : 'border-gray-200 hover:border-gray-300'
@@ -193,13 +220,13 @@ export default function CotizarPage() {
 
               {/* Step 2: Cultivo */}
               {currentStep === 2 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-3">
                   {crops.map((crop) => (
                     <button
                       key={crop}
                       type="button"
                       onClick={() => updateFormData('crop', crop)}
-                      className={`p-4 rounded-lg border-2 text-left transition-colors ${
+                      className={`w-full p-4 rounded-lg border-2 text-left transition-colors ${
                         formData.crop === crop
                           ? 'border-primary bg-primary/5'
                           : 'border-gray-200 hover:border-gray-300'
@@ -216,7 +243,7 @@ export default function CotizarPage() {
 
               {/* Step 3: Servicio */}
               {currentStep === 3 && (
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {services.map((service) => (
                     <button
                       key={service.id}
@@ -228,11 +255,11 @@ export default function CotizarPage() {
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                     >
-                      <div className="flex items-center">
-                        <Droplets className="h-5 w-5 mr-3 text-gray-400" />
-                        <div>
-                          <div className="font-medium">{service.name}</div>
-                          <div className="text-sm text-gray-500">{service.description}</div>
+                      <div className="flex items-start">
+                        <Droplets className="h-5 w-5 mr-3 text-gray-400 mt-0.5" />
+                        <div className="flex-1">
+                          <div className="font-medium text-left">{service.name}</div>
+                          <div className="text-sm text-gray-500 text-left mt-1">{service.description}</div>
                         </div>
                       </div>
                     </button>
