@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { MapPin, Phone, Mail, ExternalLink, ArrowLeft, Star } from 'lucide-react'
+import { MapPin, Phone, Mail, ExternalLink, ArrowLeft, Star, Users, Calculator } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'

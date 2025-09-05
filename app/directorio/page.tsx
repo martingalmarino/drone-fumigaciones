@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { MapPin, Phone, Mail, ExternalLink, Filter, Search } from 'lucide-react'
+import { MapPin, Phone, Mail, ExternalLink, Filter, Search, Users, Calculator } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
