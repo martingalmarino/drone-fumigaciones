@@ -30,10 +30,14 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center mb-4">
               <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">FD</span>
+                <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                  <path d="M8 12L10 14L16 8" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                </svg>
               </div>
               <span className="ml-2 text-lg sm:text-xl font-bold">
-                Fumigación Drones
+                AgryFly
               </span>
             </div>
             <p className="text-gray-300 text-sm sm:text-base mb-4 leading-relaxed">
