@@ -19,12 +19,6 @@ export default async function AdminEmpresas() {
   const companies = await prisma.company.findMany({
     include: {
       province: true,
-      services: true,
-      drones: {
-        include: {
-          drone: true,
-        },
-      },
     },
     orderBy: { createdAt: 'desc' },
   })
@@ -115,11 +109,18 @@ export default async function AdminEmpresas() {
                   
                   {/* Services */}
                   <div className="flex flex-wrap gap-1 mb-2">
-                    {company.services.map((service) => (
-                      <Badge key={service.id} variant="outline" className="text-xs">
-                        {service.type}
-                      </Badge>
-                    ))}
+                    {(() => {
+                      try {
+                        const services = JSON.parse(company.services || '[]')
+                        return services.map((service: string, index: number) => (
+                          <Badge key={index} variant="outline" className="text-xs">
+                            {service}
+                          </Badge>
+                        ))
+                      } catch {
+                        return null
+                      }
+                    })()}
                   </div>
                   
                   {/* Contact Info */}
