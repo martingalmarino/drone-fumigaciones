@@ -106,6 +106,12 @@ const provinces = [
 
 const recentArticles = [
   {
+    title: 'Drones vs. aviones vs. pulverizadoras terrestres: comparativa de costos y efectividad',
+    excerpt: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
+    slug: 'drones-vs-aviones-vs-pulverizadoras',
+    category: 'Análisis'
+  },
+  {
     title: '¿Qué es la fumigación con drones y cómo funciona?',
     excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
     slug: 'que-es-fumigacion-con-drones',

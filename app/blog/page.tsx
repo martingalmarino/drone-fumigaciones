@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 }
 
 const categories = [
+  { slug: 'análisis', name: 'Análisis', description: 'Comparativas y análisis técnicos' },
   { slug: 'conceptos', name: 'Conceptos', description: 'Fundamentos y conceptos básicos' },
   { slug: 'tecnologia', name: 'Tecnología', description: 'Drones, equipos y avances tecnológicos' },
   { slug: 'normativa', name: 'Normativa', description: 'Regulaciones y requisitos legales' },
@@ -27,11 +28,20 @@ export default async function BlogPage() {
   const articles = [
     {
       id: '1',
+      slug: 'drones-vs-aviones-vs-pulverizadoras',
+      title: 'Drones vs. aviones vs. pulverizadoras terrestres: comparativa de costos y efectividad',
+      category: 'análisis',
+      excerpt: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
+      createdAt: new Date(),
+      readingTime: 12,
+    },
+    {
+      id: '2',
       slug: 'que-es-fumigacion-con-drones',
       title: '¿Qué es la fumigación con drones y cómo funciona?',
       category: 'conceptos',
       excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
-      createdAt: new Date(),
+      createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000), // 7 días atrás
       readingTime: 10,
     }
   ]
