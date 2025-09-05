@@ -142,6 +142,16 @@ export default function Footer() {
               <p className="mt-1">
                 Información proporcionada con fines informativos. Consulte siempre con profesionales certificados.
               </p>
+              <p className="mt-2">
+                Desarrollado por{' '}
+                <a 
+                  href="mailto:m.galmarino@gmail.com" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Martín Galmarino
+                </a>{' '}
+                🤖
+              </p>
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400">
               <span className="flex items-center">
