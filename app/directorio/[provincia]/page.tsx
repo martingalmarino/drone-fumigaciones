@@ -9,6 +9,7 @@ import { formatPhone, getWhatsAppUrl } from '@/lib/utils'
 import AdSlot from '@/components/AdSlot'
 import SeoHead from '@/components/SeoHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { Map } from '@/components/Map'
 
 interface ProvinciaPageProps {
   params: { provincia: string }
@@ -167,6 +168,29 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
     companiesCount: provinceCompanies.length,
   }
 
+  // Transform companies data for map (add coordinates)
+  const mapCenters = provinceCompanies.map(company => ({
+    id: company.id,
+    nombre: company.name,
+    lat: company.lat || getDefaultCoordinates(params.provincia).lat,
+    lng: company.lng || getDefaultCoordinates(params.provincia).lng,
+    servicios: company.services ? JSON.parse(company.services) : [],
+    horarios: 'Lunes a Viernes 8:00-18:00',
+    telefono: company.phone,
+    direccion: company.address,
+    jurisdiccion: province.name
+  }))
+
+  // Default coordinates for each province
+  function getDefaultCoordinates(provinceSlug: string) {
+    const coordinates = {
+      'cordoba': { lat: -31.4201, lng: -64.1888 },
+      'buenos-aires': { lat: -34.6037, lng: -58.3816 },
+      'santa-fe': { lat: -31.6333, lng: -60.7000 }
+    }
+    return coordinates[provinceSlug as keyof typeof coordinates] || { lat: -34.6037, lng: -58.3816 }
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Place",
@@ -242,13 +266,10 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <MapPin className="h-12 w-12 mx-auto mb-4" />
-                    <p>Mapa interactivo con ubicaciones</p>
-                    <p className="text-sm">(Se cargaría con Leaflet en producción)</p>
-                  </div>
-                </div>
+                <Map 
+                  centers={mapCenters}
+                  className="h-96"
+                />
               </CardContent>
             </Card>
           </div>
