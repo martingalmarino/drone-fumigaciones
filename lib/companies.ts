@@ -6,7 +6,11 @@ export const allCompanies = [
     name: 'Fitosanitarios Martín Páez',
     province: 'Córdoba',
     services: '["Fumigación con drones", "Agricultura drones"]',
-    isFeatured: true
+    isFeatured: true,
+    phone: '957 202 591',
+    whatsapp: '957 202 591',
+    email: null,
+    websiteUrl: 'https://fitosanitariosmartinpaez.com/servicios/fumigacion-con-dron/'
   },
   {
     id: '2',
@@ -14,7 +18,11 @@ export const allCompanies = [
     name: 'Drones Agrícolas de Córdoba',
     province: 'Córdoba',
     services: '["Fumigación agricultura", "NDVI y drones"]',
-    isFeatured: true
+    isFeatured: true,
+    phone: null,
+    whatsapp: null,
+    email: null,
+    websiteUrl: 'https://www.instagram.com/drones_agricolas_de_cordoba/'
   },
   {
     id: '3',
@@ -22,7 +30,11 @@ export const allCompanies = [
     name: 'MB Logística',
     province: 'Córdoba',
     services: '["Siembra y fumigación con drones", "DJI Agras T30"]',
-    isFeatured: false
+    isFeatured: false,
+    phone: null,
+    whatsapp: null,
+    email: null,
+    websiteUrl: null
   },
   {
     id: '4',
@@ -30,7 +42,11 @@ export const allCompanies = [
     name: 'Agro Misión Servicios',
     province: 'Buenos Aires',
     services: '["Pulverización agrícola con drones", "DJI Agras T40"]',
-    isFeatured: true
+    isFeatured: true,
+    phone: null,
+    whatsapp: null,
+    email: null,
+    websiteUrl: null
   },
   {
     id: '5',
@@ -38,7 +54,11 @@ export const allCompanies = [
     name: 'Estudio G&D',
     province: 'Buenos Aires',
     services: '["Pulverización con drones", "Drones multirotor"]',
-    isFeatured: true
+    isFeatured: true,
+    phone: '+54 9 249 469-7996',
+    whatsapp: '+54 9 249 469-7996',
+    email: null,
+    websiteUrl: 'https://estudiogyd.com.ar/servicioDrones'
   },
   {
     id: '6',
@@ -46,7 +66,11 @@ export const allCompanies = [
     name: 'USS Alarmas',
     province: 'Buenos Aires',
     services: '["Drones fumigadores", "Varios modelos"]',
-    isFeatured: true
+    isFeatured: true,
+    phone: '+54 11 4011 3000',
+    whatsapp: '+54 11 4011 3000',
+    email: null,
+    websiteUrl: 'https://uss.com.ar/corporativo/drones-e-industria-4-0/drone-fumigador/'
   },
   {
     id: '7',
@@ -54,7 +78,11 @@ export const allCompanies = [
     name: 'BioDrone',
     province: 'Santa Fe',
     services: '["Control de plagas con drones", "Combustión interna"]',
-    isFeatured: true
+    isFeatured: true,
+    phone: null,
+    whatsapp: null,
+    email: null,
+    websiteUrl: null
   },
   {
     id: '8',
@@ -62,7 +90,11 @@ export const allCompanies = [
     name: 'G&D Pulverización',
     province: 'Santa Fe',
     services: '["Servicios agro con drones", "Drones multirotor"]',
-    isFeatured: true
+    isFeatured: true,
+    phone: '+54 9 249 469-7996',
+    whatsapp: '+54 9 249 469-7996',
+    email: null,
+    websiteUrl: 'https://www.agroads.com.ar/detalle.asp?clasi=714687'
   }
 ]
 
