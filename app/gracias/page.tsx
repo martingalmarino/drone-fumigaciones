@@ -43,7 +43,7 @@ export default function ThanksPage() {
             </p>
           </div>
 
-          <AdSlot variant="banner" className="my-8" />
+          <AdSlot variant="leaderboard" className="my-8" />
 
           {/* What's Next */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

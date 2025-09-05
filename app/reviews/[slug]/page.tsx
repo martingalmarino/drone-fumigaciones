@@ -176,7 +176,7 @@ El DJI Agras T50 es una excelente opción para productores que buscan maximizar 
             </div>
           </div>
 
-          <AdSlot variant="banner" className="my-8" />
+          <AdSlot variant="leaderboard" className="my-8" />
 
           {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
