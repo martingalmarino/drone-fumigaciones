@@ -10,6 +10,7 @@ import AdSlot from '@/components/AdSlot'
 import SeoHead from '@/components/SeoHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { Map } from '@/components/Map'
+import { getCompaniesByProvince } from '@/lib/companies'
 
 interface ProvinciaPageProps {
   params: { provincia: string }
