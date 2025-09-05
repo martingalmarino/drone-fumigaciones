@@ -209,8 +209,8 @@ export default async function DirectorioPage() {
                           ))}
                         </div>
                         
-                        {/* Certifications */}
-                        {company.certifications && JSON.parse(company.certifications).length > 0 && (
+                        {/* Certifications - Temporarily disabled */}
+                        {/* {company.certifications && JSON.parse(company.certifications).length > 0 && (
                           <div className="mb-4">
                             <p className="text-sm font-medium text-gray-700 mb-2">Certificaciones:</p>
                             <div className="flex flex-wrap gap-2">
@@ -221,7 +221,7 @@ export default async function DirectorioPage() {
                               ))}
                             </div>
                           </div>
-                        )}
+                        )} */}
                         
                         
                         {/* Contact Info */}
@@ -235,7 +235,7 @@ export default async function DirectorioPage() {
                               {formatPhone(company.phone)}
                             </a>
                           )}
-                          {company.whatsapp && (
+                          {/* {company.whatsapp && (
                             <a 
                               href={getWhatsAppUrl(company.whatsapp, `Hola, me interesa conocer más sobre sus servicios de fumigación con drones.`)}
                               target="_blank"
@@ -245,7 +245,7 @@ export default async function DirectorioPage() {
                               <Phone className="h-4 w-4 mr-1" />
                               WhatsApp
                             </a>
-                          )}
+                          )} */}
                           {company.email && (
                             <a 
                               href={`mailto:${company.email}`}
