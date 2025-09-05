@@ -5,7 +5,6 @@ import { MapPin, Phone, Mail, ExternalLink, ArrowLeft, Star } from 'lucide-react
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { prisma } from '@/lib/prisma'
 import { formatPhone, getWhatsAppUrl } from '@/lib/utils'
 import AdSlot from '@/components/AdSlot'
 import SeoHead from '@/components/SeoHead'
@@ -16,49 +15,71 @@ interface ProvinciaPageProps {
 }
 
 export async function generateMetadata({ params }: ProvinciaPageProps): Promise<Metadata> {
-  const province = await prisma.province.findUnique({
-    where: { slug: params.provincia },
-    include: {
-      _count: {
-        select: { companies: true }
-      }
-    }
-  })
-
-  if (!province) {
-    return {
-      title: 'Provincia no encontrada',
-    }
+  // Hardcoded province data for now
+  const province = {
+    name: 'Buenos Aires',
+    slug: params.provincia,
+    companiesCount: 5,
   }
 
   return {
-    title: `Fumigación con Drones en ${province.name} | ${province._count.companies} Empresas`,
-    description: `Encuentra ${province._count.companies} empresas certificadas de fumigación con drones en ${province.name}. Servicios de pulverización, siembra y fertilización.`,
+    title: `Fumigación con Drones en ${province.name} | ${province.companiesCount} Empresas`,
+    description: `Encuentra ${province.companiesCount} empresas certificadas de fumigación con drones en ${province.name}. Servicios de pulverización, siembra y fertilización.`,
     openGraph: {
       title: `Fumigación con Drones en ${province.name}`,
-      description: `${province._count.companies} empresas certificadas en ${province.name}`,
+      description: `${province.companiesCount} empresas certificadas en ${province.name}`,
     },
   }
 }
 
 export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
-  const province = await prisma.province.findUnique({
-    where: { slug: params.provincia },
-    include: {
-      companies: {
-        orderBy: [
-          { isFeatured: 'desc' },
-          { name: 'asc' },
-        ],
+  // Hardcoded province data for now
+  const province = {
+    id: '1',
+    name: 'Buenos Aires',
+    slug: params.provincia,
+    companies: [
+      {
+        id: '1',
+        slug: 'agro-drones-buenos-aires',
+        name: 'Agro Drones Buenos Aires',
+        city: 'La Plata',
+        description: 'Especialistas en fumigación con drones para cultivos extensivos.',
+        isFeatured: true,
+        services: '["fumigacion", "pulverizacion", "siembra"]',
+        phone: '+54 221 123-4567',
+        whatsapp: '+54 221 123-4567',
+        email: 'info@agrodronesba.com',
+        websiteUrl: 'https://agrodronesba.com',
       },
-      _count: {
-        select: { companies: true }
-      }
-    }
-  })
-
-  if (!province) {
-    notFound()
+      {
+        id: '2',
+        slug: 'drones-agricolas-sa',
+        name: 'Drones Agrícolas S.A.',
+        city: 'Mar del Plata',
+        description: 'Servicios profesionales de fumigación con drones en la costa atlántica.',
+        isFeatured: false,
+        services: '["fumigacion", "fertilizacion"]',
+        phone: '+54 223 456-7890',
+        whatsapp: '+54 223 456-7890',
+        email: 'contacto@dronesagricolas.com',
+        websiteUrl: null,
+      },
+      {
+        id: '3',
+        slug: 'precision-aerea-ba',
+        name: 'Precisión Aérea B.A.',
+        city: 'Tandil',
+        description: 'Tecnología de precisión para aplicaciones agrícolas.',
+        isFeatured: true,
+        services: '["fumigacion", "pulverizacion", "monitoreo"]',
+        phone: '+54 249 789-0123',
+        whatsapp: '+54 249 789-0123',
+        email: 'info@precisionaerea.com',
+        websiteUrl: 'https://precisionaerea.com',
+      },
+    ],
+    companiesCount: 3,
   }
 
   const jsonLd = {
@@ -85,7 +106,7 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
     <>
       <SeoHead
         title={`Fumigación con Drones en ${province.name}`}
-        description={`Encuentra ${province._count.companies} empresas certificadas de fumigación con drones en ${province.name}. Servicios de pulverización, siembra y fertilización.`}
+        description={`Encuentra ${province.companiesCount} empresas certificadas de fumigación con drones en ${province.name}. Servicios de pulverización, siembra y fertilización.`}
         canonical={`/directorio/${province.slug}`}
         jsonLd={jsonLd}
       />
@@ -106,7 +127,7 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
                 Fumigación con Drones en {province.name}
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                {province._count.companies} empresas certificadas disponibles
+                {province.companiesCount} empresas certificadas disponibles
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
