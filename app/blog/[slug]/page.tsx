@@ -229,7 +229,7 @@ La fumigación con drones representa el futuro de la agricultura de precisión, 
                         Ver Directorio
                       </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                    <Button asChild variant="secondary" size="lg">
                       <Link href="/cotizar">
                         Solicitar Cotización
                       </Link>
