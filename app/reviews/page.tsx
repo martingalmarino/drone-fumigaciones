@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const brands = [
   { slug: 'dji', name: 'DJI', count: 4 },
-  { slug: 'xag', name: 'XAG', count: 2 },
+  { slug: 'xag', name: 'XAG', count: 3 },
   { slug: 'agco', name: 'AGCO', count: 0 },
 ]
 
@@ -141,6 +141,27 @@ export default async function ReviewsPage() {
     },
     {
       id: '6',
+      slug: 'xag-v40',
+      brand: 'XAG',
+      model: 'V40',
+      capacityL: 16,
+      payloadKg: 40,
+      year: 2024,
+      features: '["Doble rotor inclinable", "RTK centimétrico", "SuperX4 IA", "3 modos operación"]',
+      pros: '["Diseño compacto", "Versatilidad", "Carga rápida 11 min", "RTK ±10 cm"]',
+      cons: '["Autonomía limitada con carga", "Caudal menor vs P100 Pro"]',
+      reviews: [
+        {
+          id: '6',
+          slug: 'xag-v40-review',
+          title: 'XAG V40 - Análisis Completo',
+          rating: 4,
+          createdAt: new Date(),
+        }
+      ]
+    },
+    {
+      id: '7',
       slug: 'xag-p150',
       brand: 'XAG',
       model: 'P150',
@@ -152,7 +173,7 @@ export default async function ReviewsPage() {
       cons: '["Menor autonomía", "Limitaciones climáticas", "Curva de aprendizaje"]',
       reviews: [
         {
-          id: '6',
+          id: '7',
           slug: 'xag-p150-review',
           title: 'XAG P150 - Review Detallado',
           rating: 4,
@@ -240,13 +261,28 @@ export default async function ReviewsPage() {
     },
     {
       id: '6',
+      slug: 'xag-v40-review',
+      title: 'XAG V40 - Análisis Completo',
+      summary: 'El XAG V40 combina doble rotor inclinable, 16L de pulverización y 40 kg/min de esparcido en un diseño compacto.',
+      rating: 4,
+      createdAt: new Date(),
+      drone: {
+        id: '6',
+        brand: 'XAG',
+        model: 'V40',
+        capacityL: 16,
+        year: 2024
+      }
+    },
+    {
+      id: '7',
       slug: 'xag-p150-review',
       title: 'XAG P150 - Review Detallado',
       summary: 'Análisis completo del XAG P150, un drone agrícola con excelente relación precio-calidad.',
       rating: 4,
       createdAt: new Date(),
       drone: {
-        id: '6',
+        id: '7',
         brand: 'XAG',
         model: 'P150',
         capacityL: 50,
