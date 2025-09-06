@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Star, Users, BookOpen, Calculator, CheckCircle, Zap, Shield, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -7,6 +8,11 @@ import AdSlot from '@/components/AdSlot'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { getCompanyCountByProvince } from '@/lib/companies'
+
+export const metadata: Metadata = {
+  title: 'AgryFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
+  description: 'El hub más completo de drones agrícolas en Argentina. En AgryFly comparás proveedores, accedés a guías especializadas y encontrás empresas certificadas.',
+}
 
 const features = [
   {
