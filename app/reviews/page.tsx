@@ -60,12 +60,12 @@ export default async function ReviewsPage() {
       slug: 'dji-agras-t50',
       brand: 'DJI',
       model: 'Agras T50',
-      capacityL: 50,
-      payloadKg: 70,
-      year: 2023,
-      features: '["GPS RTK", "Pulverización de precisión", "Vuelo autónomo"]',
-      pros: '["Alta eficiencia", "Precisión GPS", "Resistencia"]',
-      cons: '["Costo elevado", "Tamaño grande", "Mantenimiento complejo"]',
+      capacityL: 40,
+      payloadKg: 50,
+      year: 2024,
+      features: '["GPS RTK", "Radar 360°", "Pulverización + Esparcido", "8 motores coaxiales"]',
+      pros: '["Alta capacidad", "Doble función", "Detección avanzada", "Recarga rápida"]',
+      cons: '["Peso elevado", "Complejidad operativa"]',
       reviews: [
         {
           id: '2',
@@ -119,15 +119,15 @@ export default async function ReviewsPage() {
       id: '2',
       slug: 'dji-agras-t50-review',
       title: 'DJI Agras T50 - Análisis Completo',
-      summary: 'El DJI Agras T50 es uno de los drones agrícolas más avanzados del mercado.',
+      summary: 'El DJI Agras T50 combina pulverización de 40L y esparcido de 75L en un drone agrícola de alto rendimiento.',
       rating: 5,
       createdAt: new Date(),
       drone: {
         id: '2',
         brand: 'DJI',
         model: 'Agras T50',
-        capacityL: 50,
-        year: 2023
+        capacityL: 40,
+        year: 2024
       }
     },
     {
