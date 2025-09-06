@@ -164,14 +164,30 @@ export default function DJIAgrasT50ReviewPage() {
             {/* Hero Image */}
             <Card>
               <CardContent className="p-0">
-                <div className="relative h-64 sm:h-80 lg:h-96">
+                <div className="relative h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-green-100 to-green-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1713974088776-8776a0a0c877?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                    src="https://images.pexels.com/photos/1070945/pexels-photo-1070945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="DJI Agras T50 fumigando en campo agrícola"
                     fill
                     className="object-cover rounded-lg"
                     priority
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      e.currentTarget.style.display = 'none'
+                    }}
                   />
+                  {/* Fallback placeholder */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-100 to-green-200 rounded-lg">
+                    <div className="text-center p-8">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">DJI Agras T50</h3>
+                      <p className="text-sm text-gray-600">Drone agrícola en acción</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
