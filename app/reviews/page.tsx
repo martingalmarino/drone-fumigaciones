@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const brands = [
   { slug: 'dji', name: 'DJI', count: 4 },
-  { slug: 'xag', name: 'XAG', count: 1 },
+  { slug: 'xag', name: 'XAG', count: 2 },
   { slug: 'agco', name: 'AGCO', count: 0 },
 ]
 
@@ -120,6 +120,27 @@ export default async function ReviewsPage() {
     },
     {
       id: '5',
+      slug: 'xag-p100-pro',
+      brand: 'XAG',
+      model: 'P100 Pro',
+      capacityL: 50,
+      payloadKg: 50,
+      year: 2024,
+      features: '["Radar 4D", "RevoSpray 3", "RevoCast 3", "Carga rápida 11 min"]',
+      pros: '["Alto rendimiento", "Radar 4D avanzado", "150 kg/min esparcido", "Diseño compacto"]',
+      cons: '["Autonomía no detallada", "Caudal variable según grano"]',
+      reviews: [
+        {
+          id: '5',
+          slug: 'xag-p100-pro-review',
+          title: 'XAG P100 Pro - Análisis Completo',
+          rating: 5,
+          createdAt: new Date(),
+        }
+      ]
+    },
+    {
+      id: '6',
       slug: 'xag-p150',
       brand: 'XAG',
       model: 'P150',
@@ -131,7 +152,7 @@ export default async function ReviewsPage() {
       cons: '["Menor autonomía", "Limitaciones climáticas", "Curva de aprendizaje"]',
       reviews: [
         {
-          id: '5',
+          id: '6',
           slug: 'xag-p150-review',
           title: 'XAG P150 - Review Detallado',
           rating: 4,
@@ -204,13 +225,28 @@ export default async function ReviewsPage() {
     },
     {
       id: '5',
+      slug: 'xag-p100-pro-review',
+      title: 'XAG P100 Pro - Análisis Completo',
+      summary: 'El XAG P100 Pro combina 50L de pulverización, 150 kg/min de esparcido y radar 4D en un drone de alto rendimiento.',
+      rating: 5,
+      createdAt: new Date(),
+      drone: {
+        id: '5',
+        brand: 'XAG',
+        model: 'P100 Pro',
+        capacityL: 50,
+        year: 2024
+      }
+    },
+    {
+      id: '6',
       slug: 'xag-p150-review',
       title: 'XAG P150 - Review Detallado',
       summary: 'Análisis completo del XAG P150, un drone agrícola con excelente relación precio-calidad.',
       rating: 4,
       createdAt: new Date(),
       drone: {
-        id: '5',
+        id: '6',
         brand: 'XAG',
         model: 'P150',
         capacityL: 50,
