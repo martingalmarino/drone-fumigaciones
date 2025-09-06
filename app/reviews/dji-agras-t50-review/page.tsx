@@ -166,7 +166,7 @@ export default function DJIAgrasT50ReviewPage() {
               <CardContent className="p-0">
                 <div className="relative h-64 sm:h-80 lg:h-96">
                   <Image
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="https://images.unsplash.com/photo-1713974088776-8776a0a0c877?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
                     alt="DJI Agras T50 fumigando en campo agrícola"
                     fill
                     className="object-cover rounded-lg"
