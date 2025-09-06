@@ -171,13 +171,9 @@ export default function DJIAgrasT50ReviewPage() {
                     fill
                     className="object-cover rounded-lg"
                     priority
-                    onError={(e) => {
-                      // Fallback to placeholder if image fails to load
-                      e.currentTarget.style.display = 'none'
-                    }}
                   />
-                  {/* Fallback placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-100 to-green-200 rounded-lg">
+                  {/* Fallback placeholder - always visible as background */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-100 to-green-200 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
                     <div className="text-center p-8">
                       <div className="w-16 h-16 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center">
                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
