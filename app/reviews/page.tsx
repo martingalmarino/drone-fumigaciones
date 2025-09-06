@@ -382,7 +382,7 @@ export default async function ReviewsPage() {
                         
                         <div className="ml-6 flex flex-col space-y-2">
                           <Button asChild size="sm">
-                            <Link href={`/reviews/${drone.slug}`}>
+                            <Link href={`/reviews/${drone.slug}-review`}>
                               Ver Review
                             </Link>
                           </Button>
