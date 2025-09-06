@@ -54,7 +54,7 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-1" />
-                12 min de lectura
+                6 min de lectura
               </div>
               <div className="flex items-center">
                 <User className="h-4 w-4 mr-1" />
