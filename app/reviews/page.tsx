@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 }
 
 const brands = [
-  { slug: 'dji', name: 'DJI', count: 3 },
-  { slug: 'xag', name: 'XAG', count: 2 },
-  { slug: 'agco', name: 'AGCO', count: 1 },
+  { slug: 'dji', name: 'DJI', count: 2 },
+  { slug: 'xag', name: 'XAG', count: 1 },
+  { slug: 'agco', name: 'AGCO', count: 0 },
 ]
 
 const capacityRanges = [
@@ -36,6 +36,27 @@ export default async function ReviewsPage() {
   const drones = [
     {
       id: '1',
+      slug: 'dji-agras-t30',
+      brand: 'DJI',
+      model: 'Agras T30',
+      capacityL: 30,
+      payloadKg: 40,
+      year: 2024,
+      features: '["GPS RTK", "Radar omnidireccional", "Estructura plegable", "IP67"]',
+      pros: '["Alta eficiencia", "Precisión GPS", "Resistencia IP67", "Transporte fácil"]',
+      cons: '["Peso elevado", "Requiere capacitación"]',
+      reviews: [
+        {
+          id: '1',
+          slug: 'dji-agras-t30-review',
+          title: 'DJI Agras T30 - Análisis Completo',
+          rating: 5,
+          createdAt: new Date(),
+        }
+      ]
+    },
+    {
+      id: '2',
       slug: 'dji-agras-t50',
       brand: 'DJI',
       model: 'Agras T50',
@@ -47,7 +68,7 @@ export default async function ReviewsPage() {
       cons: '["Costo elevado", "Tamaño grande", "Mantenimiento complejo"]',
       reviews: [
         {
-          id: '1',
+          id: '2',
           slug: 'dji-agras-t50-review',
           title: 'DJI Agras T50 - Análisis Completo',
           rating: 5,
@@ -56,7 +77,7 @@ export default async function ReviewsPage() {
       ]
     },
     {
-      id: '2',
+      id: '3',
       slug: 'xag-p150',
       brand: 'XAG',
       model: 'P150',
@@ -68,7 +89,7 @@ export default async function ReviewsPage() {
       cons: '["Menor autonomía", "Limitaciones climáticas", "Curva de aprendizaje"]',
       reviews: [
         {
-          id: '2',
+          id: '3',
           slug: 'xag-p150-review',
           title: 'XAG P150 - Review Detallado',
           rating: 4,
@@ -81,13 +102,28 @@ export default async function ReviewsPage() {
   const reviews = [
     {
       id: '1',
+      slug: 'dji-agras-t30-review',
+      title: 'DJI Agras T30 - Análisis Completo',
+      summary: 'El DJI Agras T30 combina eficiencia, precisión y 30L de capacidad en un drone agrícola de referencia.',
+      rating: 5,
+      createdAt: new Date(),
+      drone: {
+        id: '1',
+        brand: 'DJI',
+        model: 'Agras T30',
+        capacityL: 30,
+        year: 2024
+      }
+    },
+    {
+      id: '2',
       slug: 'dji-agras-t50-review',
       title: 'DJI Agras T50 - Análisis Completo',
       summary: 'El DJI Agras T50 es uno de los drones agrícolas más avanzados del mercado.',
       rating: 5,
       createdAt: new Date(),
       drone: {
-        id: '1',
+        id: '2',
         brand: 'DJI',
         model: 'Agras T50',
         capacityL: 50,
@@ -95,14 +131,14 @@ export default async function ReviewsPage() {
       }
     },
     {
-      id: '2',
+      id: '3',
       slug: 'xag-p150-review',
       title: 'XAG P150 - Review Detallado',
       summary: 'Análisis completo del XAG P150, un drone agrícola con excelente relación precio-calidad.',
       rating: 4,
       createdAt: new Date(),
       drone: {
-        id: '2',
+        id: '3',
         brand: 'XAG',
         model: 'P150',
         capacityL: 50,
