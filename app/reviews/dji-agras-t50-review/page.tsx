@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowLeft, Star, Clock, Calendar, User, Check, X, Droplets, Zap, Shield, MapPin, Battery, Gauge } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -161,32 +160,6 @@ export default function DJIAgrasT50ReviewPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Hero Image */}
-            <Card>
-              <CardContent className="p-0">
-                <div className="relative h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-green-100 to-green-200">
-                  <Image
-                    src="https://images.pexels.com/photos/1070945/pexels-photo-1070945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="DJI Agras T50 fumigando en campo agrícola"
-                    fill
-                    className="object-cover rounded-lg"
-                    priority
-                  />
-                  {/* Fallback placeholder - always visible as background */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-100 to-green-200 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">DJI Agras T50</h3>
-                      <p className="text-sm text-gray-600">Drone agrícola en acción</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
             {/* Introduction */}
             <Card>
