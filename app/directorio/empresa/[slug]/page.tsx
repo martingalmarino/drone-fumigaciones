@@ -8,7 +8,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { formatPhone, getWhatsAppUrl } from '@/lib/utils'
 import { getCompanyBySlug, getCompaniesByProvince } from '@/lib/companies'
 import AdSlot from '@/components/AdSlot'
-import SeoHead from '@/components/SeoHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 interface CompanyPageProps {
@@ -18,20 +17,33 @@ interface CompanyPageProps {
 }
 
 export async function generateMetadata({ params }: CompanyPageProps): Promise<Metadata> {
-  // Hardcoded company data for now
-  const company = {
-    name: 'Agro Drones Buenos Aires',
-    description: 'Especialistas en fumigación con drones para cultivos extensivos. Servicios profesionales de pulverización agrícola con tecnología de última generación.',
-    province: { name: 'Buenos Aires' }
+  // Get company data from centralized source
+  const companyData = getCompanyBySlug(params.slug)
+  
+  if (!companyData) {
+    return {
+      title: 'Empresa no encontrada | Fumigación Drones Argentina',
+      description: 'La empresa solicitada no se encuentra disponible.',
+    }
   }
 
+  // Parse services for description
+  const services = companyData.services ? JSON.parse(companyData.services) : []
+  const primaryService = services[0] || 'fumigación con drones'
+  const description = `Especialistas en ${primaryService} en ${companyData.province}. ${companyData.name} ofrece servicios profesionales de pulverización agrícola con tecnología de drones.`
+
   return {
-    title: `${company.name} | Fumigación con Drones en ${company.province.name}`,
-    description: company.description || `Empresa especializada en fumigación con drones en ${company.province.name}. Servicios profesionales de pulverización agrícola.`,
+    title: `${companyData.name} | Fumigación con Drones en ${companyData.province}`,
+    description: description,
     openGraph: {
-      title: `${company.name} - Fumigación con Drones`,
-      description: company.description || `Empresa especializada en fumigación con drones en ${company.province.name}`,
+      title: `${companyData.name} - Fumigación con Drones`,
+      description: description,
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${companyData.name} - Fumigación con Drones`,
+      description: description,
     },
   }
 }
@@ -61,14 +73,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
   const certifications = company.certifications ? JSON.parse(company.certifications) : []
 
   return (
-    <>
-      <SeoHead
-        title={`${company.name} | Fumigación con Drones en ${company.province.name}`}
-        description={company.description || `Empresa especializada en fumigación con drones en ${company.province.name}. Servicios profesionales de pulverización agrícola.`}
-        canonical={`/directorio/empresa/${company.slug}`}
-      />
-      
-      <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Breadcrumbs 
             items={[
@@ -381,6 +386,6 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
