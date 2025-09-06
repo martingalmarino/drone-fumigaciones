@@ -33,7 +33,7 @@ export default async function BlogPage() {
       category: 'normativa',
       excerpt: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
       createdAt: new Date(),
-      readingTime: 14,
+      readingTime: 8,
     },
     {
       id: '2',
@@ -42,7 +42,7 @@ export default async function BlogPage() {
       category: 'análisis',
       excerpt: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
       createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // 3 días atrás
-      readingTime: 12,
+      readingTime: 6,
     },
     {
       id: '3',
@@ -51,7 +51,7 @@ export default async function BlogPage() {
       category: 'conceptos',
       excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
       createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000), // 10 días atrás
-      readingTime: 10,
+      readingTime: 7,
     }
   ]
 
