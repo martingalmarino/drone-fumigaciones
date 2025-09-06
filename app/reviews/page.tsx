@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 const brands = [
-  { slug: 'dji', name: 'DJI', count: 3 },
+  { slug: 'dji', name: 'DJI', count: 4 },
   { slug: 'xag', name: 'XAG', count: 1 },
   { slug: 'agco', name: 'AGCO', count: 0 },
 ]
@@ -36,6 +36,27 @@ export default async function ReviewsPage() {
   const drones = [
     {
       id: '1',
+      slug: 'dji-agras-t10',
+      brand: 'DJI',
+      model: 'Agras T10',
+      capacityL: 8,
+      payloadKg: 8,
+      year: 2024,
+      features: '["Tanque desmontable", "Diseño plegable 70%", "Modo Swarm", "Carga rápida 7 min"]',
+      pros: '["Diseño compacto", "Fácil transporte", "Modo Swarm 3 drones", "Ideal parcelas pequeñas"]',
+      cons: '["Caudal limitado 3 L/min", "Autonomía reducida con carga"]',
+      reviews: [
+        {
+          id: '1',
+          slug: 'dji-agras-t10-review',
+          title: 'DJI Agras T10 - Análisis Completo',
+          rating: 4,
+          createdAt: new Date(),
+        }
+      ]
+    },
+    {
+      id: '2',
       slug: 'dji-agras-t20p',
       brand: 'DJI',
       model: 'Agras T20P',
@@ -43,11 +64,11 @@ export default async function ReviewsPage() {
       payloadKg: 25,
       year: 2024,
       features: '["Sistema dual atomizado", "Radar omnidireccional", "Visión binocular", "Carga rápida"]',
-      pros: '["Diseño compacto", "Sensores avanzados", "Carga rápida 9-12 min", "Control remoto 7.02\""]',
+      pros: '["Diseño compacto", "Sensores avanzados", "Carga rápida 9-12 min", "Control remoto 7.02\\""]',
       cons: '["Tiempos de vuelo limitados", "Requiere generador adicional"]',
       reviews: [
         {
-          id: '1',
+          id: '2',
           slug: 'dji-agras-t20p-review',
           title: 'DJI Agras T20P - Análisis Completo',
           rating: 4,
@@ -56,7 +77,7 @@ export default async function ReviewsPage() {
       ]
     },
     {
-      id: '2',
+      id: '3',
       slug: 'dji-agras-t30',
       brand: 'DJI',
       model: 'Agras T30',
@@ -68,7 +89,7 @@ export default async function ReviewsPage() {
       cons: '["Peso elevado", "Requiere capacitación"]',
       reviews: [
         {
-          id: '2',
+          id: '3',
           slug: 'dji-agras-t30-review',
           title: 'DJI Agras T30 - Análisis Completo',
           rating: 5,
@@ -77,7 +98,7 @@ export default async function ReviewsPage() {
       ]
     },
     {
-      id: '3',
+      id: '4',
       slug: 'dji-agras-t50',
       brand: 'DJI',
       model: 'Agras T50',
@@ -89,7 +110,7 @@ export default async function ReviewsPage() {
       cons: '["Peso elevado", "Complejidad operativa"]',
       reviews: [
         {
-          id: '3',
+          id: '4',
           slug: 'dji-agras-t50-review',
           title: 'DJI Agras T50 - Análisis Completo',
           rating: 5,
@@ -98,7 +119,7 @@ export default async function ReviewsPage() {
       ]
     },
     {
-      id: '4',
+      id: '5',
       slug: 'xag-p150',
       brand: 'XAG',
       model: 'P150',
@@ -110,7 +131,7 @@ export default async function ReviewsPage() {
       cons: '["Menor autonomía", "Limitaciones climáticas", "Curva de aprendizaje"]',
       reviews: [
         {
-          id: '4',
+          id: '5',
           slug: 'xag-p150-review',
           title: 'XAG P150 - Review Detallado',
           rating: 4,
@@ -123,13 +144,28 @@ export default async function ReviewsPage() {
   const reviews = [
     {
       id: '1',
+      slug: 'dji-agras-t10-review',
+      title: 'DJI Agras T10 - Análisis Completo',
+      summary: 'El DJI Agras T10 es ideal para parcelas pequeñas con su diseño compacto, tanque desmontable y modo Swarm.',
+      rating: 4,
+      createdAt: new Date(),
+      drone: {
+        id: '1',
+        brand: 'DJI',
+        model: 'Agras T10',
+        capacityL: 8,
+        year: 2024
+      }
+    },
+    {
+      id: '2',
       slug: 'dji-agras-t20p-review',
       title: 'DJI Agras T20P - Análisis Completo',
       summary: 'El DJI Agras T20P combina diseño compacto, sensores avanzados y 20L de pulverización en un drone agrícola versátil.',
       rating: 4,
       createdAt: new Date(),
       drone: {
-        id: '1',
+        id: '2',
         brand: 'DJI',
         model: 'Agras T20P',
         capacityL: 20,
@@ -137,14 +173,14 @@ export default async function ReviewsPage() {
       }
     },
     {
-      id: '2',
+      id: '3',
       slug: 'dji-agras-t30-review',
       title: 'DJI Agras T30 - Análisis Completo',
       summary: 'El DJI Agras T30 combina eficiencia, precisión y 30L de capacidad en un drone agrícola de referencia.',
       rating: 5,
       createdAt: new Date(),
       drone: {
-        id: '2',
+        id: '3',
         brand: 'DJI',
         model: 'Agras T30',
         capacityL: 30,
@@ -152,14 +188,14 @@ export default async function ReviewsPage() {
       }
     },
     {
-      id: '3',
+      id: '4',
       slug: 'dji-agras-t50-review',
       title: 'DJI Agras T50 - Análisis Completo',
       summary: 'El DJI Agras T50 combina pulverización de 40L y esparcido de 75L en un drone agrícola de alto rendimiento.',
       rating: 5,
       createdAt: new Date(),
       drone: {
-        id: '3',
+        id: '4',
         brand: 'DJI',
         model: 'Agras T50',
         capacityL: 40,
@@ -167,14 +203,14 @@ export default async function ReviewsPage() {
       }
     },
     {
-      id: '4',
+      id: '5',
       slug: 'xag-p150-review',
       title: 'XAG P150 - Review Detallado',
       summary: 'Análisis completo del XAG P150, un drone agrícola con excelente relación precio-calidad.',
       rating: 4,
       createdAt: new Date(),
       drone: {
-        id: '4',
+        id: '5',
         brand: 'XAG',
         model: 'P150',
         capacityL: 50,
