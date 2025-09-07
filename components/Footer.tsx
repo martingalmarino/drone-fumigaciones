@@ -61,7 +61,7 @@ export default function Footer() {
                 </svg>
               </div>
               <span className="ml-2 text-lg sm:text-xl font-bold">
-                <span className="text-green-400">Agry</span><span className="text-white">Fly</span>
+                <span className="text-green-400">Agri</span><span className="text-white">Fly</span>
               </span>
             </div>
             <p className="text-gray-300 text-sm sm:text-base mb-4 leading-relaxed">
