@@ -112,6 +112,22 @@ export const allCompanies = [
     industries: '["Cultivos extensivos", "Viñedos", "Frutales", "Cultivos especializados"]',
     socialMedia: '{"instagram": "https://www.instagram.com/tododronesagro/", "linkedin": "https://ar.linkedin.com/company/tododrones-agricultura"}',
     contactPage: 'https://tododrones.com.ar/contactanos/'
+  },
+  {
+    id: '10',
+    slug: 'mapagro-medicion-fumigacion-aerea',
+    name: 'Mapagro Medición y Fumigación Aérea',
+    province: 'Córdoba',
+    services: '["Fumigación agrícola aérea con drones", "Medición NDVI y toma de datos", "Asesoría agrícola"]',
+    isFeatured: true,
+    phone: null,
+    whatsapp: null,
+    email: null,
+    websiteUrl: null,
+    address: 'Córdoba, actividad a nivel provincial',
+    description: 'Servicio integral de medición y fumigación aérea con drones agrícolas, con foco en aumento de productividad y aplicaciones precisas en cultivos extensivos.',
+    socialMedia: '{"instagram": "https://www.instagram.com/reel/CrcKn0sLyEd/"}',
+    summary: 'Especialistas en aplicaciones aéreas y análisis agrícola de precisión.'
   }
 ]
 
