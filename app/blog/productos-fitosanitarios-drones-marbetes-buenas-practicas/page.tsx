@@ -323,19 +323,6 @@ export default function ProductosFitosanitariosDronesPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-                  <div className="flex items-center mb-4">
-                    <Download className="h-6 w-6 text-blue-600 mr-3" />
-                    <h3 className="text-lg font-semibold text-gray-900">Recurso Gratuito</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4">
-                    Descargá el mini‑póster "Tamaño de gota y deriva" para colgar en el galpón.
-                  </p>
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Download className="h-4 w-4 mr-2" />
-                    Descargar Póster
-                  </Button>
-                </div>
               </section>
 
               {/* FAQ Section */}
