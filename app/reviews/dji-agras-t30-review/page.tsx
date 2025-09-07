@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'Análisis completo del DJI Agras T30: características técnicas, rendimiento en campo, pros, contras y comparación con otros drones agrícolas.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
     tags: ['DJI Agras T30', 'drone agrícola', 'fumigación con drones', 'review'],
   },
 }
@@ -36,7 +36,7 @@ export default function DJIAgrasT30ReviewPage() {
     titulo: "Drone agrícola DJI Agras T30: eficiencia, precisión y 30 L de capacidad",
     rating: 5,
     fecha: new Date(),
-    autor: "AgryFly",
+    autor: "AgriFly",
     categoria: "Drones Agrícolas",
     tiempoLectura: 8,
     reseña_completa: {

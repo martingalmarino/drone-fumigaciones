@@ -6,22 +6,22 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'AgryFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
-    template: '%s | AgryFly'
+    default: 'AgriFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
+    template: '%s | AgriFly'
   },
-  description: 'El hub más completo de drones agrícolas en Argentina. En AgryFly comparás proveedores, accedés a guías especializadas y encontrás empresas certificadas.',
+  description: 'El hub más completo de drones agrícolas en Argentina. En AgriFly comparás proveedores, accedés a guías especializadas y encontrás empresas certificadas.',
   keywords: ['drones agrícolas', 'fumigación con drones', 'Argentina', 'agricultura de precisión', 'pulverización', 'drones fumigadores'],
-  authors: [{ name: 'AgryFly' }],
+  authors: [{ name: 'AgriFly' }],
   openGraph: {
-    title: 'AgryFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
-    description: 'El hub más completo de drones agrícolas en Argentina. En AgryFly comparás proveedores, accedés a guías especializadas y encontrás empresas certificadas.',
+    title: 'AgriFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
+    description: 'El hub más completo de drones agrícolas en Argentina. En AgriFly comparás proveedores, accedés a guías especializadas y encontrás empresas certificadas.',
     type: 'website',
     locale: 'es_AR',
-    siteName: 'AgryFly',
+    siteName: 'AgriFly',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AgryFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
+    title: 'AgriFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
     description: 'El hub más completo de drones agrícolas en Argentina.',
   },
   robots: 'index, follow',

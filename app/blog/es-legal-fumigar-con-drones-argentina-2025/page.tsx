@@ -8,7 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: '¿Es legal fumigar con drones en Argentina? – Regulaciones y requisitos (2025) | AgryFly',
+  title: '¿Es legal fumigar con drones en Argentina? – Regulaciones y requisitos (2025) | AgriFly',
   description: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
   keywords: [
     'fumigación con drones Argentina',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
   }
 }
 
@@ -56,7 +56,7 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center">
                 <User className="h-4 w-4 mr-1" />
-                AgryFly
+                AgriFly
               </div>
             </div>
 

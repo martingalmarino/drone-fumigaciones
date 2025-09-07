@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Análisis completo del DJI Agras T20P: características técnicas, rendimiento en campo, pros, contras y comparación con otros drones agrícolas.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
     tags: ['DJI Agras T20P', 'drone agrícola', 'fumigación con drones', 'review'],
   },
 }
@@ -37,7 +37,7 @@ export default function DJIAgrasT20PReviewPage() {
     titulo: "Drone agrícola DJI Agras T20P: compacto, 20 L de pulverización y sensores avanzados",
     rating: 4,
     fecha: new Date(),
-    autor: "AgryFly",
+    autor: "AgriFly",
     categoria: "Drones Agrícolas",
     tiempoLectura: 8,
     reseña_completa: {

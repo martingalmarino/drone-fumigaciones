@@ -8,7 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: '¿Qué es la fumigación con drones y cómo funciona? | AgryFly',
+  title: '¿Qué es la fumigación con drones y cómo funciona? | AgriFly',
   description: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional. Enfoque Argentina.',
   keywords: [
     'fumigación con drones',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
   }
 }
 
@@ -58,7 +58,7 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center">
                 <User className="h-4 w-4 mr-1" />
-                AgryFly
+                AgriFly
               </div>
             </div>
 

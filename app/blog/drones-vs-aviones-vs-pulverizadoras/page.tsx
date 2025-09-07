@@ -8,7 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Drones vs. aviones vs. pulverizadoras terrestres: comparativa de costos y efectividad | AgryFly',
+  title: 'Drones vs. aviones vs. pulverizadoras terrestres: comparativa de costos y efectividad | AgriFly',
   description: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
   keywords: [
     'fumigación con drones',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
   }
 }
 
@@ -58,7 +58,7 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center">
                 <User className="h-4 w-4 mr-1" />
-                AgryFly
+                AgriFly
               </div>
             </div>
 

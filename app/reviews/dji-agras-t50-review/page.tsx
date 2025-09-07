@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Análisis completo del DJI Agras T50: características técnicas, rendimiento en campo, pros, contras y comparación con otros drones agrícolas.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
     tags: ['DJI Agras T50', 'drone agrícola', 'fumigación con drones', 'review'],
   },
 }
@@ -37,7 +37,7 @@ export default function DJIAgrasT50ReviewPage() {
     titulo: "Drone agrícola DJI Agras T50: alto rendimiento, 40 kg pulverización y expansión de 75 L",
     rating: 5,
     fecha: new Date(),
-    autor: "AgryFly",
+    autor: "AgriFly",
     categoria: "Drones Agrícolas",
     tiempoLectura: 9,
     reseña_completa: {

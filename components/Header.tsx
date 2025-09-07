@@ -59,7 +59,7 @@ export default function Header() {
               </div>
               <span className="ml-2 text-lg sm:text-xl font-bold">
                 <span className="hidden sm:inline">
-                  <span className="text-green-600">Agry</span><span className="text-gray-800">Fly</span>
+                  <span className="text-green-600">Agri</span><span className="text-gray-800">Fly</span>
                 </span>
                 <span className="sm:hidden text-gray-800">AF</span>
               </span>

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Análisis completo del DJI Agras T10: características técnicas, rendimiento en campo, pros, contras y comparación con otros drones agrícolas.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
     tags: ['DJI Agras T10', 'drone agrícola', 'fumigación con drones', 'review'],
   },
 }
@@ -37,7 +37,7 @@ export default function DJIAgrasT10ReviewPage() {
     titulo: "Drone agrícola DJI Agras T10: compacto, versátil y eficiente para tareas ligeras",
     rating: 4,
     fecha: new Date(),
-    autor: "AgryFly",
+    autor: "AgriFly",
     categoria: "Drones Agrícolas",
     tiempoLectura: 7,
     reseña_completa: {

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: 'Análisis completo del XAG V40: características técnicas, rendimiento en campo, pros, contras y comparación con otros drones agrícolas.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
     tags: ['XAG V40', 'drone agrícola', 'fumigación con drones', 'review'],
   },
 }
@@ -38,7 +38,7 @@ export default function XAGV40ReviewPage() {
     titulo: "Drone agrícola XAG V40: 16 L, 40 kg/min y doble rotor inclinable",
     rating: 4,
     fecha: new Date(),
-    autor: "AgryFly",
+    autor: "AgriFly",
     categoria: "Drones Agrícolas",
     tiempoLectura: 7,
     reseña_completa: {

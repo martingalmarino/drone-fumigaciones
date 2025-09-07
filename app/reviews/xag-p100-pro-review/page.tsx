@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: 'Análisis completo del XAG P100 Pro: características técnicas, rendimiento en campo, pros, contras y comparación con otros drones agrícolas.',
     type: 'article',
     publishedTime: new Date().toISOString(),
-    authors: ['AgryFly'],
+    authors: ['AgriFly'],
     tags: ['XAG P100 Pro', 'drone agrícola', 'fumigación con drones', 'review'],
   },
 }
@@ -38,7 +38,7 @@ export default function XAGP100ProReviewPage() {
     titulo: "Drone agrícola XAG P100 Pro: 50 L, 150 kg/min y radar 4D",
     rating: 5,
     fecha: new Date(),
-    autor: "AgryFly",
+    autor: "AgriFly",
     categoria: "Drones Agrícolas",
     tiempoLectura: 9,
     reseña_completa: {
