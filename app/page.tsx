@@ -10,7 +10,7 @@ import Footer from '@/components/Footer'
 import { getCompanyCountByProvince } from '@/lib/companies'
 
 export const metadata: Metadata = {
-  title: 'AgryFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
+  title: 'AgriFly: Drones Agrícolas, Fumigación y Precisión en Argentina',
   description: 'El hub más completo de drones agrícolas en Argentina. En AgryFly comparás proveedores, accedés a guías especializadas y encontrás empresas certificadas.',
 }
 
