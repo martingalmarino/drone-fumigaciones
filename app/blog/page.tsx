@@ -28,29 +28,38 @@ export default async function BlogPage() {
   const articles = [
     {
       id: '1',
-      slug: 'es-legal-fumigar-con-drones-argentina-2025',
-      title: '¿Es legal fumigar con drones en Argentina? – Regulaciones y requisitos (2025)',
+      slug: 'productos-fitosanitarios-drones-marbetes-buenas-practicas',
+      title: '¿Qué productos se pueden aplicar con drones? Marbetes, buenas prácticas y manejo de deriva',
       category: 'normativa',
-      excerpt: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
+      excerpt: 'Guía completa sobre productos fitosanitarios autorizados para drones, marbetes SENASA, buenas prácticas CASAFE y manejo de deriva en aplicaciones aéreas.',
       createdAt: new Date(),
       readingTime: 8,
     },
     {
       id: '2',
+      slug: 'es-legal-fumigar-con-drones-argentina-2025',
+      title: '¿Es legal fumigar con drones en Argentina? – Regulaciones y requisitos (2025)',
+      category: 'normativa',
+      excerpt: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
+      createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 día atrás
+      readingTime: 8,
+    },
+    {
+      id: '3',
       slug: 'drones-vs-aviones-vs-pulverizadoras',
       title: 'Drones vs. aviones vs. pulverizadoras terrestres: comparativa de costos y efectividad',
       category: 'análisis',
       excerpt: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
-      createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // 3 días atrás
+      createdAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000), // 4 días atrás
       readingTime: 6,
     },
     {
-      id: '3',
+      id: '4',
       slug: 'que-es-fumigacion-con-drones',
       title: '¿Qué es la fumigación con drones y cómo funciona?',
       category: 'conceptos',
       excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
-      createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000), // 10 días atrás
+      createdAt: new Date(Date.now() - 11 * 24 * 60 * 60 * 1000), // 11 días atrás
       readingTime: 7,
     }
   ]
