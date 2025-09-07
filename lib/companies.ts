@@ -95,6 +95,23 @@ export const allCompanies = [
     whatsapp: '+54 9 249 469-7996',
     email: null,
     websiteUrl: 'https://www.agroads.com.ar/detalle.asp?clasi=714687'
+  },
+  {
+    id: '9',
+    slug: 'todo-drones-agricultura',
+    name: 'Todo Drones Agricultura',
+    province: 'Buenos Aires',
+    services: '["Monitoreo de campos y cultivos", "Siembra al voleo", "Fertilización de precisión", "Pulverización automatizada", "Procesamiento NDVI", "Capacitación y asesoría", "Servicio técnico", "Planes de financiamiento"]',
+    isFeatured: true,
+    phone: '+54 9 11 5263 0498',
+    whatsapp: '+54 9 11 3005 1766',
+    email: null,
+    websiteUrl: 'https://agro.tododrones.com.ar/',
+    address: 'Dardo Rocha 2934, 1640 Martínez, Buenos Aires',
+    description: 'Integración de tecnología avanzada de drones en el sector agropecuario para optimizar la producción, reducir costos y minimizar el impacto ambiental. Capacitación, asesoría, demostraciones, servicio técnico y financiamiento.',
+    industries: '["Cultivos extensivos", "Viñedos", "Frutales", "Cultivos especializados"]',
+    socialMedia: '{"instagram": "https://www.instagram.com/tododronesagro/", "linkedin": "https://ar.linkedin.com/company/tododrones-agricultura"}',
+    contactPage: 'https://tododrones.com.ar/contactanos/'
   }
 ]
 
