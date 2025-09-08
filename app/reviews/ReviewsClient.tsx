@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import AdSlot from '@/components/AdSlot'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const brands = [
   { slug: 'dji', name: 'DJI', count: 4 },
@@ -200,6 +201,7 @@ export default function ReviewsClient({ drones, reviews }: ReviewsClientProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <Breadcrumbs items={[{ label: 'Reviews' }]} />
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
