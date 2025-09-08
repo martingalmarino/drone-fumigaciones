@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import { MapPin, Phone, Mail, ExternalLink, ArrowLeft, Star, Users, Calculator } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -17,6 +17,20 @@ interface ProvinciaPageProps {
 }
 
 export async function generateMetadata({ params }: ProvinciaPageProps): Promise<Metadata> {
+  // Handle URL decoding for province slugs
+  const decodedProvincia = decodeURIComponent(params.provincia)
+  
+  // Map of common misspellings/encodings to correct slugs
+  const provinceSlugMap: Record<string, string> = {
+    'córdoba': 'cordoba',
+    'c%C3%B3rdoba': 'cordoba',
+    'buenos-aires': 'buenos-aires',
+    'santa-fe': 'santa-fe'
+  }
+  
+  // Get the correct slug
+  const correctSlug = provinceSlugMap[decodedProvincia] || params.provincia
+
   // Get province name from slug
   const provinceNames = {
     'cordoba': 'Córdoba',
@@ -24,7 +38,7 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
     'santa-fe': 'Santa Fe'
   }
 
-  const provinceName = provinceNames[params.provincia as keyof typeof provinceNames] || params.provincia
+  const provinceName = provinceNames[correctSlug as keyof typeof provinceNames] || correctSlug
 
   // Get companies count for this province
   const allCompanies = [
@@ -142,7 +156,7 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
     }
   ]
 
-  const provinceCompanies = allCompanies.filter(company => company.province === params.provincia)
+  const provinceCompanies = allCompanies.filter(company => company.province === correctSlug)
   const companiesCount = provinceCompanies.length
 
   return {
@@ -162,6 +176,25 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
 }
 
 export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
+  // Handle URL decoding for province slugs
+  const decodedProvincia = decodeURIComponent(params.provincia)
+  
+  // Map of common misspellings/encodings to correct slugs
+  const provinceSlugMap: Record<string, string> = {
+    'córdoba': 'cordoba',
+    'c%C3%B3rdoba': 'cordoba',
+    'buenos-aires': 'buenos-aires',
+    'santa-fe': 'santa-fe'
+  }
+  
+  // Get the correct slug
+  const correctSlug = provinceSlugMap[decodedProvincia] || params.provincia
+  
+  // If the slug is incorrect, redirect to the correct one
+  if (correctSlug !== params.provincia) {
+    redirect(`/directorio/${correctSlug}`)
+  }
+
   // Province data with companies
   const allCompanies = [
     {
@@ -279,7 +312,7 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   ]
 
   // Filter companies by province
-  const provinceCompanies = allCompanies.filter(company => company.province === params.provincia)
+  const provinceCompanies = allCompanies.filter(company => company.province === correctSlug)
   
   // Get province name
   const provinceNames = {
@@ -290,15 +323,15 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
 
   const province = {
     id: '1',
-    name: provinceNames[params.provincia as keyof typeof provinceNames] || params.provincia,
-    slug: params.provincia,
+    name: provinceNames[correctSlug as keyof typeof provinceNames] || correctSlug,
+    slug: correctSlug,
     companies: provinceCompanies,
     companiesCount: provinceCompanies.length,
   }
 
   // Transform companies data for map (add coordinates)
   const mapCenters = provinceCompanies.map((company, index) => {
-    const defaultCoords = getDefaultCoordinates(params.provincia)
+    const defaultCoords = getDefaultCoordinates(correctSlug)
     // Add slight offset for multiple companies in same province
     const offset = index * 0.01
     return {
