@@ -52,7 +52,7 @@ NEXTAUTH_URL=https://tu-dominio.vercel.app
 NEXTAUTH_SECRET=tu-secret-super-seguro
 
 # Admin
-ADMIN_EMAIL=admin@fumigaciondrones.com
+ADMIN_EMAIL=admin@agrifly.com.ar
 
 # Email (Resend)
 RESEND_API_KEY=re_xxxxxxxxxx
@@ -141,7 +141,7 @@ npx prisma db seed
 ```typescript
 // En tu código, usar así:
 await resend.emails.send({
-  from: 'noreply@fumigaciondrones.com',
+  from: 'noreply@agrifly.com.ar',
   to: lead.email,
   subject: 'Confirmación de solicitud de cotización',
   html: `
@@ -335,7 +335,7 @@ Si tienes problemas con el deploy:
 1. **Revisar logs en Vercel**
 2. **Verificar variables de entorno**
 3. **Comprobar configuración de base de datos**
-4. **Contactar soporte**: info@fumigaciondrones.com
+4. **Contactar soporte**: info@agrifly.com.ar
 
 ---
 

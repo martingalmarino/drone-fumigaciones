@@ -100,7 +100,7 @@ export default function TerminosPage() {
               <h2>10. Contacto</h2>
               <p>
                 Si tiene preguntas sobre estos términos y condiciones, puede 
-                contactarnos en: info@fumigaciondrones.com
+                contactarnos en: info@agrifly.com.ar
               </p>
             </div>
           </CardContent>

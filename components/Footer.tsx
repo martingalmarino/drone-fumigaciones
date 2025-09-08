@@ -187,7 +187,7 @@ export default function Footer() {
                 Argentina
               </span>
               <a
-                href="mailto:info@fumigaciondrones.com"
+                href="mailto:info@agrifly.com.ar"
                 className="flex items-center hover:text-white transition-colors"
               >
                 <Mail className="h-4 w-4 mr-1" />

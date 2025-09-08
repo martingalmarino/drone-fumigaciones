@@ -19,7 +19,7 @@ export default function SeoHead({
   noindex = false,
   jsonLd,
 }: SeoHeadProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://fumigaciondrones.com'
+  const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.agrifly.com.ar'
   const fullTitle = title.includes('Fumigación Drones') ? title : `${title} | Fumigación Drones Argentina`
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined
 

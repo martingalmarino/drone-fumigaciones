@@ -107,7 +107,7 @@ export default function PrivacidadPage() {
               <p>
                 Si tiene preguntas sobre esta política de privacidad o desea 
                 ejercer sus derechos, puede contactarnos en: 
-                privacidad@fumigaciondrones.com
+                privacidad@agrifly.com.ar
               </p>
 
               <h2>11. Cumplimiento Legal</h2>

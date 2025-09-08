@@ -59,7 +59,7 @@ NEXTAUTH_URL="http://localhost:3000"
 NEXTAUTH_SECRET="your-secret-key-here"
 
 # Admin
-ADMIN_EMAIL="admin@fumigaciondrones.com"
+ADMIN_EMAIL="admin@agrifly.com.ar"
 
 # Email (Resend)
 RESEND_API_KEY="re_xxxxxxxxxx"
@@ -314,7 +314,7 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 ## 📞 Soporte
 
-- Email: info@fumigaciondrones.com
+- Email: info@agrifly.com.ar
 - Documentación: [Wiki del proyecto]
 - Issues: [GitHub Issues]
 

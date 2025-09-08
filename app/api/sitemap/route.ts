@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://fumigaciondrones.com'
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.agrifly.com.ar'
   
   // Static pages only for now
   const staticPages = [

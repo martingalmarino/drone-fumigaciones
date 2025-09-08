@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    description: 'info@fumigaciondrones.com',
-    href: 'mailto:info@fumigaciondrones.com'
+    description: 'info@agrifly.com.ar',
+    href: 'mailto:info@agrifly.com.ar'
   },
   {
     icon: Phone,
@@ -211,7 +211,7 @@ export default function ContactoPage() {
                   beneficios de ser una empresa certificada.
                 </p>
                 <Button asChild size="lg">
-                  <a href="mailto:empresas@fumigaciondrones.com">
+                  <a href="mailto:empresas@agrifly.com.ar">
                     <Mail className="mr-2 h-5 w-5" />
                     Registrar Mi Empresa
                   </a>
