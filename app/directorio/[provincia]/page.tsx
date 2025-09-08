@@ -180,19 +180,13 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
 }
 
 export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
-  // Get the correct slug
+  // Use the correct slug for filtering, but don't redirect for now
   const correctSlug = getCorrectProvinceSlug(params.provincia)
   
   console.log('Debug ProvinciaPage:')
   console.log('- params.provincia:', params.provincia)
   console.log('- correctSlug:', correctSlug)
-  console.log('- Will redirect?', correctSlug !== params.provincia)
-  
-  // TEMPORARILY DISABLE REDIRECTION TO DEBUG
-  // if (correctSlug !== params.provincia) {
-  //   console.log('- Redirecting to:', `/directorio/${correctSlug}`)
-  //   redirect(`/directorio/${correctSlug}`)
-  // }
+  console.log('- Using correctSlug for filtering:', correctSlug)
 
   // Province data with companies
   const allCompanies = [
