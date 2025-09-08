@@ -3,6 +3,15 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { getAllCompanies, getCompanyCountByProvince } from '@/lib/companies'
 import DirectorioClient from './DirectorioClient'
 
+// Función helper para normalizar slugs de provincia
+function normalizeProvinceSlug(provinceName: string): string {
+  return provinceName
+    .toLowerCase()
+    .normalize('NFD') // Normalizar caracteres unicode
+    .replace(/[\u0300-\u036f]/g, '') // Remover acentos
+    .replace(/\s+/g, '-') // Reemplazar espacios con guiones
+}
+
 export const metadata: Metadata = {
   title: 'Directorio de Empresas | Fumigación con Drones Argentina',
   description: 'Encuentra empresas certificadas de fumigación con drones en toda Argentina. Filtra por provincia, servicios y equipos.',
@@ -38,7 +47,7 @@ export default async function DirectorioPage() {
     province: {
       id: company.id,
       name: company.province,
-      slug: company.province.toLowerCase().replace(' ', '-')
+      slug: normalizeProvinceSlug(company.province)
     }
   }))
 
