@@ -89,7 +89,7 @@ export default function BlogPost() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Pulverización con drones: precisión en baja escala</h2>
               <p className="text-gray-700 leading-relaxed">
-                Los drones agrícolas, en particular modelos como DJI Agras T40/T50 o XAG P150, han ganado protagonismo en Argentina y el mundo. Según datos de FAO (2023), en Asia ya representan más del 30% de las aplicaciones aéreas. En Argentina, la adopción pasó de 90 drones registrados en 2023 a más de 600 en 2024 (Agrofy News, 2024).
+                Los drones agrícolas, en particular modelos como DJI Agras T40/T50 o XAG P100 Pro, han ganado protagonismo en Argentina y el mundo. Según datos de FAO (2023), en Asia ya representan más del 30% de las aplicaciones aéreas. En Argentina, la adopción pasó de 90 drones registrados en 2023 a más de 600 en 2024 (Agrofy News, 2024).
               </p>
             </section>
 

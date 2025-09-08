@@ -132,37 +132,6 @@ async function main() {
     },
   })
 
-  const xagP150 = await prisma.drone.upsert({
-    where: { slug: 'xag-p150' },
-    update: {},
-    create: {
-      slug: 'xag-p150',
-      brand: 'XAG',
-      model: 'P150',
-      capacityL: 30,
-      payloadKg: 30,
-      year: 2023,
-      features: JSON.stringify(['RTK', 'Vision', 'Radar', 'Nocturno', 'Modular']),
-      pros: JSON.stringify([
-        'Diseño modular versátil',
-        'Excelente relación precio-calidad',
-        'Fácil configuración',
-        'Soporte técnico local'
-      ]),
-      cons: JSON.stringify([
-        'Menor autonomía que competencia',
-        'Limitaciones en condiciones extremas',
-        'Menos opciones de personalización'
-      ]),
-      specs: JSON.stringify({
-        peso: '28.5 kg',
-        velocidad: '10 m/s',
-        autonomia: '16 minutos',
-        cobertura: '8-10 ha/hora',
-        precision: '±3 cm'
-      })
-    },
-  })
 
   console.log('✅ Drones creados')
 
@@ -351,19 +320,6 @@ Guía completa de los drones más destacados para fumigación agrícola en Argen
 - Amplia disponibilidad de repuestos
 - Fácil mantenimiento
 
-## XAG P150
-
-**Especificaciones:**
-- Capacidad: 30L líquidos / 30kg sólidos
-- Autonomía: 16 minutos
-- Cobertura: 8-10 ha/hora
-- Precio: $28.000 USD
-
-**Ventajas:**
-- Diseño modular
-- Precio competitivo
-- Buena para operaciones medianas
-- Soporte local en Argentina
 
 ## Comparativa de costos
 

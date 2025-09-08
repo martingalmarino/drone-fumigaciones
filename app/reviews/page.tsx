@@ -159,27 +159,6 @@ export default async function ReviewsPage() {
           createdAt: new Date(),
         }
       ]
-    },
-    {
-      id: '7',
-      slug: 'xag-p150',
-      brand: 'XAG',
-      model: 'P150',
-      capacityL: 50,
-      payloadKg: 50,
-      year: 2023,
-      features: '["Sistema de pulverización", "Vuelo autónomo", "Monitoreo en tiempo real"]',
-      pros: '["Buena relación precio-calidad", "Fácil mantenimiento", "Soporte técnico"]',
-      cons: '["Menor autonomía", "Limitaciones climáticas", "Curva de aprendizaje"]',
-      reviews: [
-        {
-          id: '7',
-          slug: 'xag-p150-review',
-          title: 'XAG P150 - Review Detallado',
-          rating: 4,
-          createdAt: new Date(),
-        }
-      ]
     }
   ]
 
@@ -272,21 +251,6 @@ export default async function ReviewsPage() {
         model: 'V40',
         capacityL: 16,
         year: 2024
-      }
-    },
-    {
-      id: '7',
-      slug: 'xag-p150-review',
-      title: 'XAG P150 - Review Detallado',
-      summary: 'Análisis completo del XAG P150, un drone agrícola con excelente relación precio-calidad.',
-      rating: 4,
-      createdAt: new Date(),
-      drone: {
-        id: '7',
-        brand: 'XAG',
-        model: 'P150',
-        capacityL: 50,
-        year: 2023
       }
     }
   ]

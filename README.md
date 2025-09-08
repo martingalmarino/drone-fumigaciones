@@ -295,7 +295,7 @@ npm run db:studio    # Prisma Studio
 El proyecto incluye:
 - 3 provincias (Córdoba, Santa Fe, Buenos Aires)
 - 3 empresas de ejemplo
-- 4 drones (DJI Agras T25/T40/T50, XAG P150)
+- 4 drones (DJI Agras T25/T40/T50, XAG P100 Pro)
 - 3 artículos del blog
 - 1 review de drone
 - 5 FAQs

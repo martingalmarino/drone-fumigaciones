@@ -462,14 +462,6 @@ export default function XAGP100ProReviewPage() {
                     ))}
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">
-                  <Link href="/reviews/xag-p150-review" className="hover:text-primary">
-                    XAG P150 - Review Detallado
-                  </Link>
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Análisis del XAG P150, una alternativa sólida a los drones DJI.
-                </p>
               </CardContent>
             </Card>
           </div>

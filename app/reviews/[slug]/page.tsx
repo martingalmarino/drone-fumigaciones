@@ -100,7 +100,7 @@ El DJI Agras T50 representa la evolución más reciente en tecnología de drones
 
 ## Comparación con Competidores
 
-| Característica | DJI Agras T50 | XAG P150 | DJI Agras T40 |
+| Característica | DJI Agras T50 | XAG P100 Pro | DJI Agras T40 |
 |----------------|---------------|----------|---------------|
 | Capacidad líquidos | 50L | 50L | 40L |
 | Capacidad sólidos | 70L | 50L | 50L |
