@@ -109,7 +109,7 @@ async function main() {
       model: 'Agras T50',
       capacityL: 50,
       payloadKg: 50,
-      year: 2024,
+      year: 2025,
       features: JSON.stringify(['RTK', 'Vision', 'Radar', 'Nocturno', 'Dual Tank', 'AI']),
       pros: JSON.stringify([
         'Máxima capacidad del mercado',

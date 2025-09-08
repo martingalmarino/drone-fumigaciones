@@ -41,7 +41,7 @@ export default async function ReviewsPage() {
       model: 'Agras T10',
       capacityL: 8,
       payloadKg: 8,
-      year: 2024,
+      year: 2025,
       features: '["Tanque desmontable", "Diseño plegable 70%", "Modo Swarm", "Carga rápida 7 min"]',
       pros: '["Diseño compacto", "Fácil transporte", "Modo Swarm 3 drones", "Ideal parcelas pequeñas"]',
       cons: '["Caudal limitado 3 L/min", "Autonomía reducida con carga"]',
@@ -62,7 +62,7 @@ export default async function ReviewsPage() {
       model: 'Agras T20P',
       capacityL: 20,
       payloadKg: 25,
-      year: 2024,
+      year: 2025,
       features: '["Sistema dual atomizado", "Radar omnidireccional", "Visión binocular", "Carga rápida"]',
       pros: '["Diseño compacto", "Sensores avanzados", "Carga rápida 9-12 min", "Control remoto 7.02\\""]',
       cons: '["Tiempos de vuelo limitados", "Requiere generador adicional"]',
@@ -83,7 +83,7 @@ export default async function ReviewsPage() {
       model: 'Agras T30',
       capacityL: 30,
       payloadKg: 40,
-      year: 2024,
+      year: 2025,
       features: '["GPS RTK", "Radar omnidireccional", "Estructura plegable", "IP67"]',
       pros: '["Alta eficiencia", "Precisión GPS", "Resistencia IP67", "Transporte fácil"]',
       cons: '["Peso elevado", "Requiere capacitación"]',
@@ -104,7 +104,7 @@ export default async function ReviewsPage() {
       model: 'Agras T50',
       capacityL: 40,
       payloadKg: 50,
-      year: 2024,
+      year: 2025,
       features: '["GPS RTK", "Radar 360°", "Pulverización + Esparcido", "8 motores coaxiales"]',
       pros: '["Alta capacidad", "Doble función", "Detección avanzada", "Recarga rápida"]',
       cons: '["Peso elevado", "Complejidad operativa"]',
@@ -125,7 +125,7 @@ export default async function ReviewsPage() {
       model: 'P100 Pro',
       capacityL: 50,
       payloadKg: 50,
-      year: 2024,
+      year: 2025,
       features: '["Radar 4D", "RevoSpray 3", "RevoCast 3", "Carga rápida 11 min"]',
       pros: '["Alto rendimiento", "Radar 4D avanzado", "150 kg/min esparcido", "Diseño compacto"]',
       cons: '["Autonomía no detallada", "Caudal variable según grano"]',
@@ -146,7 +146,7 @@ export default async function ReviewsPage() {
       model: 'V40',
       capacityL: 16,
       payloadKg: 40,
-      year: 2024,
+      year: 2025,
       features: '["Doble rotor inclinable", "RTK centimétrico", "SuperX4 IA", "3 modos operación"]',
       pros: '["Diseño compacto", "Versatilidad", "Carga rápida 11 min", "RTK ±10 cm"]',
       cons: '["Autonomía limitada con carga", "Caudal menor vs P100 Pro"]',
@@ -175,7 +175,7 @@ export default async function ReviewsPage() {
         brand: 'DJI',
         model: 'Agras T10',
         capacityL: 8,
-        year: 2024
+        year: 2025
       }
     },
     {
@@ -190,7 +190,7 @@ export default async function ReviewsPage() {
         brand: 'DJI',
         model: 'Agras T20P',
         capacityL: 20,
-        year: 2024
+        year: 2025
       }
     },
     {
@@ -205,7 +205,7 @@ export default async function ReviewsPage() {
         brand: 'DJI',
         model: 'Agras T30',
         capacityL: 30,
-        year: 2024
+        year: 2025
       }
     },
     {
@@ -220,7 +220,7 @@ export default async function ReviewsPage() {
         brand: 'DJI',
         model: 'Agras T50',
         capacityL: 40,
-        year: 2024
+        year: 2025
       }
     },
     {
@@ -235,7 +235,7 @@ export default async function ReviewsPage() {
         brand: 'XAG',
         model: 'P100 Pro',
         capacityL: 50,
-        year: 2024
+        year: 2025
       }
     },
     {
@@ -250,7 +250,7 @@ export default async function ReviewsPage() {
         brand: 'XAG',
         model: 'V40',
         capacityL: 16,
-        year: 2024
+        year: 2025
       }
     }
   ]
