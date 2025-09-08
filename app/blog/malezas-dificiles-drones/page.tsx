@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Clock, Calendar, User } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar, User, Tag, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -32,6 +32,7 @@ export default function BlogPost() {
       <Header />
       <main className="flex-1">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Header del artículo */}
           <div className="mb-8">
             <Button asChild variant="ghost" className="mb-4">
               <Link href="/blog" className="flex items-center">
@@ -72,6 +73,7 @@ export default function BlogPost() {
             </div>
           </div>
 
+          {/* Introducción */}
           <div className="prose prose-lg max-w-none mb-8">
             <p className="text-lg text-gray-700 leading-relaxed">
               El control de malezas en cultivos extensivos como soja y maíz es uno de los mayores desafíos que enfrentan los productores argentinos. La expansión de biotipos resistentes y tolerantes a herbicidas convencionales ha generado la necesidad de integrar nuevas herramientas dentro del Manejo Integrado de Plagas (MIP). En este contexto, los drones agrícolas aparecen como una alternativa de precisión para aplicaciones localizadas y rápidas.
@@ -81,6 +83,7 @@ export default function BlogPost() {
             </p>
           </div>
 
+          {/* Sección 1: Panorama actual */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Malezas difíciles en maíz y soja: panorama actual
@@ -118,6 +121,7 @@ export default function BlogPost() {
             </div>
           </section>
 
+          {/* Sección 2: MIM y rol del dron */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Manejo integrado de malezas (MIM) y rol del dron
@@ -158,10 +162,12 @@ export default function BlogPost() {
             </div>
           </section>
 
+          {/* Sección 3: Timings de aplicación */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Timings de aplicación y uso del dron
             </h2>
+
             <div className="bg-green-50 p-6 rounded-lg">
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
                 El momento de aplicación es crítico en el control de malezas difíciles. Los drones ofrecen la flexibilidad de ingresar rápidamente al lote y aplicar en la ventana ideal.
@@ -174,10 +180,12 @@ export default function BlogPost() {
             </div>
           </section>
 
+          {/* Sección 4: Mezclas y protocolos */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Mezclas y protocolos recomendados (según marbete)
             </h2>
+
             <div className="bg-yellow-50 p-6 rounded-lg">
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
                 Es indispensable respetar lo indicado en el marbete del producto y las recomendaciones de SENASA y CASAFE. Algunas prácticas comunes incluyen:
@@ -191,6 +199,7 @@ export default function BlogPost() {
             </div>
           </section>
 
+          {/* Sección 5: Ensayos REM */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Ensayos y experiencias del Programa REM
@@ -207,51 +216,7 @@ export default function BlogPost() {
             </div>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-              Tabla comparativa de estrategias con drones
-            </h2>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Maleza difícil</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Estrategia recomendada</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Ventaja del dron</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Observaciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 px-4 py-3 font-medium">Rama negra</td>
-                    <td className="border border-gray-300 px-4 py-3">Aplicación temprana (2–4 hojas)</td>
-                    <td className="border border-gray-300 px-4 py-3">Localización rápida y precisa</td>
-                    <td className="border border-gray-300 px-4 py-3">Usar mezcla glifosato + hormonal si marbete lo permite</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border border-gray-300 px-4 py-3 font-medium">Capín</td>
-                    <td className="border border-gray-300 px-4 py-3">Control temprano con graminicidas</td>
-                    <td className="border border-gray-300 px-4 py-3">Cobertura homogénea en bajas dosis</td>
-                    <td className="border border-gray-300 px-4 py-3">Aplicar con HR >40% y viento <10 km/h</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-gray-300 px-4 py-3 font-medium">Sorgo de Alepo</td>
-                    <td className="border border-gray-300 px-4 py-3">Aplicación sobre rebrotes jóvenes</td>
-                    <td className="border border-gray-300 px-4 py-3">Aplicaciones sectorizadas en manchones</td>
-                    <td className="border border-gray-300 px-4 py-3">Combinar sistémico con coadyuvante</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border border-gray-300 px-4 py-3 font-medium">Yuyo colorado</td>
-                    <td className="border border-gray-300 px-4 py-3">Antes de 10 cm de altura</td>
-                    <td className="border border-gray-300 px-4 py-3">Alta precisión en aplicaciones de contacto</td>
-                    <td className="border border-gray-300 px-4 py-3">Rotar modos de acción según REM</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
+          {/* Sección 6: Conclusiones */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Conclusiones prácticas
@@ -273,6 +238,7 @@ export default function BlogPost() {
             </div>
           </section>
 
+          {/* FAQ */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Preguntas frecuentes
@@ -281,10 +247,10 @@ export default function BlogPost() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué malezas resistentes son más problemáticas en soja y maíz?
+                    ¿Cuál de los dos drones cubre más hectáreas por hora?
                   </h3>
                   <p className="text-gray-700">
-                    Las principales son Amaranthus spp. (yuyo colorado), Echinochloa colona (capín), Sorghum halepense (sorgo de Alepo) y Conyza bonariensis (rama negra).
+                    El XAG P100 Pro puede alcanzar hasta 22 ha/h en condiciones óptimas, mientras que el DJI T50 ronda entre 15–20 ha/h.
                   </p>
                 </CardContent>
               </Card>
@@ -292,10 +258,10 @@ export default function BlogPost() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Los drones reemplazan a la pulverización terrestre?
+                    ¿Cuál es más preciso en vuelos autónomos?
                   </h3>
                   <p className="text-gray-700">
-                    No, los drones son una herramienta complementaria dentro del MIM. Son útiles para aplicaciones localizadas, rápidas y de difícil acceso, pero no reemplazan a las pulverizadoras terrestres o aéreas convencionales.
+                    El DJI T50, gracias a su radar de matriz y visión binocular, ofrece mayor precisión en detección de obstáculos y seguimiento de terreno.
                   </p>
                 </CardContent>
               </Card>
@@ -303,10 +269,10 @@ export default function BlogPost() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué volúmenes de aplicación se recomiendan con drones?
+                    ¿Cuál es más fácil de mantener?
                   </h3>
                   <p className="text-gray-700">
-                    Generalmente entre 10 y 20 L/ha para herbicidas sistémicos y de contacto, siempre respetando lo que indique el marbete del producto.
+                    El XAG P100 Pro, con diseño modular e IPX6K, permite mantenimiento rápido y lavado a presión.
                   </p>
                 </CardContent>
               </Card>
@@ -314,10 +280,10 @@ export default function BlogPost() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué ventajas ofrece el dron frente a una pulverizadora terrestre?
+                    ¿Cuál conviene para un contratista que trabaja en varios campos?
                   </h3>
                   <p className="text-gray-700">
-                    Acceso a lotes anegados o zonas inaccesibles, reducción de compactación, y mayor precisión en aplicaciones localizadas.
+                    Depende de la necesidad: DJI asegura precisión y respaldo de red global; XAG brinda mayor capacidad y robustez operativa.
                   </p>
                 </CardContent>
               </Card>
@@ -325,16 +291,17 @@ export default function BlogPost() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Existen ensayos locales con drones para malezas resistentes?
+                    ¿Cuál es la diferencia en precio en Argentina?
                   </h3>
                   <p className="text-gray-700">
-                    Sí, el Programa REM de Aapresid ha difundido resultados positivos en congresos, mostrando reducción de uso de herbicidas y mejoras en control localizado.
+                    El DJI T50 ronda los USD 25.000, mientras que el XAG P100 Pro se ubica alrededor de USD 34.000, dependiendo del distribuidor y accesorios incluidos.
                   </p>
                 </CardContent>
               </Card>
             </div>
           </section>
 
+          {/* CTA */}
           <div className="bg-primary text-white p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold mb-4">
               ¿Necesitas asesoramiento para el manejo de malezas con drones?
