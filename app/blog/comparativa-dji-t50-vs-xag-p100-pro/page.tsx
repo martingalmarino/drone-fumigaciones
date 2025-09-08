@@ -348,7 +348,7 @@ export default function BlogPost() {
                   Solicitar cotización
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary bg-transparent">
                 <Link href="/contacto">
                   Contactar expertos
                 </Link>
