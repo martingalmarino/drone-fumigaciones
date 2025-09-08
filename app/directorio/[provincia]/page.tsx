@@ -183,8 +183,14 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   // Get the correct slug
   const correctSlug = getCorrectProvinceSlug(params.provincia)
   
+  console.log('Debug ProvinciaPage:')
+  console.log('- params.provincia:', params.provincia)
+  console.log('- correctSlug:', correctSlug)
+  console.log('- Will redirect?', correctSlug !== params.provincia)
+  
   // If the slug is incorrect, redirect to the correct one
   if (correctSlug !== params.provincia) {
+    console.log('- Redirecting to:', `/directorio/${correctSlug}`)
     redirect(`/directorio/${correctSlug}`)
   }
 
@@ -305,7 +311,13 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   ]
 
   // Filter companies by province
+  console.log('Debug Filtering:')
+  console.log('- correctSlug for filtering:', correctSlug)
+  console.log('- Available provinces in companies:', [...new Set(allCompanies.map(c => c.province))])
+  console.log('- Companies with province cordoba:', allCompanies.filter(c => c.province === 'cordoba').length)
+  
   const provinceCompanies = allCompanies.filter(company => company.province === correctSlug)
+  console.log('- Filtered companies count:', provinceCompanies.length)
   
   // Get province name
   const provinceNames = {
