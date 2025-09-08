@@ -180,13 +180,12 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
 }
 
 export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
-  // Use the correct slug for filtering, but don't redirect for now
-  const correctSlug = getCorrectProvinceSlug(params.provincia)
+  // For now, use the province directly without any transformation
+  const correctSlug = params.provincia
   
   console.log('Debug ProvinciaPage:')
   console.log('- params.provincia:', params.provincia)
-  console.log('- correctSlug:', correctSlug)
-  console.log('- Using correctSlug for filtering:', correctSlug)
+  console.log('- Using params.provincia directly for filtering:', correctSlug)
 
   // Province data with companies
   const allCompanies = [
