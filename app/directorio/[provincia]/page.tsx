@@ -188,11 +188,11 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   console.log('- correctSlug:', correctSlug)
   console.log('- Will redirect?', correctSlug !== params.provincia)
   
-  // If the slug is incorrect, redirect to the correct one
-  if (correctSlug !== params.provincia) {
-    console.log('- Redirecting to:', `/directorio/${correctSlug}`)
-    redirect(`/directorio/${correctSlug}`)
-  }
+  // TEMPORARILY DISABLE REDIRECTION TO DEBUG
+  // if (correctSlug !== params.provincia) {
+  //   console.log('- Redirecting to:', `/directorio/${correctSlug}`)
+  //   redirect(`/directorio/${correctSlug}`)
+  // }
 
   // Province data with companies
   const allCompanies = [
