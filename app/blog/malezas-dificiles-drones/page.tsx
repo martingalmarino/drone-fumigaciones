@@ -32,7 +32,6 @@ export default function BlogPost() {
       <Header />
       <main className="flex-1">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Header del artículo */}
           <div className="mb-8">
             <Button asChild variant="ghost" className="mb-4">
               <Link href="/blog" className="flex items-center">
@@ -73,7 +72,6 @@ export default function BlogPost() {
             </div>
           </div>
 
-          {/* Introducción */}
           <div className="prose prose-lg max-w-none mb-8">
             <p className="text-lg text-gray-700 leading-relaxed">
               El control de malezas en cultivos extensivos como soja y maíz es uno de los mayores desafíos que enfrentan los productores argentinos. La expansión de biotipos resistentes y tolerantes a herbicidas convencionales ha generado la necesidad de integrar nuevas herramientas dentro del Manejo Integrado de Plagas (MIP). En este contexto, los drones agrícolas aparecen como una alternativa de precisión para aplicaciones localizadas y rápidas.
@@ -83,7 +81,6 @@ export default function BlogPost() {
             </p>
           </div>
 
-          {/* Sección 1: Panorama actual */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Malezas difíciles en maíz y soja: panorama actual
@@ -121,7 +118,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Sección 2: MIM y rol del dron */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Manejo integrado de malezas (MIM) y rol del dron
@@ -162,7 +158,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Sección 3: Timings de aplicación */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Timings de aplicación y uso del dron
@@ -179,7 +174,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Sección 4: Mezclas y protocolos */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Mezclas y protocolos recomendados (según marbete)
@@ -197,7 +191,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Sección 5: Ensayos REM */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Ensayos y experiencias del Programa REM
@@ -214,7 +207,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Sección 6: Tabla comparativa */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Tabla comparativa de estrategias con drones
@@ -260,7 +252,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Sección 7: Conclusiones */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Conclusiones prácticas
@@ -282,7 +273,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* FAQ */}
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
               Preguntas frecuentes
@@ -345,7 +335,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* CTA */}
           <div className="bg-primary text-white p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold mb-4">
               ¿Necesitas asesoramiento para el manejo de malezas con drones?

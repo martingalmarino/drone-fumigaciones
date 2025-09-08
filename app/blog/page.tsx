@@ -20,7 +20,7 @@ export default async function BlogPage() {
   const articles = [
     {
       id: '1',
-      slug: 'malezas-dificiles-maiz-soja-drones',
+      slug: 'malezas-dificiles-drones',
       title: 'Casos de manejo: malezas difíciles en maíz y soja y el rol del dron',
       category: 'casos',
       excerpt: 'Análisis del control de malezas resistentes en cultivos extensivos con drones: estrategias MIM, timings de aplicación y experiencias del Programa REM de Aapresid.',
