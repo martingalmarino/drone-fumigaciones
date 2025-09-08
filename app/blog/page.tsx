@@ -20,56 +20,65 @@ export default async function BlogPage() {
   const articles = [
     {
       id: '1',
+      slug: 'malezas-dificiles-maiz-soja-drones',
+      title: 'Casos de manejo: malezas difíciles en maíz y soja y el rol del dron',
+      category: 'casos',
+      excerpt: 'Análisis del control de malezas resistentes en cultivos extensivos con drones: estrategias MIM, timings de aplicación y experiencias del Programa REM de Aapresid.',
+      createdAt: new Date(),
+      readingTime: 10,
+    },
+    {
+      id: '2',
       slug: 'comparativa-dji-t50-vs-xag-p100-pro',
       title: 'Comparativa técnica para extensivos: DJI Agras T50 vs XAG P100 Pro',
       category: 'análisis',
       excerpt: 'Análisis técnico detallado entre DJI Agras T50 y XAG P100 Pro: capacidad, caudal, autonomía, sensores y casos de uso para cultivos extensivos en Argentina.',
-      createdAt: new Date(),
+      createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
       readingTime: 8,
     },
     {
-      id: '2',
+      id: '3',
       slug: 'capacidad-cobertura-dron-agricola-hectareas-hora',
       title: 'Capacidad real: ¿cuántas hectáreas por hora puede cubrir mi dron agrícola?',
       category: 'tecnologia',
       excerpt: 'Análisis completo sobre la capacidad de cobertura de drones agrícolas: factores técnicos, cálculos prácticos y comparativa de modelos para maximizar eficiencia.',
-      createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
+      createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
       readingTime: 6,
     },
     {
-      id: '3',
+      id: '4',
       slug: 'productos-fitosanitarios-drones-marbetes-buenas-practicas',
       title: '¿Qué productos se pueden aplicar con drones? Marbetes, buenas prácticas y manejo de deriva',
       category: 'normativa',
       excerpt: 'Guía completa sobre productos fitosanitarios autorizados para drones, marbetes SENASA, buenas prácticas CASAFE y manejo de deriva en aplicaciones aéreas.',
-      createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // 2 días atrás
-      readingTime: 8,
-    },
-    {
-      id: '4',
-      slug: 'es-legal-fumigar-con-drones-argentina-2025',
-      title: '¿Es legal fumigar con drones en Argentina? – Regulaciones y requisitos (2025)',
-      category: 'normativa',
-      excerpt: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
       createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // 3 días atrás
       readingTime: 8,
     },
     {
       id: '5',
+      slug: 'es-legal-fumigar-con-drones-argentina-2025',
+      title: '¿Es legal fumigar con drones en Argentina? – Regulaciones y requisitos (2025)',
+      category: 'normativa',
+      excerpt: 'Análisis actualizado 2025 sobre la legalidad de la fumigación con drones en Argentina: regulaciones ANAC, requisitos SENASA, vacíos provinciales y recomendaciones para operadores.',
+      createdAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000), // 4 días atrás
+      readingTime: 8,
+    },
+    {
+      id: '6',
       slug: 'drones-vs-aviones-vs-pulverizadoras',
       title: 'Drones vs. aviones vs. pulverizadoras terrestres: comparativa de costos y efectividad',
       category: 'análisis',
       excerpt: 'Análisis comparativo de drones, aviones y pulverizadoras terrestres en la agricultura: costos por hectárea, eficiencia, limitaciones y mejores casos de uso.',
-      createdAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000), // 6 días atrás
+      createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000), // 7 días atrás
       readingTime: 6,
     },
     {
-      id: '6',
+      id: '7',
       slug: 'que-es-fumigacion-con-drones',
       title: '¿Qué es la fumigación con drones y cómo funciona?',
       category: 'conceptos',
       excerpt: 'Guía completa sobre fumigación con drones: qué es, cómo operan los drones pulverizadores, componentes, flujo de trabajo, ventajas y diferencias con la fumigación tradicional.',
-      createdAt: new Date(Date.now() - 13 * 24 * 60 * 60 * 1000), // 13 días atrás
+      createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000), // 14 días atrás
       readingTime: 7,
     }
   ]
