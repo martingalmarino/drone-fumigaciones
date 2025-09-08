@@ -312,7 +312,13 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   ]
 
   // Filter companies by province
+  console.log('Debug - params.provincia:', params.provincia)
+  console.log('Debug - decodedProvincia:', decodedProvincia)
+  console.log('Debug - correctSlug:', correctSlug)
+  console.log('Debug - allCompanies provinces:', allCompanies.map(c => c.province))
+  
   const provinceCompanies = allCompanies.filter(company => company.province === correctSlug)
+  console.log('Debug - provinceCompanies count:', provinceCompanies.length)
   
   // Get province name
   const provinceNames = {
