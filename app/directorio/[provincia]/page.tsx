@@ -180,12 +180,13 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
 }
 
 export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
-  // For now, use the province directly without any transformation
-  const correctSlug = params.provincia
+  // Get the correct slug for filtering
+  const correctSlug = getCorrectProvinceSlug(params.provincia)
   
-  console.log('Debug ProvinciaPage:')
-  console.log('- params.provincia:', params.provincia)
-  console.log('- Using params.provincia directly for filtering:', correctSlug)
+  // If the slug is incorrect (has encoding issues), redirect to the correct one
+  if (correctSlug !== params.provincia) {
+    redirect(`/directorio/${correctSlug}`)
+  }
 
   // Province data with companies
   const allCompanies = [
@@ -304,13 +305,7 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   ]
 
   // Filter companies by province
-  console.log('Debug Filtering:')
-  console.log('- correctSlug for filtering:', correctSlug)
-  console.log('- Available provinces in companies:', [...new Set(allCompanies.map(c => c.province))])
-  console.log('- Companies with province cordoba:', allCompanies.filter(c => c.province === 'cordoba').length)
-  
   const provinceCompanies = allCompanies.filter(company => company.province === correctSlug)
-  console.log('- Filtered companies count:', provinceCompanies.length)
   
   // Get province name
   const provinceNames = {
