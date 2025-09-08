@@ -16,9 +16,9 @@ interface ProvinciaPageProps {
   params: { provincia: string }
 }
 
-export async function generateMetadata({ params }: ProvinciaPageProps): Promise<Metadata> {
-  // Handle URL decoding for province slugs
-  const decodedProvincia = decodeURIComponent(params.provincia)
+// Helper function to get correct province slug
+function getCorrectProvinceSlug(provincia: string): string {
+  const decodedProvincia = decodeURIComponent(provincia)
   
   // Map of common misspellings/encodings to correct slugs
   const provinceSlugMap: Record<string, string> = {
@@ -28,8 +28,12 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
     'santa-fe': 'santa-fe'
   }
   
+  return provinceSlugMap[decodedProvincia] || provincia
+}
+
+export async function generateMetadata({ params }: ProvinciaPageProps): Promise<Metadata> {
   // Get the correct slug
-  const correctSlug = provinceSlugMap[decodedProvincia] || params.provincia
+  const correctSlug = getCorrectProvinceSlug(params.provincia)
 
   // Get province name from slug
   const provinceNames = {
@@ -176,19 +180,8 @@ export async function generateMetadata({ params }: ProvinciaPageProps): Promise<
 }
 
 export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
-  // Handle URL decoding for province slugs
-  const decodedProvincia = decodeURIComponent(params.provincia)
-  
-  // Map of common misspellings/encodings to correct slugs
-  const provinceSlugMap: Record<string, string> = {
-    'córdoba': 'cordoba',
-    'c%C3%B3rdoba': 'cordoba',
-    'buenos-aires': 'buenos-aires',
-    'santa-fe': 'santa-fe'
-  }
-  
   // Get the correct slug
-  const correctSlug = provinceSlugMap[decodedProvincia] || params.provincia
+  const correctSlug = getCorrectProvinceSlug(params.provincia)
   
   // If the slug is incorrect, redirect to the correct one
   if (correctSlug !== params.provincia) {
@@ -312,13 +305,7 @@ export default async function ProvinciaPage({ params }: ProvinciaPageProps) {
   ]
 
   // Filter companies by province
-  console.log('Debug - params.provincia:', params.provincia)
-  console.log('Debug - decodedProvincia:', decodedProvincia)
-  console.log('Debug - correctSlug:', correctSlug)
-  console.log('Debug - allCompanies provinces:', allCompanies.map(c => c.province))
-  
   const provinceCompanies = allCompanies.filter(company => company.province === correctSlug)
-  console.log('Debug - provinceCompanies count:', provinceCompanies.length)
   
   // Get province name
   const provinceNames = {
